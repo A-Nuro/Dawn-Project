@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"Sng_First_evening",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":76.85221,
+  "exportDir":"",
+  "name":"Sng_First_evening",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/MAIN STUFF/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Sng_First_evening.mp3",
+  "volume":1.0,
+}

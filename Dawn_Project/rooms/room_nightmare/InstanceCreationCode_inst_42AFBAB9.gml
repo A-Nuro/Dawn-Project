@@ -1,0 +1,4 @@
+if os_type!=os_android
+{
+part=1;	
+}

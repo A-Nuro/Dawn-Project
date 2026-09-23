@@ -1,0 +1,52 @@
+is_mouse=false;
+cur_mouse_x=mouse_x;
+cur_mouse_y=mouse_y;
+t_phone=0;
+t_phone_app=0;
+camera_width=camera_get_view_width(view_camera[0])
+camera_height=camera_get_view_height(view_camera[0])
+width = 280;
+height =128;
+op_border = 9;
+op_space = 16;
+screen=global.screen0;
+pos =0;
+pos1 =0;
+up_key = keyboard_check_pressed(vk_up);
+down_key = keyboard_check_pressed(vk_down);
+left_key = keyboard_check_pressed(vk_left);
+right_key = keyboard_check_pressed(vk_right);
+enter_key = keyboard_check_pressed(vk_enter);
+m_option[0,0] = "[scale,0.3]Задания";
+m_option[0,1] = "[scale,0.3]Магазин";
+m_option[0,2] = "[scale,0.3]Сообщения";
+m_option[0,3] = "[scale,0.3]Команда";
+m_option[0,4] = "[scale,0.3]Инвентарь";
+m_option[0,5] = "[scale,0.3]Прокачка";
+m_option[0,6] = "[scale,0.3]Настройки";
+m_option[0,7] = "[scale,0.3]Выход";
+m_option[0,8] = "[scale,0.3]Сохранение";
+
+
+m_option[1,0] = "[scale,0.3]";
+m_option[1,1] = "[scale,0.3]";
+m_option[1,2] = "[scale,0.3]";
+m_option[1,3] = "[scale,0.3]";
+m_option[1,4] = "[scale,0.3]";
+m_option[1,5] = "[scale,0.3]";
+m_option[1,6] = "[scale,0.3]Да";
+m_option[1,7] = "[scale,0.3]";
+m_option[1,8] = "[scale,0.3]Нет";
+
+m_option[2,0] = "[scale,0.3]Режим экрана";
+m_option[2,1] = "[scale,0.3]";
+m_option[2,2] = "[scale,0.3]";
+m_option[2,3] = "[scale,0.3]";
+m_option[2,4] = "[scale,0.3]Управление";
+m_option[2,5] = "[scale,0.3]";
+m_option[2,6] = "[scale,0.3]";
+m_option[2,7] = "[scale,0.3]Назад";
+m_option[2,8] = "[scale,0.3]";
+
+op_lenght = 0;
+menu_level = 0;

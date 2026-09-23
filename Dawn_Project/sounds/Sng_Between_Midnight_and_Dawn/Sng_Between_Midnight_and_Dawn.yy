@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"Sng_Between_Midnight_and_Dawn",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":144.03917,
+  "exportDir":"",
+  "name":"Sng_Between_Midnight_and_Dawn",
+  "parent":{
+    "name":"Звуки",
+    "path":"folders/MAIN STUFF/Звуки.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Sng_Between_Midnight_and_Dawn.mp3",
+  "volume":1.0,
+}

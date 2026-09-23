@@ -1,0 +1,3 @@
+layer_sequence_destroy(unit_sequence);
+
+ds_list_destroy(hit_by_attack)

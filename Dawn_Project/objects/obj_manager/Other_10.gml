@@ -1,0 +1,1 @@
+allow_input = !allow_input;

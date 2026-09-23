@@ -1,0 +1,4 @@
+if (collision_point(obj_payer.bbox_right+6,obj_payer.bbox_bottom,id,true,false)  or collision_point(obj_payer.bbox_right+6,obj_payer.bbox_top-15,id,true,false) or collision_point(obj_payer.bbox_left-6,obj_payer.bbox_bottom,id,true,false) or collision_point(obj_payer.bbox_left-6,obj_payer.bbox_top-15,id,true,false) or collision_point(obj_payer.bbox_left,obj_payer.bbox_top-15,id,true,false) or collision_point(obj_payer.bbox_right,obj_payer.bbox_top-15,id,true,false) or collision_point(obj_payer.bbox_left,obj_payer.bbox_bottom+6,id,true,false) or collision_point(obj_payer.bbox_right,obj_payer.bbox_bottom+6,id,true,false))
+{
+		
+}

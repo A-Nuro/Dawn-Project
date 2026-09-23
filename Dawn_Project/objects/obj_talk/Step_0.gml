@@ -1,0 +1,1 @@
+image_xscale=(string_width_scribble(nameing)/20);
