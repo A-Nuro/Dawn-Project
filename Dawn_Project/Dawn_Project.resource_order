@@ -222,6 +222,7 @@
     {"name":"spr_mike_dead_1","order":12,"path":"sprites/spr_mike_dead_1/spr_mike_dead_1.yy",},
     {"name":"spr_mike_dead","order":3,"path":"sprites/spr_mike_dead/spr_mike_dead.yy",},
     {"name":"spr_mike_fight_1","order":10,"path":"sprites/spr_mike_fight_1/spr_mike_fight_1.yy",},
+    {"name":"spr_mike_fight_1rw","order":16,"path":"sprites/spr_mike_fight_1rw/spr_mike_fight_1rw.yy",},
     {"name":"spr_mike_fight","order":8,"path":"sprites/spr_mike_fight/spr_mike_fight.yy",},
     {"name":"spr_mike_hurt_1","order":13,"path":"sprites/spr_mike_hurt_1/spr_mike_hurt_1.yy",},
     {"name":"spr_mike_hurt_static","order":2,"path":"sprites/spr_mike_hurt_static/spr_mike_hurt_static.yy",},
