@@ -1,5 +1,5 @@
 npc_id="masha"
-char_spr=s_masha_sd;
+char_spr=s_masha_gd;
 
 
 function  npc_doings()
