@@ -1,0 +1,18 @@
+# Временные файлы компиляции и сборки
+/.cache/
+/cache/
+/export/
+/datafiles_yy/
+
+# Локальные настройки пользователя
+/options/main/inherited/
+local_settings.json
+config.json
+
+# Локальные файлы конфигурации Android / iOS
+/options/android/local.properties
+/options/ios/
+
+# Системные файлы ОС
+Thumbs.db
+.DS_Store
