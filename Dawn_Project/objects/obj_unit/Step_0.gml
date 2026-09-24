@@ -1,3 +1,5 @@
+
+
 if current[@ HP]<0
 {
 	current[@ HP] = 0;
@@ -34,6 +36,7 @@ if  is_ai1==false is_ai=false;
 switch(state)
 {
 	case IDLE:
+	
 	if current[@ HP]<0
 	{current[@ HP] = 0;
 	state = DEATH;
@@ -100,15 +103,16 @@ switch(state)
 	
 	case ATTACK:
 		
-		if sprite_index != atk_spr //(layer_sequence_get_headpos(unit_sequence)<attack_start or layer_sequence_get_headpos(unit_sequence)>attack_end+1) 
+		if sprite_index != asset_get_index(atk_spr+dir) //(layer_sequence_get_headpos(unit_sequence)<attack_start or layer_sequence_get_headpos(unit_sequence)>attack_end+1) 
 		{
+			obj_payer.battle=1
 			layer_sequence_headpos(unit_sequence, attack_start)
 			ds_list_clear(hit_by_attack)
-			sprite_index = atk_spr
+			sprite_index = asset_get_index(atk_spr+dir)
 			image_index = 0
 		}
 		
-		mask_index = atk_hitbox
+		mask_index = asset_get_index(atk_hitbox+dir)
 		var hit_by_attack_now = ds_list_create();
 		var hits = instance_place_list(x,y,obj_unit,hit_by_attack_now,false);
 		if (hits>0)
@@ -131,12 +135,13 @@ switch(state)
 			}
 		}
 		ds_list_destroy(hit_by_attack_now);
-		mask_index = def_spr;
+		mask_index = asset_get_index(def_spr+dir);
 
 		if (layer_sequence_get_headpos(unit_sequence) >= attack_end)
 		{
 			//turn_finished = true;
-			sprite_index = def_spr
+			obj_payer.battle=0
+			sprite_index = asset_get_index(def_spr+dir)
 			layer_sequence_headpos(unit_sequence, idle_start);
 			state = IDLE;	
 		}

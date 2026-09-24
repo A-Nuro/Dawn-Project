@@ -1,9 +1,11 @@
 //draw_text(30,30,instance_exists() global.bad_team[|0])
 //draw_text(30,30,obj_payer.unit_xp[0])
 //draw_text(30,60,obj_payer.unit_lvl[0])
+
+
+
 var _hp = current[@ HP]/base[@ HP];
 var _sp = current[@ SP]/base[@ SP];
-
 /*
 if ((global.dev!=1 and mouse_x>=x and mouse_x<=x+64 and mouse_y>=y and mouse_y<=y+64) or (global.dev==1 and id != global.selected_unit and obj_manager.allow_input) ) and obj_manager.combat_phase==phase.wait and camera_get_view_width(view_camera[0])>=640 and (mouse_check_button_pressed(mb_right) or (global.targeting or global.skill_targeting))
 {

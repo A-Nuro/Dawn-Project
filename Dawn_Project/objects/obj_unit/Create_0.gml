@@ -30,6 +30,7 @@ inst=false;
 #macro IDLE1 10
 #macro NO_THING 11
 #macro DEATH_HURT 7
+
 need_to_hurt = false;
 
 check=false;
@@ -37,10 +38,12 @@ check=false;
 our=true
 is_atk=false
 
+dir = "r"
+
 weapon = "none";
-def_spr = spr_mike_fight_1
-atk_spr = spr_mike_attack_1;
-atk_hitbox = spr_mike_attack_hit;
+def_spr = "spr_mike_fight_1"
+atk_spr = "spr_mike_attack_1";
+atk_hitbox = "spr_mike_attack_hit";
 
 xp_get = 10;
 alp=1;

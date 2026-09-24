@@ -39,8 +39,8 @@
     "path":"sprites/spr_mike_fight/spr_mike_fight.yy",
   },
   "spriteMaskId":{
-    "name":"spr_mike_fight_1",
-    "path":"sprites/spr_mike_fight_1/spr_mike_fight_1.yy",
+    "name":"spr_mike_fight_1r",
+    "path":"sprites/spr_mike_fight_1r/spr_mike_fight_1r.yy",
   },
   "visible":true,
 }

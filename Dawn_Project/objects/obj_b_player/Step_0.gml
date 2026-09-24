@@ -1,4 +1,5 @@
 // Inherit the parent event
+depth = obj_payer.depth
 event_inherited();
 x=obj_payer.x-17
 y=obj_payer.y

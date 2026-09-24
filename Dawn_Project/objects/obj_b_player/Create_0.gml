@@ -31,7 +31,7 @@ switch(weapon)
 {
 	case "none":
 	unit_sequence = layer_sequence_create(_layer,x,y,seq_mike_none);
-	sprite_index=spr_mike_fight_1
+	sprite_index=spr_mike_fight_1r
 	break;
 	case "stick":
 	sprite_index=spr_mike_fight

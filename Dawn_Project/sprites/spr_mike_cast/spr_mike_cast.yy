@@ -40,8 +40,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"mike",
-    "path":"folders/MAIN STUFF/Спрайты/fight/enemies/mike.yy",
+    "name":"right",
+    "path":"folders/MAIN STUFF/Спрайты/fight/enemies/mike/right.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
