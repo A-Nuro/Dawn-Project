@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Script85_",
+  "%Name":"Scr_text_rus",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Script85_",
+  "name":"Scr_text_rus",
   "parent":{
     "name":"Скрипты",
     "path":"folders/MAIN STUFF/Скрипты.yy",

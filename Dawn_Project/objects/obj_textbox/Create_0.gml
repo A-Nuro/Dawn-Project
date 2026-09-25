@@ -13,7 +13,7 @@ rand_move_sin[i]=0;
 rand_sin_offset[i]=0;
 }
 
-
+page_eff[0] = -1;
 
 __end=0;
 no_accept=0;

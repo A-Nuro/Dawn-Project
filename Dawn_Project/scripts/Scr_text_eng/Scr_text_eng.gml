@@ -1,5 +1,5 @@
 
-function Scr_game_text(_text_id){
+function text_eng(_text_id){
 ini_open("character.name")
 /*
 switch(global.lang)
@@ -42,6 +42,7 @@ break;
 scr_text("Где я?",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"Where am I?");
 scr_text("Этот дом...",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"This house...");
 scr_text("Он выглядит прямо как мой родной дом.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"It looks just like my own house.");
+page_eff[0]=function(){obj_payer.sprite_index=spr_anna_cast};
 scr_text("Но совсем другой.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"But much different.");
 scr_text("...",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end","...");
 	break;
@@ -55,11 +56,12 @@ scr_text("Ты прекрастно всё понимаешь. Мир во вс�
 scr_text("!",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"!");
 scr_text("Нет. Это неправда...",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"No. That isn't truth...");
 scr_text("Тогда докажи что я неправ.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,"Then prove me wrong.");
-scr_No_option("First talk1-");
-break;
-case "First talk1-":
-obj_payer.faza[0]=0.01;
+//scr_No_option("First talk1-");
+//break;
+//case "First talk1-":
+
 scr_text("Сразись со своими страхами!",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,"Face your fears!");
+page_eff[7]=function(){obj_payer.faza[0]=0.01};
 break;
 
 case "Firstest fight0":

@@ -17,14 +17,20 @@ _font[page_number]="Font_main";
 function scr_text(_text){
 scr_set_def_for_text();
 obj_payer.talk=1; 
+
+
+
+
 if global.lang==0
 {
 text[page_number] =_text;
 }
 if global.lang==1
 {
-text[page_number] =argument[9];
+
 }
+
+
 if argument_count>1
 	{
 	snd[page_number]=argument[1]
@@ -86,6 +92,8 @@ reacting[page_number]=-1;
 else text_end=0;
 	}
 
+if argument_count>9 page_eff[page_number] =argument[9];
+else page_eff[page_number] = -1;
 
 if argument_count>10
 {
@@ -194,7 +202,11 @@ function create_textbox(_text_id){
 	
 	with(instance_create_depth(0,0,-9999,obj_textbox))
 {
-Scr_game_text(_text_id);
+	switch(global.lang)
+	{
+		case 0: text_rus(_text_id); break;
+		case 1: text_eng(_text_id); break;
+	}
 }
 	
 }
