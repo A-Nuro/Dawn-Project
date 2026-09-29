@@ -2,6 +2,7 @@ if obj_payer.battle==0
 {
 	if (keyboard_check(ord("A"))) dir = "l"
 	if (keyboard_check(ord("D"))) dir = "r"
+	if (keyboard_check(ord("S"))) dir = "d"
 }
 if instance_exists(obj_effects)
 {

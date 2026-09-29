@@ -58,7 +58,7 @@ scr_text("Тогда докажи что я неправ.",noone,noone,"Mike","?
 //scr_No_option("First talk1-");
 //break;
 //case "First talk1-":
-scr_text("Сразись со своими страхами!",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,function(){/*obj_payer.faza[0]=0.01*/if ((accept_key or obj_payer.skip_key) and draw_char==text_length[page]){room_goto(room_car)}});
+scr_text("Сразись со своими страхами!",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,function(){/*obj_payer.faza[0]=0.01*/});
 scr_No_option("First talk2")
 break;
 
@@ -111,6 +111,10 @@ scr_text("Хотя, я бы хотел встретиться снова",noone,
 break;
 
 case "First talk2":
+
+scr_sound_sette(0,Sng_Where_am_I,true,0);
+scr_sound_sette(1,Sng_Feeling_empty,true,1);
+scr_text("!",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,function(){
 obj_time.time_change=3;
 obj_time.time_was=3;
 obj_pic.picture=pic_mike_in_car;
@@ -127,13 +131,7 @@ for (var i = 0; i < 2; i++)
 
 scr_black(black_no,1);
 room_goto(room_car)
-/*
-scr_sound_sette(0,Sng_Last_hope_died,true,0);
-scr_sound_sette(1,Sng_Feeling_empty,true,1);*/
-scr_text("!",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
-scr_No_option("First talk2-");
-break;
-case "First talk2-":
+});
 scr_text("Что?..",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,function(){obj_payer.phy_position_x=200;obj_payer.phy_position_y=80;});
 scr_text("(Я проснулся.)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
 scr_text("...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
@@ -201,22 +199,17 @@ scr_text("Так нам просто будет проще работать.",no
 scr_text("Извините, но можно ещё один вопрос...",noone, _mike,"Mike_awk",noone,"Sasha");
 scr_text("А Аня - это, получается, ваша жена?",noone, _mike,"Mike",noone,"Sasha");
 scr_text("Это моя дочь.",noone,noone,"Mike",_sasha,"Sasha");
-scr_No_option("First talk7--");
-break;
-
-case "First talk7--":
 //global.main_quests[1].activation=1
-scr_text("Оу...",noone, _mike,"Mike_awk",noone,"Sasha");
-obj_payer.faza[0]=0.1;
+scr_text("Оу...",noone, _mike,"Mike_awk",noone,"Sasha",0.6,"Font_main",noone,function(){obj_payer.faza[0]=0.1;});
+
 if os_type = os_android
 {
-scr_text("*Для открытия меню с помощью кнопки паузы*",noone,noone,noone,noone,noone,0.6,"Font_main","end")	
+scr_text("*Для открытия меню исполшьзовать кнопки паузы*",noone,noone,noone,noone,noone,0.6,"Font_main","end",function(){obj_saves.savekey=1;})	
 }
 else
 {
-scr_text("*Для открытия меню с помощью Еsc*",noone,noone,noone,noone,noone,0.6,"Font_main","end")
+scr_text("*Для открытия меню исполшьзовать Еsc*",noone,noone,noone,noone,noone,0.6,"Font_main","end",function(){obj_saves.savekey=1;})
 }
-obj_saves.savekey=1;
 break;
 
 case "car_sasha":
@@ -247,19 +240,16 @@ scr_text("Ага.",noone, _mike,"Mike",noone,"Mama");
 scr_text("Ну, тогда пошли.",noone,noone,"Mike",_mam,"Mama");
 scr_text("(Александр сопроводил нас в наш новый дом)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_night,-1);scr_sound_sette(0,Sng_First_evening,true,1);});
 scr_text("(На улице уже так темно...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("...",Snd_walk_ground);
-scr_text("(И вот, мы пришли.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;obj_payer.phy_position_x=255;obj_payer.phy_position_y=257;obj_payer.sprite_index=spgu_});
+scr_text("...",Snd_walk_ground,noone,noone,noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;});
+scr_text("(И вот, мы пришли.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=255;obj_payer.phy_position_y=257;obj_payer.sprite_index=spgu_});
+scr_No_option("First_night_home0")
+break;
+case "First_night_home":
 scr_text("Папа? Ты уже вернулся?",noone,noone,"Mike","???","Anya",0.6,"Font_main",noone,function(){room_goto(room_home);scr_black(black_no,1);scr_sound_sette(1,Sng_Slowly,true,0);});
 scr_text("Да.",noone,_sasha,"Sasha",noone,"Anya");
 scr_text("А кто эти люди? Это твои коллеги по работе?",noone,noone,"Sasha","???","Anya");
 scr_text("Я пока поговорю с ними, а ты познакомься с вот ним.",noone,_sasha,"Sasha",noone,"Anya");
-scr_No_option("home__1");
-break;
-case "home__1":
-obj_payer.faza[10]="anna_s_left"
-obj_payer.sprite_index=spgr_
-
-scr_text("Привет...",noone, _mike,"Mike","???","Anya");
+scr_text("Привет...",noone, _mike,"Mike","???","Anya",0.5,"Font_main",noone,function(){obj_payer.faza[10]="anna_s_left";obj_payer.sprite_index=spgr_});
 scr_text("Хм?",noone,noone,"Mike","???","Anya",);
 scr_text("...",noone,noone,"Mike","???","Anya",);
 scr_text("Меня зовут Аня.",noone,noone,"Mike",_anya,"Anya");
@@ -281,43 +271,19 @@ scr_text("Стой, так ты не придумывал это?",noone,noone,"
 scr_text("Мх, ладно, не важно...",noone,noone,"Mike",_anya,"Anya_awk");
 scr_text("...",noone,noone,"Mike",_anya,"Anya_awk");
 scr_text("(Она попыталась быстро уйти от темы.)",noone, _mike,"Mike",noone,"Anya_awk",0.6,"Font_think");
-scr_No_option("home_2");
-break;
-case "home_2":
-scr_text("Так или иначе, но я пойду в мою комнату.",noone,noone,"Mike",_anya,"Anya");
-obj_payer.faza[9]=143;
-obj_payer.faza[10]="anna_up";
-obj_payer.faza[11]=1.5;
+scr_text("Так или иначе, но я пойду в мою комнату.",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main",noone,function(){obj_payer.faza[9]=143;obj_payer.faza[10]="anna_up_no";obj_payer.faza[11]=1.5;});
 scr_text("... О, и кстати, не забывай стучать, прежде чем будешь входить ко мне.",noone,noone,"Mike",_anya,"Anya");
 scr_text("(...)",noone, _mike,"Mike",noone,"Anya",0.6,"Font_think");
 scr_text("Ладно. Как будто я этого обычно не делаю...",noone, _mike,"Mike",noone,"Anya");
 scr_text("Не, ну а вдруг. Разные же люди попадаются",noone,noone,"Mike",_anya,"Anya");
-scr_No_option("home_3");
-break;
-case "home_3":
-obj_payer.faza[9]=-640;
-obj_payer.faza[10]="anna_left";
-obj_payer.faza[11]=2;
-scr_black(black_no,-1.5);
-scr_text("(C этими словами она поспешила вверх по лестнице)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
+scr_text("(C этими словами она поспешила вверх по лестнице)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=-640;obj_payer.faza[10]="anna_left";obj_payer.faza[11]=2;scr_black(black_no,-1.5);});
 scr_text("(Видимо, наши комнаты находятся там.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
 scr_text("Но что за [c_yellow]настоящая причина[c_white]?",noone, _mike,"Mike",noone,noone,0.6,"Font_main");
 scr_text("(Почему она так быстро сменила тему?)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("(Какие тайны она пытается от меня утаить?)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_No_option("home_4");
-break;
-case "home_4":
-scr_No_text();
-scr_black(black_no,2);
-obj_payer.faza[0]=1;
-obj_payer.faza[9]=0;
-obj_payer.faza[10]=0;
-obj_payer.faza[11]=0;
+scr_text("(Какие тайны она пытается от меня утаить?)",noone, _mike,"Mike",noone,noone,0.6,"Font_think","end",function(){if(accept_key or obj_payer.skip_key) and draw_char==text_length[page]{scr_black(black_no,2);obj_payer.faza[0]=1;obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;}});
 break;
 case "npc kust":
-
 scr_text("Это куст.	...		Выглядит красиво.",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end");
-
 break;
 case "home_storage":
 scr_text("(Кладовая...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
