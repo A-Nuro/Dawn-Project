@@ -1,9 +1,13 @@
-if obj_payer.battle==0
-{
+if id==global.selected_unit
+{	
+	if obj_payer.battle==0 {
 	if (keyboard_check(ord("A"))) dir = "l"
 	if (keyboard_check(ord("D"))) dir = "r"
 	if (keyboard_check(ord("S"))) dir = "d"
+	if (keyboard_check(ord("W"))) dir = "u"
+	}
 }
+else dir = ""
 if instance_exists(obj_effects)
 {
 if place_meeting(x, y, obj_effects) and obj_effects.our!=id.our

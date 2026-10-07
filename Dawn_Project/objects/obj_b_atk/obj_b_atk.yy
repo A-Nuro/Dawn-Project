@@ -4,6 +4,8 @@
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":73,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_b_atk",
@@ -29,13 +31,17 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[],
+  "properties":[
+    {"$GMObjectProperty":"v2","%Name":"atk_spr_spawn","filters":[],"listItems":[],"multiselect":false,"name":"atk_spr_spawn","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"atk_hitbox_spawn","filters":[],"listItems":[],"multiselect":false,"name":"atk_hitbox_spawn","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":2,},
+    {"$GMObjectProperty":"v2","%Name":"baseATK","filters":[],"listItems":[],"multiselect":false,"name":"baseATK","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0.0","varType":0,},
+  ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_anna_tapes",
-    "path":"sprites/spr_anna_tapes/spr_anna_tapes.yy",
+    "name":"s_mike_atk_static_spawn",
+    "path":"sprites/s_mike_atk_static_spawn/s_mike_atk_static_spawn.yy",
   },
   "spriteMaskId":{
     "name":"point",

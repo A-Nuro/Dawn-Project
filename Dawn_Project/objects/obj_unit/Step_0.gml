@@ -103,9 +103,19 @@ switch(state)
 	
 	case ATTACK:
 		
+		if (array_contains(spawn_frame,round(image_index)) and !array_contains(spawned_frame,round(image_index)))
+		{
+			var _spw = instance_create_depth(obj_payer.x,obj_payer.y,depth,obj_b_atk,{
+			atk_spr_spawn: self.spawn_spr,
+			atk_hitbox_spawn: self.spawn_hitbox,
+			baseATK: self.base[ATK]
+			});
+			array_push(spawned_frame,round(image_index))
+		}
+		
 		if sprite_index != asset_get_index(atk_spr+dir) //(layer_sequence_get_headpos(unit_sequence)<attack_start or layer_sequence_get_headpos(unit_sequence)>attack_end+1) 
 		{
-			obj_payer.battle=1
+			if (id==global.selected_unit)obj_payer.battle=1
 			layer_sequence_headpos(unit_sequence, attack_start)
 			ds_list_clear(hit_by_attack)
 			sprite_index = asset_get_index(atk_spr+dir)
@@ -137,10 +147,12 @@ switch(state)
 		ds_list_destroy(hit_by_attack_now);
 		mask_index = asset_get_index(def_spr+dir);
 
-		if (layer_sequence_get_headpos(unit_sequence) >= attack_end)
+		if (layer_sequence_get_headpos(unit_sequence) >= attack_end) or (floor(image_index) == image_number - 1)
 		{
 			//turn_finished = true;
-			obj_payer.battle=0
+			spawned_frame=[]
+			if (id==obj_b_atk) instance_destroy()
+			if (id==global.selected_unit) obj_payer.battle=0
 			sprite_index = asset_get_index(def_spr+dir)
 			layer_sequence_headpos(unit_sequence, idle_start);
 			state = IDLE;	
@@ -148,30 +160,14 @@ switch(state)
 	break
 	
 	case HURT:
-		if (layer_sequence_get_headpos(unit_sequence) < hurt_start+3 and layer_sequence_get_headpos(unit_sequence) > hurt_start+1)
+		if (sprite_index != asset_get_index(hur_spr)) sprite_index = asset_get_index(hur_spr)
+		
+		if (layer_sequence_get_headpos(unit_sequence) >= hurt_end)// or (floor(image_index) == image_number - 1)
 		{
-		/*
-		if global.selected_unit.selected_skill!=-1 //and global.selected_unit.selected_skill.type != skill_type.physic
-		{
-		script_execute(global.selected_unit.selected_skill.doing)
-		}
-		else
-		{
-		damage_unit(global.selected_unit.current[ATK],global.selected_unit.ignore_def,global.selected_unit.ignore_rand);
-		}*/
-		}
-		if (layer_sequence_get_headpos(unit_sequence) >= hurt_end)
-		{
-			/*
-			for(var i =0; i<ds_list_size(global.selected_targets); i++)
-	{
-		if global.selected_unit = global.selected_targets[|i]
-		{
-			turn_finished = true;
-		}
-	}*/
+			
 			if (current[@ HP] > 0)
 			{
+			sprite_index = asset_get_index(def_spr+dir)
 			layer_sequence_headpos(unit_sequence, idle_start);
 			incoming_damage = 0;
 			state = IDLE;
@@ -371,10 +367,11 @@ else
 
 //if (!global.targeting and !global.skill_targeting) multi_draw = false;
 
-
+if id!=obj_b_atk
+{/*
 layer_sequence_x(id.unit_sequence,id.x)	
-layer_sequence_y(id.unit_sequence,id.y);
-
+layer_sequence_y(id.unit_sequence,id.y);*/
+}
 /*
 if global.selected_unit!=noone
 {

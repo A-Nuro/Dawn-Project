@@ -25,10 +25,10 @@ var _layer = layer_create(id.depth);
 
 unit_sequence = layer_sequence_create(_layer,x,y,seq_fear);
 
-def_spr = spr_fear_fight
-atk_spr = spr_fear_attack;
-atk_hitbox = spr_fear_attack_hit;
-
+def_spr = "spr_fear_fight"
+atk_spr = "spr_fear_attack";
+atk_hitbox = "spr_fear_attack_hit";
+hur_spr = "spr_fear_attack_hit";
 
 idle_start = 0;
 idle_end = 239;
@@ -76,6 +76,10 @@ learned_skill[4] = global.skill[skills.no_skill];
 learned_skill[5] = global.skill[skills.no_skill];
 learned_skill[6] = global.skill[skills.no_skill];
 learned_skill[7] = global.skill[skills.no_skill];
+
+spawn_frame=[3]
+spawn_spr="s_mike_atk_static_spawn"
+spawn_hitbox="s_mike_atk_static_spawn_hit"
 
 function ai_doings()
 {

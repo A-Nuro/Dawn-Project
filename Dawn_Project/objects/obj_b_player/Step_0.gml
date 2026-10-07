@@ -3,6 +3,9 @@ depth = obj_payer.depth
 event_inherited();
 x=obj_payer.x-17
 y=obj_payer.y
+
+global.selected_unit = id
+
 if obj_payer.danger==false 
 {
 	global.selected_unit=noone

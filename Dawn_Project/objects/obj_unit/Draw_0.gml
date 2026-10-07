@@ -2,8 +2,6 @@
 //draw_text(30,30,obj_payer.unit_xp[0])
 //draw_text(30,60,obj_payer.unit_lvl[0])
 
-
-
 var _hp = current[@ HP]/base[@ HP];
 var _sp = current[@ SP]/base[@ SP];
 /*

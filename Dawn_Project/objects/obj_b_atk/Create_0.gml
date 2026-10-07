@@ -4,7 +4,7 @@ is_ai1=true;
 unit_name = "Ленты"
 unit_post_name = "ют"
 unit_name_atk = "Ленты"
-
+our=false
 
 base[HP] = 10000;
 base[SP] = 0;
@@ -22,7 +22,9 @@ current[ATK] = base[@ ATK];
 current[DEF] = base[@ DEF];
 current[ACC] = base[@ ACC];
 
-unit_sequence = layer_sequence_create("sequences",x-999,y-999,seq_anna_tapes);
+var _layer = layer_create(id.depth);
+
+unit_sequence = noone//layer_sequence_create(_layer,x-999,y-999,seq_fear);
 
 idle_start = 0;
 idle_end = 59;
@@ -63,14 +65,20 @@ learned_skill[5] = global.skill[skills.no_skill];
 learned_skill[6] = global.skill[skills.no_skill];
 learned_skill[7] = global.skill[skills.no_skill];
 
+base[ATK]=baseATK
+current[ATK] = base[@ ATK]
+
+atk_spr=atk_spr_spawn
+def_spr=atk_spr_spawn
+atk_hitbox=atk_hitbox_spawn
+
+
+state=ATTACK
+
 function ai_doings()
 {
 if state != ATTACK
 {
-state = ATTACK;
-layer_sequence_headpos(unit_sequence, attack_start)
+instance_destroy()
 }
-
-
-
 }

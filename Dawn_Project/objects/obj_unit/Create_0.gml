@@ -39,11 +39,16 @@ our=true
 is_atk=false
 
 dir = "r"
+spawn_frame=[]
+spawned_frame=[]
+spawn_spr=""
+spawn_hitbox=""
 
 weapon = "none";
 def_spr = "spr_mike_fight_1"
 atk_spr = "spr_mike_attack_1";
 atk_hitbox = "spr_mike_attack_hit";
+hur_spr = "spr_mike_hurt_1";
 
 xp_get = 10;
 alp=1;
@@ -76,6 +81,7 @@ unit_post_name = ""
 unit_name_atk = ""
 
 idle_anim=-1;
+
 
 base[HP] = 20;
 base[SP] = 10;
