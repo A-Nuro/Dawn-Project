@@ -123,6 +123,7 @@ for (var i = 0; i < 2; i++)
 	inst_my_best_inv.inventory[i].colvo=global.items[2].colvo;
 	inst_my_best_inv.inventory[i].activ=global.items[2].activ;
 	inst_my_best_inv.inventory[i].use_no_battle=global.items[2].use_no_battle;
+	inst_my_best_inv.inventory[i].armour=global.items[2].armour;
 	inst_my_best_inv.inventory[i].hp_change=global.items[2].hp_change;
 	inst_my_best_inv.inventory[i].sp_change=global.items[2].sp_change;
 }

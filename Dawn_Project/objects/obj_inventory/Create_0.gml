@@ -3,7 +3,7 @@ row_length =6
 //inventory = array_create(INV_SLOTS,{num:-1})
 inventory=[];
 
-for (var i = 0; i < INV_SLOTS; i++){array_push(inventory,{namein:"",num:-1,colvo:-1,activ: function(){}, use_no_battle: false, hp_change: 0, sp_change: 0,})}
+for (var i = 0; i < INV_SLOTS; i++){array_push(inventory,{namein:"",num:-1,colvo:-1,activ: function(){}, use_no_battle: false, armour: -1, hp_change: 0, sp_change: 0,})}
 
 
 

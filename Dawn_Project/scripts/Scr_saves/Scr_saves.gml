@@ -66,6 +66,7 @@ for (var i = 0; i < INV_SLOTS; i++)
 	inst_my_best_inv.inventory[i].colvo=global.items[0].colvo;
 	inst_my_best_inv.inventory[i].activ=global.items[0].activ;
 	inst_my_best_inv.inventory[i].use_no_battle=global.items[0].use_no_battle;
+	inst_my_best_inv.inventory[i].armour=global.items[0].armour;
 	inst_my_best_inv.inventory[i].hp_change=global.items[0].hp_change;
 	inst_my_best_inv.inventory[i].sp_change=global.items[0].sp_change;
 
@@ -86,6 +87,7 @@ for (var i = 0; i < INV_BOX_SLOTS; i++)
 	inst_my_big_inv.inventory[i].colvo=global.items[0].colvo;
 	inst_my_big_inv.inventory[i].activ=global.items[0].activ;
 	inst_my_big_inv.inventory[i].use_no_battle=global.items[0].use_no_battle;
+	inst_my_big_inv.inventory[i].armour=global.items[0].armour;
 	inst_my_big_inv.inventory[i].hp_change=global.items[0].hp_change;
 	inst_my_big_inv.inventory[i].sp_change=global.items[0].sp_change;
 }
@@ -164,6 +166,7 @@ for (var i = 0; i < INV_SLOTS; i++)
 	inst_my_best_inv.inventory[i].colvo=global.items[ini_read_real("inventary",i,0)].colvo;
 	inst_my_best_inv.inventory[i].activ=global.items[ini_read_real("inventary",i,0)].activ;
 	inst_my_best_inv.inventory[i].use_no_battle=global.items[ini_read_real("inventary",i,0)].use_no_battle;
+	inst_my_best_inv.inventory[i].armour=global.items[ini_read_real("inventary",i,0)].armour;
 	inst_my_best_inv.inventory[i].hp_change=global.items[ini_read_real("inventary",i,0)].hp_change;
 	inst_my_best_inv.inventory[i].sp_change=global.items[ini_read_real("inventary",i,0)].sp_change;
 	}
@@ -176,6 +179,7 @@ for (var i = 0; i < INV_BOX_SLOTS; i++)
 	inst_my_big_inv.inventory[i].colvo=global.items[ini_read_real("inventary_box",i,0)].colvo;
 	inst_my_big_inv.inventory[i].activ=global.items[ini_read_real("inventary_box",i,0)].activ;
 	inst_my_big_inv.inventory[i].use_no_battle=global.items[ini_read_real("inventary_box",i,0)].use_no_battle;
+	inst_my_big_inv.inventory[i].armour=global.items[ini_read_real("inventary_box",i,0)].armour;
 	inst_my_big_inv.inventory[i].hp_change=global.items[ini_read_real("inventary_box",i,0)].hp_change;
 	inst_my_big_inv.inventory[i].sp_change=global.items[ini_read_real("inventary_box",i,0)].sp_change;
 	}

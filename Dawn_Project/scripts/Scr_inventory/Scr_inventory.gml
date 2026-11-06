@@ -3,6 +3,7 @@ global.items[0]=
 namein:"",
 num:0,
 use_no_battle: false,
+armour: -1,
 hp_change: 0,
 sp_change: 0,
 colvo:1,
@@ -13,6 +14,7 @@ global.items[1]=
 namein:"Прикольный рисунок [no_no,0,0] Восстанавливает 10[nbsp]SP",
 num:1,
 use_no_battle: true,
+armour: -1,
 hp_change: 0,
 sp_change: 10,
 colvo:-28,
@@ -23,12 +25,23 @@ global.items[2]=
 namein:"Конфета [no_no,0,0][no_no,0,0] [no_no,0,0] Восстанавливает 30[nbsp]HP",
 num:2,
 use_no_battle: true,
+armour: -1,
 hp_change: 30,
 sp_change: 0,
 colvo:1,
 activ: function(){damage_unit(-30,true,true,true)}
 }
-
+global.items[3]=
+{
+namein:"Простая палка [no_no,0,0] Слабое оружие",
+num:3,
+use_no_battle: false,
+armour: 0,
+hp_change: 0,
+sp_change: 0,
+colvo:-28,
+activ: function(){}
+}
 
 function inv_search(root_object, item_type)
 {
@@ -54,6 +67,7 @@ function inv_add(root_obj, item_type)
 			inventory[_slot].colvo = global.items[item_type].colvo
 			inventory[_slot].activ = global.items[item_type].activ
 			inventory[_slot].use_no_battle = global.items[item_type].use_no_battle
+			inventory[_slot].armour = global.items[item_type].armour
 			inventory[_slot].hp_change = global.items[item_type].hp_change
 			inventory[_slot].sp_change = global.items[item_type].sp_change
 			
@@ -74,6 +88,7 @@ function inv_swap(obj_from, slot_from ,obj_to, slot_to)
 	var _item_from4 = obj_from.inventory[slot_from].use_no_battle
 	var _item_from5 = obj_from.inventory[slot_from].hp_change
 	var _item_from6 = obj_from.inventory[slot_from].sp_change
+	var _item_from7 = obj_from.inventory[slot_from].armour
 
 	obj_from.inventory[slot_from].num = obj_to.inventory[slot_to].num
 	obj_from.inventory[slot_from].colvo = obj_to.inventory[slot_to].colvo
@@ -82,6 +97,7 @@ function inv_swap(obj_from, slot_from ,obj_to, slot_to)
 	obj_from.inventory[slot_from].use_no_battle = obj_to.inventory[slot_to].use_no_battle
 	obj_from.inventory[slot_from].hp_change = obj_to.inventory[slot_to].hp_change
 	obj_from.inventory[slot_from].sp_change = obj_to.inventory[slot_to].sp_change
+	obj_from.inventory[slot_from].armour = obj_to.inventory[slot_to].armour
 	
 	obj_to.inventory[slot_to].num = _item_from;
 	obj_to.inventory[slot_to].colvo = _item_from1;
@@ -90,6 +106,7 @@ function inv_swap(obj_from, slot_from ,obj_to, slot_to)
 	obj_to.inventory[slot_to].use_no_battle = _item_from4;
 	obj_to.inventory[slot_to].hp_change = _item_from5;
 	obj_to.inventory[slot_to].sp_change = _item_from6;
+	obj_to.inventory[slot_to].armour = _item_from7;
 }
 
 
@@ -107,6 +124,7 @@ function inv_remove(root_obj, item_type)
 				inventory[_slot].colvo = -1;
 				inventory[_slot].activ = function(){}
 				inventory[_slot].use_no_battle = false;
+				inventory[_slot].armour = -1;
 				inventory[_slot].hp_change = 0;
 				inventory[_slot].sp_change = 0;
 			}
@@ -125,6 +143,7 @@ function inv_remove(root_obj, item_type)
 				inventory[_slot].colvo = -1;
 				inventory[_slot].activ = function(){}
 				inventory[_slot].use_no_battle = false;
+				inventory[_slot].armour = -1;
 				inventory[_slot].hp_change = 0;
 				inventory[_slot].sp_change = 0;
 				inv_swap(root_obj,_slot,root_obj,slot_drag)

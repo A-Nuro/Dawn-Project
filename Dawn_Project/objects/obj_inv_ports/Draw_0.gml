@@ -73,12 +73,12 @@ for (var i = 0; i < array_length(global.team); i++)
 		draw_sprite_stretched(spr_textbox2,0,x-1-64,y+64*i,64,50)
 		//draw_sprite_stretched(spr_textbox2,0,x+20-(string_width_scribble(_naem)/2),y+41+64*i,string_width_scribble(_naem),string_height(_naem)*0.3)
 		scribble(_naem).starting_format("Font_main",c_white).draw(x-32-string_width_scribble(_naem)/2,y+1+64*i);//-46
-		scribble("HP:"+string(obj_payer._hp[0])+"/80").starting_format("Font_main",c_white).scale(0.16).draw(x-32-string_width("HP:"+string(obj_payer._hp[0])+"/80")/2*0.16,y+47-34+64*i);
-		scribble("SP:"+string(obj_payer._sp[0])+"/40").starting_format("Font_main",c_white).scale(0.16).draw(x-32-string_width("SP:"+string(obj_payer._sp[0])+"/40")/2*0.16,y+47-16+64*i);
+		scribble("HP:"+string(global.team[i].current[@ HP])+"/"+string(global.team[i].base[@ HP])).starting_format("Font_main",c_white).scale(0.16).draw(x-32-string_width("HP:"+string(global.team[i].current[@ HP])+"/"+string(global.team[i].base[@ HP]))/2*0.16,y+47-34+64*i);
+		scribble("SP:"+string(global.team[i].current[@ SP])+"/"+string(global.team[i].base[@ SP])).starting_format("Font_main",c_white).scale(0.16).draw(x-32-string_width("SP:"+string(global.team[i].current[@ SP])+"/"+string(global.team[i].base[@ SP]))/2*0.16,y+47-16+64*i);
 		draw_sprite(ui_hp,0,x-59,y-22+47+64*i);
-		draw_sprite_part(ui_hp,1,0,0,sprite_get_width(ui_hp)*obj_payer._hp[0]/80,sprite_get_height(ui_hp),x-59,y-22+47+64*i);
+		draw_sprite_part(ui_hp,1,0,0,sprite_get_width(ui_hp)*global.team[i].current[@ HP]/global.team[i].base[@ HP],sprite_get_height(ui_hp),x-59,y-22+47+64*i);
 		draw_sprite(ui_sp,0,x-59,y-6+47+64*i);
-		draw_sprite_part(ui_sp,1,0,0,sprite_get_width(ui_hp)*obj_payer._sp[0]/40,sprite_get_height(ui_hp),x-59,y-6+47+64*i);
+		draw_sprite_part(ui_sp,1,0,0,sprite_get_width(ui_hp)*global.team[i].current[@ SP]/global.team[i].base[@ SP],sprite_get_height(ui_hp),x-59,y-6+47+64*i);
 	break
 	case "obj_b_anna":
 		if activ_portrets[i]=false draw_sprite_stretched(spr_textbox3,0,x-1,y-1+64*i,42,42)

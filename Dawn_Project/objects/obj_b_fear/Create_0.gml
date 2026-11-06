@@ -77,7 +77,7 @@ learned_skill[5] = global.skill[skills.no_skill];
 learned_skill[6] = global.skill[skills.no_skill];
 learned_skill[7] = global.skill[skills.no_skill];
 
-spawn_frame=[3]
+spawn_frame=[]
 spawn_spr="s_mike_atk_static_spawn"
 spawn_hitbox="s_mike_atk_static_spawn_hit"
 

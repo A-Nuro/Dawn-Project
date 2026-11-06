@@ -14,4 +14,4 @@ if gamepad_is_connected(gpl()) gamepad_set_vibration(gpl(),0,0)
 	instance_destroy(id);
 }
 
-draw_text(x,y,our)
+//draw_text(x,y,our)

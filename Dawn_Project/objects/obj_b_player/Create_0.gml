@@ -1,6 +1,6 @@
 event_inherited();
 
-
+global.selected_unit = id
 
 base[HP] = 80//+(obj_payer.unit_lvl[0] div 2 )*2+(obj_payer.unit_lvl[0] div 3)*2+(obj_payer.unit_lvl[0] div 7)*3+(obj_payer.unit_lvl[0] div 5)+(obj_payer.unit_lvl[0] div 10)*6+(obj_payer.unit_lvl[0] div 99);
 base[SP] = 40//+(obj_payer.unit_lvl[0] div 3)*3+(obj_payer.unit_lvl[0] div 10)*5+(obj_payer.unit_lvl[0] div 7)*4+(obj_payer.unit_lvl[0] div 4)*2;

@@ -1,9 +1,21 @@
 //draw_text(30,30,instance_exists() global.bad_team[|0])
 //draw_text(30,30,obj_payer.unit_xp[0])
 //draw_text(30,60,obj_payer.unit_lvl[0])
-
 var _hp = current[@ HP]/base[@ HP];
 var _sp = current[@ SP]/base[@ SP];
+
+if (state == IDLE or state == IDLE1) and id==global.selected_unit
+{
+	if (keyboard_check(ord("D")) or keyboard_check(ord("A")) or keyboard_check(ord("S"))) //and sprite_index!=asset_get_index(def_spr+dir+"w")
+	{
+		sprite_index=asset_get_index(def_spr+dir+"w")
+	}
+	if !keyboard_check(ord("D")) and !keyboard_check(ord("A")) and !keyboard_check(ord("S"))
+	{
+		sprite_index=asset_get_index(def_spr+dir)
+	}
+}
+
 /*
 if ((global.dev!=1 and mouse_x>=x and mouse_x<=x+64 and mouse_y>=y and mouse_y<=y+64) or (global.dev==1 and id != global.selected_unit and obj_manager.allow_input) ) and obj_manager.combat_phase==phase.wait and camera_get_view_width(view_camera[0])>=640 and (mouse_check_button_pressed(mb_right) or (global.targeting or global.skill_targeting))
 {
@@ -13,6 +25,7 @@ if ((mouse_x>=x+64 or mouse_x<=x or mouse_y>=y+64 or mouse_y<=y) and mouse_check
 {
 check=false
 }*/
+
 
 if draw_target==true //and obj_manager.cam_w>630
 {
@@ -40,9 +53,6 @@ for(var e = 0; e<array_length(active_effects); e++)
 }
 
 }
-
-
-
 
 	
 //}

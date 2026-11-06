@@ -48,7 +48,7 @@ var esk = gamepad_button_check_pressed(gpl(),gp_start) or gamepad_button_check_p
 }
 else
 {
-	var esk = keyboard_check_pressed(vk_escape)
+	var esk = keyboard_check_released(vk_escape)
 }
 
 
@@ -56,6 +56,7 @@ if room!=Main_menu and room!=room_fight and (esk or (obj_inventory_give.y<=camer
 {
 	inv_active=false
 	if inv_open_with_phone==true obj_phone.t_phone=1
+	else obj_battle_button.active=true
 }
 
 if inv_active==false

@@ -125,6 +125,7 @@ for (var i = 0; i < 2; i++)
 	inst_my_best_inv.inventory[i].colvo=global.items[2].colvo;
 	inst_my_best_inv.inventory[i].activ=global.items[2].activ;
 	inst_my_best_inv.inventory[i].use_no_battle=global.items[2].use_no_battle;
+	inst_my_best_inv.inventory[i].armour=global.items[2].armour;
 	inst_my_best_inv.inventory[i].hp_change=global.items[2].hp_change;
 	inst_my_best_inv.inventory[i].sp_change=global.items[2].sp_change;
 }
@@ -242,7 +243,7 @@ scr_text("(Александр сопроводил нас в наш новый �
 scr_text("(На улице уже так темно...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
 scr_text("...",Snd_walk_ground,noone,noone,noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;});
 scr_text("(И вот, мы пришли.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=255;obj_payer.phy_position_y=257;obj_payer.sprite_index=spgu_});
-scr_No_option("First_night_home0")
+scr_No_option("First_night_home")
 break;
 case "First_night_home":
 scr_text("Папа? Ты уже вернулся?",noone,noone,"Mike","???","Anya",0.6,"Font_main",noone,function(){room_goto(room_home);scr_black(black_no,1);scr_sound_sette(1,Sng_Slowly,true,0);});
@@ -275,12 +276,12 @@ scr_text("Так или иначе, но я пойду в мою комнату.
 scr_text("... О, и кстати, не забывай стучать, прежде чем будешь входить ко мне.",noone,noone,"Mike",_anya,"Anya");
 scr_text("(...)",noone, _mike,"Mike",noone,"Anya",0.6,"Font_think");
 scr_text("Ладно. Как будто я этого обычно не делаю...",noone, _mike,"Mike",noone,"Anya");
-scr_text("Не, ну а вдруг. Разные же люди попадаются",noone,noone,"Mike",_anya,"Anya");
-scr_text("(C этими словами она поспешила вверх по лестнице)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=-640;obj_payer.faza[10]="anna_left";obj_payer.faza[11]=2;scr_black(black_no,-1.5);});
+scr_text("Не, ну а вдруг. Разные же люди попадаются",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main",noone,function(){scr_black(black_no,-1.5)});
+scr_text("(C этими словами она поспешила вверх по лестнице)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=-640;obj_payer.faza[10]="anna_left";obj_payer.faza[11]=2;});
 scr_text("(Видимо, наши комнаты находятся там.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
 scr_text("Но что за [c_yellow]настоящая причина[c_white]?",noone, _mike,"Mike",noone,noone,0.6,"Font_main");
 scr_text("(Почему она так быстро сменила тему?)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("(Какие тайны она пытается от меня утаить?)",noone, _mike,"Mike",noone,noone,0.6,"Font_think","end",function(){if(accept_key or obj_payer.skip_key) and draw_char==text_length[page]{scr_black(black_no,2);obj_payer.faza[0]=1;obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;}});
+scr_text("(Какие тайны она пытается от меня утаить?)",noone, _mike,"Mike",noone,noone,0.6,"Font_think","end",function(){scr_black(black_no,2);obj_payer.faza[0]=1;obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;});
 break;
 case "npc kust":
 scr_text("Это куст.	...		Выглядит красиво.",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end");

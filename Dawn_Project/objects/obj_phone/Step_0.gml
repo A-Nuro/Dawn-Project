@@ -159,7 +159,7 @@ switch(pos1)
 	switch(pos)
 	{
 	case 0: break;
-	case 1: inst_my_best_inv.inv_active=true; inst_my_best_inv.inv_open_with_phone=true; t_phone=0; break;
+	case 1: inst_my_best_inv.inv_active=true; inst_my_arm_inv.inv_active=true/*inst_my_best_inv.inv_open_with_phone=true;*/ t_phone=0; break;
 	case 2: menu_level = 1; break;
 	}
 	break;

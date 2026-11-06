@@ -3,6 +3,8 @@ slot_hover = -1;
 inv_drag = -1;
 slot_drag = -1;
 item_drag = -1;
+inv_last = -1;
+
 
 mouse_over = function()
 {
@@ -21,13 +23,16 @@ mouse_over = function()
 			
 			for (var i = 0; i < INV_SLOTS; i++)
 			{
-				var xx = x + (i mod row_length) * 32 + 2;
-				var yy = y + (i div row_length) * 32 + 2;
-				if (point_in_rectangle(mx,my,xx,yy,xx+32,yy+32))
+				if inv_drag!=inst_my_arm_inv or (inv_drag==inst_my_arm_inv and (inventory[i].armour==global.items[max(item_drag,0)].armour or max(inventory[i].num,0)==0))
 				{
-					if item_drag == -1 window_set_cursor(cr_drag);
-					obj_inv_mouse.slot_hover = i;
-					obj_inv_mouse.inv_hover = id;
+					var xx = x + (i mod row_length) * 32 + 2;
+					var yy = y + (i div row_length) * 32 + 2;
+					if (point_in_rectangle(mx,my,xx,yy,xx+32,yy+32))
+					{
+						if item_drag == -1 window_set_cursor(cr_drag);
+						obj_inv_mouse.slot_hover = i;
+						obj_inv_mouse.inv_hover = id;
+					}
 				}
 			}
 			
@@ -95,6 +100,36 @@ mouse_over = function()
 			//if global.dev==1 and obj_payer.Gp_a window_set_cursor(cr_none);
 		}
 		
+		}
+		if id==inst_my_arm_inv
+		{
+		if (point_in_rectangle(mx,my,x-6,y-6,x-6+12+row_length*32,y-6+12+(((INV_ARM_SLOTS-1) div row_length)+1)*32))	
+		{
+		
+			for (var i = 0; i < INV_ARM_SLOTS; i++)
+			{
+				if global.items[max(item_drag,0)].armour==i or item_drag==-1
+				{
+				var xx = x + (i mod row_length) * 32 + 2;
+				var yy = y + (i div row_length) * 32 + 2;
+				if (point_in_rectangle(mx,my,xx,yy,xx+32,yy+32))
+				{
+					if item_drag == -1 window_set_cursor(cr_drag);
+					obj_inv_mouse.slot_hover = i;
+					obj_inv_mouse.inv_hover = id;
+				}
+				}
+			}
+			
+		}
+		else 
+		{
+			if global.dev==0 /*and !mouse_check_button(mb_left)*/ window_set_cursor(cr_default);
+			if global.dev==1 /*and !obj_payer.Gp_a*/ window_set_cursor(cr_default);
+			
+			//if global.dev==0 and mouse_check_button(mb_left) window_set_cursor(cr_none);
+			//if global.dev==1 and obj_payer.Gp_a window_set_cursor(cr_none);
+		}
 		}
 		}
 	
@@ -164,15 +199,17 @@ state_drag = function()
 					{
 					if inventory[slot_drag].sp_change!=0 
 					{
-						obj_payer._sp[array_get_index(global.playable_units,global.team[u])]+=inventory[slot_drag].sp_change
-						var _dmg = instance_create_depth(x-32,y-1+32+64*u,depth-1,dmg_num)
+						//obj_payer._sp[array_get_index(global.playable_units,global.team[u])]+=inventory[slot_drag].sp_change
+						global.team[u].current[@ SP]+=inventory[slot_drag].sp_change
+						var _dmg = instance_create_depth(global.team[u].x,global.team[u].y,depth-1,dmg_num)
 						_dmg.is_hp=false
 						_dmg.num_dmg=-inventory[slot_drag].sp_change
 					}
 					if inventory[slot_drag].hp_change!=0 
 					{
-						obj_payer._hp[array_get_index(global.playable_units,global.team[u])]+=inventory[slot_drag].hp_change		
-						var _dmg = instance_create_depth(x-32,y-1+32+64*u,depth-1,dmg_num)
+						//obj_payer._hp[array_get_index(global.playable_units,global.team[u])]+=inventory[slot_drag].hp_change		
+						global.team[u].current[@ HP]+=inventory[slot_drag].hp_change	
+						var _dmg = instance_create_depth(global.team[u].x,global.team[u].y,depth-1,dmg_num)
 						_dmg.is_hp=true
 						_dmg.num_dmg=-inventory[slot_drag].hp_change
 					}

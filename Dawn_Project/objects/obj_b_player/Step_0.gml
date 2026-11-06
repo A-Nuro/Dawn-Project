@@ -1,10 +1,13 @@
 // Inherit the parent event
+if id=global.selected_unit and obj_payer.stil_moving=false
+{
 depth = obj_payer.depth
 event_inherited();
 x=obj_payer.x-17
 y=obj_payer.y
+}
 
-global.selected_unit = id
+if (array_get_index(global.team,object_index)==obj_payer.playable_team) global.selected_unit=id
 
 if obj_payer.danger==false 
 {

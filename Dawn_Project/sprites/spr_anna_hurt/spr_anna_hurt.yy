@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"anna",
-    "path":"folders/MAIN STUFF/Спрайты/fight/enemies/anna.yy",
+    "name":"right",
+    "path":"folders/MAIN STUFF/Спрайты/fight/enemies/anna/right.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

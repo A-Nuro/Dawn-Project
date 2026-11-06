@@ -22,7 +22,9 @@ current[ATK] = base[@ ATK];
 current[DEF] = base[@ DEF];
 current[ACC] = base[@ ACC];
 
-unit_sequence = layer_sequence_create("sequences",x,y,seq_anna);
+var _layer = layer_create(obj_payer.depth);
+
+unit_sequence = layer_sequence_create(_layer,x,y,seq_anna);
 
 spr_pr=spr_anna_inv;
 
@@ -65,9 +67,14 @@ learned_skill[5] = global.skill[skills.no_skill];
 learned_skill[6] = global.skill[skills.no_skill];
 learned_skill[7] = global.skill[skills.no_skill];
 
+def_spr = "spr_anna_fight"
+atk_spr = "spr_anna_attack";
+atk_hitbox = "spr_anna_attack";
+hur_spr = "spr_anna_hurt";
+
 function ai_doings()
 {
-
+/*
 if ds_list_empty(global.targets)
 {
 var hto = irandom_range(0,ds_list_size(global.bad_team)-1)
@@ -79,4 +86,5 @@ if state != ATTACK and !instance_exists(obj_effects)
 state = ATTACK;
 layer_sequence_headpos(unit_sequence, attack_start)
 }
+*/
 }

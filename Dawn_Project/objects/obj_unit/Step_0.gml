@@ -1,4 +1,21 @@
 
+if mouse_wheel_down() and obj_payer.mouse_wheel_block==0
+{
+	if (obj_payer.playable_team<array_length(global.team)-1) obj_payer.playable_team+=1
+	else obj_payer.playable_team=0
+	obj_payer.stil_moving=true
+	obj_payer.mouse_wheel_block=30
+}
+if mouse_wheel_up() and obj_payer.mouse_wheel_block==0
+{
+	if (obj_payer.playable_team>0) obj_payer.playable_team-=1
+	else obj_payer.playable_team=array_length(global.team)-1
+	obj_payer.stil_moving=true
+	obj_payer.mouse_wheel_block=30
+}
+
+if (array_get_index(global.team,object_index)==obj_payer.playable_team) global.selected_unit=id
+
 
 if current[@ HP]<0
 {
@@ -47,12 +64,13 @@ switch(state)
 	death_start=miss_end+1
 	}
 	
-	if mouse_check_button_pressed(mb_left) and id=global.selected_unit 
+	if mouse_check_button_pressed(mb_left) and id=global.selected_unit and obj_battle_button.active == false and inst_my_best_inv.inv_active==false
 	{
 		layer_sequence_headpos(unit_sequence, attack_start)
 		state=ATTACK
 	}
-	if mouse_check_button(mb_right) and id=global.selected_unit state=TO_BLOCK
+	if mouse_check_button(mb_right) and id=global.selected_unit and obj_battle_button.active == false and inst_my_best_inv.inv_active==false
+	state=TO_BLOCK
 	
 	if id!=global.selected_unit ai_doings()
 	

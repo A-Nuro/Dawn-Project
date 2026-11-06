@@ -160,6 +160,8 @@ else
 {typist.pause();
 text_timer--;}
 ///проверка печати + отвечает за скип и следующие строки текста
+if (is_method(page_eff[page])) script_execute(page_eff[page]); 
+//draw_text(0,0,no_accept)
 if (draw_char==text_length[page]) and (page >= page_number-1) and (__end==1)
 	{
 if text_end==1
@@ -173,7 +175,6 @@ if text_end==1
 		{obj_payer.talk=1;
 		}
 	}
-if (is_method(page_eff[page])) page_eff[page](); 
 if ((accept_key and (obj_payer.skip_active!=2 or _op>=1) and obj_payer.moment_skip==0) or (obj_payer.skip_key==1 and _op==0)) and no_accept==0 and obj_inventory_give.y<=camera_get_view_y(view_camera[0])+10
 {obj_payer.skip_key=0;
 	if draw_char==text_length[page]
@@ -181,8 +182,6 @@ if ((accept_key and (obj_payer.skip_active!=2 or _op>=1) and obj_payer.moment_sk
 		if page < page_number-1
 		{	page++;
 			draw_char=0;
-			
-
 			
 		}
 		else

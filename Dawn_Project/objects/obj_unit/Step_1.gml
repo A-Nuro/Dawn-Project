@@ -7,7 +7,7 @@ if id==global.selected_unit
 	if (keyboard_check(ord("W"))) dir = "u"
 	}
 }
-else dir = ""
+else dir = "r"
 if instance_exists(obj_effects)
 {
 if place_meeting(x, y, obj_effects) and obj_effects.our!=id.our

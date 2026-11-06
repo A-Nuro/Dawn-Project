@@ -1,6 +1,9 @@
 if os_type = os_android global.dev=2;
 else global.dev=0;
 
+playable_team=0
+mouse_wheel_block=0
+
 danger=false
 atk=false
 def=false
@@ -20,6 +23,8 @@ _talk_what="";
 need_to_rumble=false;
 global.team=[obj_b_player];
 global.playable_units=[obj_b_player,obj_b_anna];
+global.armour=[[0,0],[0,0]]
+
 unit_lvl[0]=0;
 unit_xp[0]=0;
 
@@ -115,3 +120,23 @@ Gp_b_cl = gamepad_button_check_pressed(0,gp_face2);
 Gp_x_cl = gamepad_button_check_pressed(0,gp_face3);
 Gp_y_cl = gamepad_button_check_pressed(0,gp_face4);
 
+
+stil_moving = false
+function player_move(_who){
+if (instance_exists(_who)) {
+    var _tx = _who.x+17;
+    var _ty = _who.y;
+    var _dist = point_distance(x, y, _tx, _ty);
+    if (_dist > 10) {
+        var _dir = point_direction(x, y, _tx, _ty);
+        phy_position_x += lengthdir_x(10, _dir);
+        phy_position_y += lengthdir_y(10, _dir);
+		draw_circle_colour(x,y,6,$FFD8A6,c_blue,false)
+    } else {
+        phy_position_x = _tx;
+        phy_position_y = _ty;
+		stil_moving=false
+    }
+}
+else stil_moving=false
+}
