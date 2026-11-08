@@ -77,7 +77,9 @@
     {"$GMFolder":"","%Name":"Шрифты","folderPath":"folders/Шрифты.yy","name":"Шрифты","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
-  "IncludedFiles":[],
+  "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"scribble_license.txt","CopyToMask":-1,"filePath":"datafiles","name":"scribble_license.txt","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+  ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
@@ -86,7 +88,6 @@
   "name":"Dawn_Project",
   "resources":[
     {"id":{"name":"androidVibrationEXT","path":"extensions/androidVibrationEXT/androidVibrationEXT.yy",},},
-    {"id":{"name":"Font_fancy","path":"fonts/Font_fancy/Font_fancy.yy",},},
     {"id":{"name":"Font_main","path":"fonts/Font_main/Font_main.yy",},},
     {"id":{"name":"Font_think","path":"fonts/Font_think/Font_think.yy",},},
     {"id":{"name":"scribble_fallback_font","path":"fonts/scribble_fallback_font/scribble_fallback_font.yy",},},

@@ -177,8 +177,9 @@ scr_text("Так, давайте, это наша остановка.",noone,noo
 scr_text("(Мы забрали свои вещи, и быстро покинули автобус.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
 scr_text("(Ну, с собой у нас только очень малая часть вещей...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
 scr_text("(Остальная их часть ехала отдельно от нас)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(А автобус с другими людьми сразу же уехал дальше.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(На улице уже довольно темно и прохладно... Не думал, что мы будем ехать так долго.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_night,1);obj_pic.picture=noone;scr_sound_sette(0,Sng_Feeling_empty,true,0.5);scr_sound_sette(1,Sng_First_evening,true,1);obj_payer._sp[0]=40;});
+scr_text("(А автобус с другими людьми сразу же уехал дальше.)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+
+scr_text("(На улице уже довольно темно и прохладно... Не думал, что мы будем ехать так долго.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_night,1);obj_pic.picture=noone;scr_sound_sette(0,Sng_Feeling_empty,true,0.5);scr_sound_sette(1,Sng_First_evening,true,1);});
 scr_text("Ох, вы наконец-то тут.",noone,noone,"Mike","???");
 scr_text("А? Кто Вы?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,function(){obj_payer.faza[9]=156;obj_payer.faza[10]="sasha_down_no";obj_payer.faza[11]=1;},"?","mike",1);
 scr_text("Привет, Саша. Как долго ты уже тут?",noone,noone,"Mike",_dad,"Papa");

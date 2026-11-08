@@ -217,11 +217,8 @@ function scr_sound_sette(_start,_sound,_loop,_sec)
 		{	
 			audio_resume_sound(_sound);
 		}
-
 	if (_start = 1 and !audio_is_playing(_sound)) 
 	{
-		
-		
 		audio_play_sound(_sound,10,_loop);
 	
 		if (audio_sound_get_gain(_sound)==0) audio_sound_gain(_sound, 1, 0);
@@ -244,7 +241,7 @@ function scr_sound_sette(_start,_sound,_loop,_sec)
 		
 		audio_sound_gain(_sound, 1, 0);
 		audio_sound_gain(_sound, 0, _sec*1000);
-		if argument[4] == false
+		if (argument_count > 4 and argument[4] == false)
 		{
 		obj_payer.sound_off=2;
 		}
