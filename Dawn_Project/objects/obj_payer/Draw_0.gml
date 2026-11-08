@@ -17,12 +17,13 @@ if air<airLim air_alp+=0.1
 if moveOk=0
 {
 draw_sprite_ext(spr_breath_1,0,x,y-5,1,1,0,c_white,air_alp);
-draw_sprite_part_ext(spr_breath_1,1,0,0,30*(air/airLim),5,x,y-5,1,1,c_white,air_alp);
+draw_sprite_ext(spr_breath_1,1,x,y-5,(air/airLim),1,0,c_white,air_alp);
 }
 else
 {
 draw_sprite_ext(spr_breath_2,0,x,y-5,1,1,0,c_white,air_alp);
-draw_sprite_part_ext(spr_breath_2,1,0,0,30*(air/airLim),5,x,y-5,1,1,c_white,air_alp);
+draw_sprite_ext(spr_breath_2,1,x,y-5,(air/airLim),1,0,c_white,air_alp);
+//draw_sprite_part_ext(spr_breath_2,1,0,0,round(30*(air/airLim)),5,x,y-5,1,1,c_white,air_alp);
 }
 
 if ((x!=xprevious or y!=yprevious) and (Shift=1 or andr_shift=1) and air>0 and fake_down=0 and fake_up=0 and fake_left=0 and fake_right=0) air-=1;
