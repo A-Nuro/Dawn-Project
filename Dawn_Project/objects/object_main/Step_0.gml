@@ -96,11 +96,11 @@ m_option[2,3] = "[scale,0.3]Да"
 
 m_option[3,0] = "[scale,0.4]Выберите сохранение"
 m_option[3,1] = ""
-if file_exists("unused_sound.mp3") m_option[3,2] = "[scale,0.3]Сохранение 1"
+if has_save1 m_option[3,2] = "[scale,0.3]Сохранение 1"
 else m_option[3,2] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_1.mp3") m_option[3,3] = "[scale,0.3]Сохранение 2"
+if has_save2 m_option[3,3] = "[scale,0.3]Сохранение 2"
 else m_option[3,3] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_2.mp3") m_option[3,4] = "[scale,0.3]Сохранение 3"
+if has_save3 m_option[3,4] = "[scale,0.3]Сохранение 3"
 else m_option[3,4] = "[c_gray][scale,0.3]нет данных"
 m_option[3,5] = "[scale,0.3]Назад"
 if just_delite==false
@@ -110,11 +110,11 @@ else
 
 m_option[4,0] = "[scale,0.4]Выберите сохранение"
 m_option[4,1] = ""
-if file_exists("unused_sound.mp3") m_option[4,2] = "[scale,0.3]Сохранение 1"
+if has_save1 m_option[4,2] = "[scale,0.3]Сохранение 1"
 else m_option[4,2] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_1.mp3") m_option[4,3] = "[scale,0.3]Сохранение 2"
+if has_save2 m_option[4,3] = "[scale,0.3]Сохранение 2"
 else m_option[4,3] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_2.mp3") m_option[4,4] = "[scale,0.3]Сохранение 3"
+if has_save3 m_option[4,4] = "[scale,0.3]Сохранение 3"
 else m_option[4,4] = "[c_gray][scale,0.3]нет данных"
 m_option[4,5] = "[scale,0.3]Назад"
 }
@@ -140,11 +140,11 @@ m_option[2,3] = "[scale,0.3]Yes"
 
 m_option[3,0] = "[scale,0.4]Choose save file"
 m_option[3,1] = ""
-if file_exists("unused_sound.mp3") m_option[3,2] = "[scale,0.3]Save 1"
+if has_save1 m_option[3,2] = "[scale,0.3]Save 1"
 else m_option[3,2] = "[c_gray][scale,0.3]no data"
-if file_exists("unused_sound_1.mp3") m_option[3,3] = "[scale,0.3]Save 2"
+if has_save2 m_option[3,3] = "[scale,0.3]Save 2"
 else m_option[3,3] = "[c_gray][scale,0.3]no data"
-if file_exists("unused_sound_2.mp3") m_option[3,4] = "[scale,0.3]Save 3"
+if has_save3 m_option[3,4] = "[scale,0.3]Save 3"
 else m_option[3,4] = "[c_gray][scale,0.3]no data"
 m_option[3,5] = "[scale,0.3]Back"
 if just_delite==false
@@ -154,11 +154,11 @@ else
 
 m_option[4,0] = "[scale,0.4]Choose save file"
 m_option[4,1] = ""
-if file_exists("unused_sound.mp3") m_option[4,2] = "[scale,0.3]Save 1"
+if has_save1 m_option[4,2] = "[scale,0.3]Save 1"
 else m_option[4,2] = "[c_gray][scale,0.3]no data"
-if file_exists("unused_sound_1.mp3") m_option[4,3] = "[scale,0.3]Save 2"
+if has_save2 m_option[4,3] = "[scale,0.3]Save 2"
 else m_option[4,3] = "[c_gray][scale,0.3]no data"
-if file_exists("unused_sound_2.mp3") m_option[4,4] = "[scale,0.3]Save 3"
+if has_save3 m_option[4,4] = "[scale,0.3]Save 3"
 else m_option[4,4] = "[c_gray][scale,0.3]no data"
 m_option[4,5] = "[scale,0.3]Back"
 }
@@ -229,9 +229,9 @@ break;
 	if (just_delite==false)
 	{
 		switch(pos){
-		case 2: if timer=40 and file_exists("unused_sound.mp3"){scr_black(black_no,-1.5)}; load_save("unused_sound.mp3"); break;
-		case 3: if timer=40 and file_exists("unused_sound_1.mp3"){scr_black(black_no,-1.5)}; load_save("unused_sound_1.mp3"); break;
-		case 4: if timer=40 and file_exists("unused_sound_2.mp3"){scr_black(black_no,-1.5)}; load_save("unused_sound_2.mp3"); break;
+		case 2: if timer=40 and has_save1{scr_black(black_no,-1.5)}; load_save("unused_sound.mp3"); break;
+		case 3: if timer=40 and has_save2{scr_black(black_no,-1.5)}; load_save("unused_sound_1.mp3"); break;
+		case 4: if timer=40 and has_save3{scr_black(black_no,-1.5)}; load_save("unused_sound_2.mp3"); break;
 		case 5: menu_level = 0; global.save_slot=""; break;
 		case 6: just_delite=true; break;
 		}
@@ -239,9 +239,9 @@ break;
 	else
 	{
 		switch(pos){
-		case 2: if file_exists("unused_sound.mp3") {global.save_slot="unused_sound.mp3"; menu_level = 2;}; break;
-		case 3: if file_exists("unused_sound_1.mp3") {global.save_slot="unused_sound_1.mp3"; menu_level = 2;} break;
-		case 4: if file_exists("unused_sound_2.mp3") {global.save_slot="unused_sound_2.mp3"; menu_level = 2;} break;
+		case 2: if has_save1 {global.save_slot="unused_sound.mp3"; menu_level = 2;}; break;
+		case 3: if has_save2 {global.save_slot="unused_sound_1.mp3"; menu_level = 2;} break;
+		case 4: if has_save3 {global.save_slot="unused_sound_2.mp3"; menu_level = 2;} break;
 		case 5: menu_level = 0; global.save_slot=""; break;
 		case 6: just_delite=false; break;
 		}
@@ -251,15 +251,15 @@ break;
 	case 4:
 		switch(pos){
 		case 2:
-		if file_exists("unused_sound.mp3") {global.save_slot="unused_sound.mp3"; menu_level = 2;}
+		if has_save1 {global.save_slot="unused_sound.mp3"; menu_level = 2;}
 		else {if timer=40{scr_black(black_no,-1.5)}; new_save("unused_sound.mp3");}
 		break;
 		case 3:
-		if file_exists("unused_sound_1.mp3") {global.save_slot="unused_sound_1.mp3"; menu_level = 2;}
+		if has_save2 {global.save_slot="unused_sound_1.mp3"; menu_level = 2;}
 		else {if timer=40{scr_black(black_no,-1.5)}; new_save("unused_sound_1.mp3");}
 		break;
 		case 4:
-		if file_exists("unused_sound_2.mp3") {global.save_slot="unused_sound_2.mp3"; menu_level = 2;}
+		if has_save3 {global.save_slot="unused_sound_2.mp3"; menu_level = 2;}
 		else {if timer=40{scr_black(black_no,-1.5)}; new_save("unused_sound_2.mp3");}
 		break;
 		case 5: menu_level = 0; global.save_slot=""; break;;

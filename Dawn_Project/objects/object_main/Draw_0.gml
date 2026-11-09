@@ -59,7 +59,7 @@ if (dy>40) dy-=max((dy-40)/10,0.01);
 if (dy<40) dy+=max((40-dy)/10,0.01);
 switch(pos){
 		case 2: 
-		if file_exists("unused_sound.mp3")
+		if has_save1
 		{
 			ini_open("unused_sound.mp3");
 			_file_room = ini_read_real("settings","room",Main_menu);
@@ -68,7 +68,7 @@ switch(pos){
 		else _file_room = 0;
 		break;
 		case 3: 
-		if file_exists("unused_sound_1.mp3")
+		if has_save2
 		{
 			ini_open("unused_sound_1.mp3");
 			_file_room = ini_read_real("settings","room",Main_menu);
@@ -77,7 +77,7 @@ switch(pos){
 		else _file_room = 0;
 		break;
 		case 4: 
-		if file_exists("unused_sound_2.mp3")
+		if has_save3
 		{
 			ini_open("unused_sound_2.mp3");
 			_file_room = ini_read_real("settings","room",Main_menu);
@@ -103,7 +103,7 @@ if (dy>40) dy-=max((dy-40)/10,0.01);
 if (dy<40) dy+=max((40-dy)/10,0.01);
 switch(pos){
 		case 2: 
-		if file_exists("unused_sound.mp3")
+		if has_save1
 		{
 			ini_open("unused_sound.mp3");
 			_file_room = ini_read_real("settings","room",Main_menu);
@@ -112,7 +112,7 @@ switch(pos){
 		else _file_room = 0;
 		break;
 		case 3: 
-		if file_exists("unused_sound_1.mp3")
+		if has_save2
 		{
 			ini_open("unused_sound_1.mp3");
 			_file_room = ini_read_real("settings","room",Main_menu);
@@ -121,7 +121,7 @@ switch(pos){
 		else _file_room = 0;
 		break;
 		case 4: 
-		if file_exists("unused_sound_2.mp3")
+		if has_save3
 		{
 			ini_open("unused_sound_2.mp3");
 			_file_room = ini_read_real("settings","room",Main_menu);

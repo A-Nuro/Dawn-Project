@@ -2,6 +2,10 @@ randomize();
 //show_debug_overlay(true);
 global.selected_unit=noone
 
+has_save1 = file_exists("unused_sound.mp3");
+has_save2 = file_exists("unused_sound_1.mp3");
+has_save3 = file_exists("unused_sound_2.mp3");
+
 if os_get_language()=="ru"
 	global.lang=0
 else
@@ -44,22 +48,22 @@ m_option[2,3] = "[scale,0.3]Да"
 
 m_option[3,0] = "[scale,0.3]Выберите сохранение"
 m_option[3,1] = ""
-if file_exists("unused_sound.mp3") m_option[3,2] = "[scale,0.3]Сохранение 1"
+if has_save1 m_option[3,2] = "[scale,0.3]Сохранение 1"
 else m_option[3,2] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_1.mp3") m_option[3,3] = "[scale,0.3]Сохранение 2"
+if has_save2 m_option[3,3] = "[scale,0.3]Сохранение 2"
 else m_option[3,3] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_2.mp3") m_option[3,4] = "[scale,0.3]Сохранение 3"
+if has_save3 m_option[3,4] = "[scale,0.3]Сохранение 3"
 else m_option[3,4] = "[c_gray][scale,0.3]нет данных"
 m_option[3,5] = "[scale,0.3]Назад"
 m_option[3,6] = "[scale,0.3]Удалить файл"
 
 m_option[4,0] = "[scale,0.3]Выберите сохранение"
 m_option[4,1] = ""
-if file_exists("unused_sound.mp3") m_option[4,2] = "[scale,0.3]Сохранение 1"
+if has_save1 m_option[4,2] = "[scale,0.3]Сохранение 1"
 else m_option[4,2] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_1.mp3") m_option[4,3] = "[scale,0.3]Сохранение 2"
+if has_save2 m_option[4,3] = "[scale,0.3]Сохранение 2"
 else m_option[4,3] = "[c_gray][scale,0.3]нет данных"
-if file_exists("unused_sound_2.mp3") m_option[4,4] = "[scale,0.3]Сохранение 3"
+if has_save3 m_option[4,4] = "[scale,0.3]Сохранение 3"
 else m_option[4,4] = "[c_gray][scale,0.3]нет данных"
 m_option[4,5] = "[scale,0.3]Назад"
 }
@@ -127,19 +131,19 @@ var _s1=0;
 var _s2=0;
 var _s3=0;
 
-if file_exists("unused_sound.mp3")
+if has_save1
 {
 	ini_open("unused_sound.mp3");
 	_s1=ini_read_real("settings","room",_Room2);
 	ini_close()
 }
-if file_exists("unused_sound_1.mp3")
+if has_save2
 {
 	ini_open("unused_sound_1.mp3");
 	_s2=ini_read_real("settings","room",_Room2);
 	ini_close()
 }
-if file_exists("unused_sound_2.mp3")
+if has_save3
 {
 	ini_open("unused_sound_2.mp3");
 	_s3=ini_read_real("settings","room",_Room2);
