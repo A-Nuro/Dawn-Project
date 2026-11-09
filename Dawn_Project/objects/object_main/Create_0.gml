@@ -6,6 +6,24 @@ has_save1 = file_exists("unused_sound.mp3");
 has_save2 = file_exists("unused_sound_1.mp3");
 has_save3 = file_exists("unused_sound_2.mp3");
 
+if (has_save1) {
+   ini_open("unused_sound.mp3");
+        save_rooms[0] = ini_read_real("settings", "room", Main_menu);
+        ini_close();
+    } else { save_rooms[0] = 0; }
+
+    if (has_save2) {
+        ini_open("unused_sound_1.mp3");
+        save_rooms[1] = ini_read_real("settings", "room", Main_menu);
+        ini_close();
+    } else { save_rooms[1] = 0; }
+
+    if (has_save3) {
+        ini_open("unused_sound_2.mp3");
+        save_rooms[2] = ini_read_real("settings", "room", Main_menu);
+        ini_close();
+    } else { save_rooms[2] = 0; }
+
 if os_get_language()=="ru"
 	global.lang=0
 else

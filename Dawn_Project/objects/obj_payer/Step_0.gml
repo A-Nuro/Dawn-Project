@@ -151,7 +151,7 @@ if (audio_sound_get_gain(Sng_Timeless)=0 and sound_off == 2)
 
 
 
-if (esk or (global.dev=2 and mouse_x<camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2+16 and mouse_x>camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-16 and mouse_y<42+camera_get_view_y(view_camera[0]) and mouse_check_button_pressed(mb_left))) and actions==0 and room!=Main_menu and room!=room_nightmare and room!=room_fight and obj_inventory.inv_active==false and obj_battle_button.active==false
+if (esk or (global.dev=2 and mouse_x<camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2+16 and mouse_x>camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-16 and mouse_y<42+camera_get_view_y(view_camera[0]) and mouse_check_button_pressed(mb_left))) and actions==0 and room!=Main_menu and room!=room_nightmare and room!=room_fight and obj_inventory.inv_active==false //and obj_battle_button.active==false
 {obj_phone.t_phone =1;}
 
 
@@ -367,12 +367,13 @@ else
 
 }
 }
+/*
 if keyboard_check_pressed(vk_control)
 {
 	if (danger==false) danger=true;
 	else danger=false;
 }
-
+*/
 if faza[0]>0.01 
 {
 

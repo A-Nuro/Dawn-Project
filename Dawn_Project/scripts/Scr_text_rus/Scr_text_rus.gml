@@ -590,18 +590,17 @@ scr_text("Стойте!",noone, _mike,"Mike",noone,"Faceless");
 scr_text("Не волнуйтесь. У нас ещё будет время.",noone,noone,"Mike",_faceless,"Faceless");
 scr_text("А пока что...",noone,noone,"Mike",_faceless,"Faceless");
 scr_text("До свидания. Надеюсь, мы встретимся следующей ночью.",noone,noone,"Mike",_faceless,"Faceless");
-scr_No_option("home_make_faceless_1.41");
+scr_No_option("home_make_faceless_1.5");
 break;
 case "home_make_faceless_1.41":
-obj_payer.phy_position_x=504;
-obj_payer.phy_position_y=165;
 scr_black(black_black,0);
+
 scr_sound_sette(0,Sng_Timeless,true,0);
 scr_text("...",noone,_mike,noone,noone,noone);
 scr_text("...?",noone,_mike,noone,noone,noone);
 scr_text("Что произошло..?",noone,_mike,noone,noone,noone);
-scr_text("(Вроде бы я уже не сплю...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("(Но при этом я и не проснулся...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
+scr_text("(Вроде бы я уже не сплю...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=504;obj_payer.phy_position_y=165;});
+scr_text("(Но при этом я и не проснулся...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=504;obj_payer.phy_position_y=165;});
 scr_No_option("home_make_faceless_1.42");
 break;
 case "home_make_faceless_1.42":
@@ -622,23 +621,22 @@ room_goto(room_room);
 scr_black(black_no,1)
 obj_time.time_change=0;
 obj_pic.picture=no_no;
+obj_payer.phy_position_x=504;
+obj_payer.phy_position_y=165;
+scr_sound_sette(0,Sng_Timeless,true,0);
 scr_text("?!",noone, _mike,"Mike",noone,noone);
-scr_text("(Внезапно я вернулся в реальность, от чего чуть ли не выпал с кровати)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
+scr_text("(Внезапно я вернулся в реальность, от чего чуть ли не выпал с кровати)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=504;obj_payer.phy_position_y=165;});
 
 scr_No_option("home_make_faceless_1.61");
 break;
 case "home_make_faceless_1.61":
 obj_payer.sprite_index=spgd_
-scr_text("(Быстро огляделся вокруг)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
+scr_text("(Быстро огляделся вокруг)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.x=504;obj_payer.y=165;});
 scr_text("Никого нет...",noone, _mike,"Mike");
-scr_text("(Но я точно видел что-то)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("(Фиолетовые глаза где-то в дали комнаты...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("...",noone, _mike,"Mike");
 scr_No_option("home_make_faceless_1.6");
 break;
 case "home_make_faceless_1.6":
-obj_payer.moment_skip=1;
-scr_text("(Медленно вдохнув я попытался прийти в себя-)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
+scr_text("(Медленно вдохнув я попытался прийти в себя-)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.moment_skip=1;});
 scr_No_option("home_make_faceless_1.7");
 break;
 case "home_make_faceless_1.7":
@@ -659,15 +657,14 @@ case "home_make_school":
 
 
 scr_sound_sette(1,Sng_Slowly,true,0)
-scr_text("Хорошоб хорошо...",noone, _mike,"Mike",noone,noone,0.6,"Font_main");
+scr_text("Хорошо, хорошо...",noone, _mike,"Mike",noone,noone,0.6,"Font_main");
 scr_text("(Мх, этот сон прервался на самом важном месте...)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
 scr_text("(Наверное, пока что стоит попытаться забыть об этом)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_text("(Всё-таки школу никто не отменял.)",noone, _mike,"Mike_awk",noone,noone,0.6,"Font_think","end");
 scr_No_option("home_make_school.");
 break;
 case "home_make_school.":
 global.main_quests[2].activation=1
-scr_No_text()
+scr_text("(Всё-таки школу никто не отменял.)",noone, _mike,"Mike_awk",noone,noone,0.6,"Font_think","end");
 break;
 
 case "Before school bed":
@@ -776,12 +773,8 @@ scr_text("(И когда она успела так вырасти?)",noone, _mi
 scr_text("(Она уже носит мою старую футболку...)",noone, _mike,"Mike",noone,"Masha",0.6,"Font_think");
 scr_text("(Хоть она ей всё ещё велика.)",noone, _mike,"Mike",noone,"Masha",0.6,"Font_think");
 scr_text("Привет, Маш... Давно не виделись.",noone, _mike,"Mike",noone,"Masha");
-scr_text("(0 ω 0)",noone,noone,"Mike",_masha,"Masha");
-scr_text("... Ты приехал вчера вечером?",noone,noone,"Mike",_masha,"Masha");
-scr_text("[jitter]А почему мне не сказал[/jitter]!?",noone,noone,"Mike",_masha,"Masha");
-scr_text("Ты уже спала... я не хотел будить тебя.",noone, _mike,"Mike",noone,"Masha");
-scr_text("*вздох*",noone,noone,"Mike",_masha,"Masha");
-scr_text("Ясно... А можно мне...",noone,noone,"Mike",_masha,"Masha");
+scr_text(":D",noone,noone,"Mike",_masha,"Masha");
+scr_text("Кстати... А можно мне...",noone,noone,"Mike",_masha,"Masha");
 scr_text("Маш, поговоришь с ним попозже? А то мы можем опоздать.",noone, _anya,"Anya",noone,"Masha");
 scr_text("А куда? Вы идёте куда-то?",noone,noone,"Anya",_masha,"Masha");
 scr_text("Да, мы идём в школу.",noone, _mike,"Mike",noone,"Masha");
@@ -899,7 +892,6 @@ scr_text("Там ещё скоро должна моя сестра прийти
 scr_text("...",noone,noone,"Mike",_anya,"Anya");
 scr_text("Привет...",noone,_mike,"Mike",noone,"Anya");
 scr_text("Ой, да что вы там в проходе встали, идите к нам, тут и поговорим.",noone,noone,"Mike",noone,"Anya");
-scr_text("Поздороваешься с ними, а затем я спрошу у тебя кое-что...",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
 scr_No_option("school1.1");
 break;
 
@@ -907,7 +899,7 @@ case "school1.1":
 obj_payer.faza[9]=72;
 obj_payer.faza[10]="zhenya_up";
 obj_payer.faza[11]=1;
-scr_No_text();
+scr_text("Поздороваешься с ними, а затем я спрошу у тебя кое-что...",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
 break;
 
 

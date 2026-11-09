@@ -58,39 +58,13 @@ if (dx<-9) dx+=min((9-dx)/10,0.01);
 if (dy>40) dy-=max((dy-40)/10,0.01);
 if (dy<40) dy+=max((40-dy)/10,0.01);
 switch(pos){
-		case 2: 
-		if has_save1
-		{
-			ini_open("unused_sound.mp3");
-			_file_room = ini_read_real("settings","room",Main_menu);
-			ini_close();
-		}
-		else _file_room = 0;
-		break;
-		case 3: 
-		if has_save2
-		{
-			ini_open("unused_sound_1.mp3");
-			_file_room = ini_read_real("settings","room",Main_menu);
-			ini_close();
-		}
-		else _file_room = 0;
-		break;
-		case 4: 
-		if has_save3
-		{
-			ini_open("unused_sound_2.mp3");
-			_file_room = ini_read_real("settings","room",Main_menu);
-			ini_close();
-		}
-		else _file_room = 0;
-		break;
-		case 5:
-		case 6:
-		_file_room = 0;
-		break;
-		}
+    case 2: _file_room = save_rooms[0]; break;
+    case 3: _file_room = save_rooms[1]; break;
+    case 4: _file_room = save_rooms[2]; break;
+    default: _file_room = 0; break;
+}
 break;
+
 case 4:
 sprite_index=spr_textbox;
 if (height>72) height-=max((height-72)/10,0.01);
@@ -101,36 +75,13 @@ if (dx>-9) dx-=min((dx-9)/10,0.01);
 if (dx<-9) dx+=min((9-dx)/10,0.01);
 if (dy>40) dy-=max((dy-40)/10,0.01);
 if (dy<40) dy+=max((40-dy)/10,0.01);
+
 switch(pos){
-		case 2: 
-		if has_save1
-		{
-			ini_open("unused_sound.mp3");
-			_file_room = ini_read_real("settings","room",Main_menu);
-			ini_close();
-		}
-		else _file_room = 0;
-		break;
-		case 3: 
-		if has_save2
-		{
-			ini_open("unused_sound_1.mp3");
-			_file_room = ini_read_real("settings","room",Main_menu);
-			ini_close();
-		}
-		else _file_room = 0;
-		break;
-		case 4: 
-		if has_save3
-		{
-			ini_open("unused_sound_2.mp3");
-			_file_room = ini_read_real("settings","room",Main_menu);
-			ini_close();
-		}
-		else _file_room = 0;
-		break;
-		case 5: _file_room = 0; break;
-		}
+    case 2: _file_room = save_rooms[0]; break;
+    case 3: _file_room = save_rooms[1]; break;
+    case 4: _file_room = save_rooms[2]; break;
+    default: _file_room = 0; break;
+}
 break;
 }
 

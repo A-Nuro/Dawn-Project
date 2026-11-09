@@ -18,9 +18,7 @@ if global.lang>1 global.lang=0;
 if os_type = os_android
 {
 	var enter_key =(device_mouse_x(0)>128 and device_mouse_y(0)<camera_get_view_height(view_camera[0])-138 and mouse_check_button_pressed(mb_left)) or keyboard_check_pressed(vk_enter);
-	
 	var enter_key =(device_mouse_x(0)>128 and device_mouse_y(0)<camera_get_view_height(view_camera[0])-138 and mouse_check_button_pressed(mb_left)) or gamepad_button_check_pressed(gpl(),gp_face1) or keyboard_check_pressed(vk_enter);
-	
 }
 else
 {
@@ -33,7 +31,6 @@ else
 	var enter_key = keyboard_check_pressed(vk_enter)	
 	}
 }
-
 if os_type = os_android
 {
 if obj_black.black=no_no
@@ -43,7 +40,6 @@ if obj_black.black=no_no
 	
 var up_key =((device_mouse_x(0)>=camera_get_view_x(view_camera[0])+45 and device_mouse_x(0)<=camera_get_view_x(view_camera[0])+82 and device_mouse_y(0)<=camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])-138+40 and device_mouse_y(0)>=camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])-138+3) and device_mouse_check_button_pressed(0,mb_left)) or gamepad_button_check_pressed(gpl(),gp_padu);
 var down_key =((device_mouse_x(0)>=camera_get_view_x(view_camera[0])+45 and device_mouse_x(0)<=camera_get_view_x(view_camera[0])+82 and  device_mouse_y(0)<=camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])-138+124 and device_mouse_y(0)>=camera_get_view_y(view_camera[0])+camera_get_view_height(view_camera[0])-138+87) and device_mouse_check_button_pressed(0,mb_left)) or gamepad_button_check_pressed(gpl(),gp_padd);
-	
 }
 else
 {var up_key = noone;
@@ -73,7 +69,6 @@ else
 var down_key = noone;
 	}
 }
-
 if global.lang==0
 {
 m_option[0, 0] = "[scale,0.3]Новая игра";

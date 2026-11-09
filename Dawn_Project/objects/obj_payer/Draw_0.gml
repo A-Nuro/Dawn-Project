@@ -1,3 +1,9 @@
+if keyboard_check(vk_control)
+{
+draw_text(100,20,obj_payer.x)	
+draw_text(100,80,obj_payer.y)	
+}
+
 if (stil_moving = true) 
 {
 	player_move(global.selected_unit)
