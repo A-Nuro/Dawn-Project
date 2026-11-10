@@ -18,18 +18,7 @@ function scr_text(_text){
 scr_set_def_for_text();
 obj_payer.talk=1; 
 
-
-
-
-if global.lang==0
-{
 text[page_number] =_text;
-}
-if global.lang==1
-{
-
-}
-
 
 if argument_count>1
 	{

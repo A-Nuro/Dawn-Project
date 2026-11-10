@@ -29,39 +29,34 @@ scr_text(" ",noone," ",noone,noone,noone,0.6,"Font_main","end");
 break;
 
 case "game_start":
-scr_text("Где я?",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"Where am I?");
-scr_text("Этот дом...",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"This house...");
-scr_text("Он выглядит прямо как мой родной дом.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"It looks just like my own house.");
-scr_text("Но совсем другой.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"But much different.");
-scr_text("...",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end","...");
+scr_text("Where am I?",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,function(){obj_payer.sprite_index=spsu_});
+scr_text("This house...",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("It looks just like my own house.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("But much different.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("...",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end");
 	break;
 	case "my_home":
-scr_text("Мой домик",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end");
+scr_text("My house",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end");
 break;
 	case "first door":
-scr_text("Где я?",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"Where am I?");
-scr_text("Этот дом...",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"This house...");
-scr_text("Он выглядит прямо как мой родной дом.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"It looks just like my own house.");
-page_eff[0]=function(){obj_payer.sprite_index=spr_anna_cast};
-scr_text("Но совсем другой.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,"But much different.");
-scr_text("...",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end","...");
+scr_text("Where am I?",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone,function(){obj_payer.sprite_index=spsu_});
+scr_text("This house...",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("It looks just like my own house.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("But much different.",noone,_mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("...",noone,_mike,"Mike",noone,noone,0.6,"Font_main","end");
 	break;
 	
 	case "First talk1":
 	obj_payer.sprite_index=spsu_;
-scr_text("А? Что ты такое?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"A? What are you?");
-scr_text("Существо из твоих страхов.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,"Creature of your fears.");
-scr_text("Моих страхов?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"My fears?");
-scr_text("Ты прекрастно всё понимаешь. Мир во всю меняется, но ты не готов к этим переменам.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,"You understand everything clearly. This world is changing, but you are not ready for it.");
-scr_text("!",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"!");
-scr_text("Нет. Это неправда...",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"No. That isn't truth...");
-scr_text("Тогда докажи что я неправ.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,"Then prove me wrong.");
-//scr_No_option("First talk1-");
-//break;
-//case "First talk1-":
-
-scr_text("Сразись со своими страхами!",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,"Face your fears!");
-page_eff[7]=function(){obj_payer.faza[0]=0.01};
+scr_text("A? What are you?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("Creature of your fears.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone);
+scr_text("My fears?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("You understand everything clearly. This world is changing, but you are not ready for it.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone);
+scr_text("!",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("No. This isn't truth...",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone);
+scr_text("Then prove me wrong.",noone,noone,"Mike","???",noone,0.6,"Font_main",noone);
+scr_text("Face your fears!",noone,noone,"Mike","???",noone,0.6,"Font_main",noone/*,function(){obj_payer.faza[0]=0.01}*/);
+scr_No_option("First talk2")
 break;
 
 case "Firstest fight0":
@@ -113,6 +108,9 @@ scr_text("Хотя, я бы хотел встретиться снова",noone,
 break;
 
 case "First talk2":
+scr_sound_sette(0,Sng_Where_am_I,true,0);
+scr_sound_sette(1,Sng_Feeling_empty,true,1);
+scr_text("!",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,function(){
 obj_time.time_change=3;
 obj_time.time_was=3;
 obj_pic.picture=pic_mike_in_car;
@@ -130,92 +128,54 @@ for (var i = 0; i < 2; i++)
 
 scr_black(black_no,1);
 room_goto(room_car)
-/*
-scr_sound_sette(0,Sng_Last_hope_died,true,0);
-scr_sound_sette(1,Sng_Feeling_empty,true,1);*/
-scr_text("!",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"!");
-scr_No_option("First talk2-");
-break;
-case "First talk2-":
-obj_payer.phy_position_x=200;
-obj_payer.phy_position_y=80;
-
-scr_text("Что?..",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"Wha?..");
-scr_text("(Я проснулся.)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(I woke up.)");
-scr_text("...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"...");
-scr_text("(Это был сон?)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(Was it just a dream?)");
-scr_text("(А то все чувства в нём были уж слишком реальными...)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(But every feelings in was awfully real...)");
-scr_text("Ты проснулся? Мы как раз скоро приедем.",noone,noone,noone,_mam,noone,0.6,"Font_main",noone,"You woke up? We will be there soon enough.");
-scr_text("(Что?)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(What?)","?","mike",2);
-scr_text("(Из-за этого сна я совсем забыл про то, что сейчас происходит)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(This dream made me lost track of reality for a moment.)");
-scr_text("(И вот он я, сижу в самом конце микроавтобуса)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(And here I am, sitting at the very and of this tiny bus)");
-scr_text("А ещё раз... зачем мы переежаем?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"Uh, once again... why are we moving?");
-scr_text("У нас с мамой там важные дела...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"Me and mother had some important business...");
-scr_text("Это я уже слышал, а по подробнее расскажете?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"I heard that already, but will you tell me any details?");
-scr_text("...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"...");
-scr_text("... Наш переезд ведь связан с вашей работой?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"... Our move is related to your job, right?");
-scr_text("Ну да. Нам было предложено новое место работы.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"Well yeah. We got new work place.");
-scr_text("То есть вы снова будете весь день на работе?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"So you will spend whole day at work as always?");
-scr_text("Тут мы особо ничего поменять не можем.",noone,noone,noone,_mam,noone,0.6,"Font_main",noone,"We can't change much in it.");
-scr_text("Кстати... а в какой ты там класс уже идёшь?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"By the way... what grade are you in now?");
-scr_text("Пап, если что, мне уже 16.",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"Dad, I am 16 already.");
-scr_text("Как быстро время летит...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"Oh, time sure fly fast...");
-scr_text("Ага...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"Yeah...");
-scr_text("*вздох*",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"*sight*");
-scr_text("Знаешь, тебе же завтра надо будет идти в школу?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"You know, you will go to school tomorrow, right?");
-scr_text("Заведи там как можно больше друзей. Познакомься со всеми своими одноклассниками.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"Make sure to make as many friends as you can. Introduce yourself to all your classmates");
-scr_text("Так ты точно не останешься один.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"So you definitly won't be alone");
-scr_text("...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,"...");
-scr_text("(Я посмотрел в окно, как будто игнорируя это предупреждение)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,"(I just looked through the window, almost like I didn't heard this warning)");
-scr_text("(Хочу просто оказаться снова у себя в старом домике.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Я попробовал прикрыть глаза, сфокусировавшись на своих мыслях)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_No_option("First talk3");
-break;
-case "First talk3":
-scr_black(black_no,-1);
-obj_payer.battle=0;
-scr_text("(Мои родители долго ждали повышения, и внезапно им предложили новое дело за тридевять земель...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Как тяжело было прощаться со своим домом...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(И ведь я даже не просил этого.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Бросить всех моих друзей...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Хоть мы и готовились к этому несколько недель...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Но я всё равно не успел попрощаться со своими друзьями)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Я боялся произносить вслух то, что скоро перееду так далеко.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Боялся принять это.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Как же я жалею об этом...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_No_option("First talk4");
-break;
-case "First talk4":
-obj_payer.phy_position_x=300;
-obj_payer.phy_position_y=125;
-obj_payer.sprite_index=spsd_;
-scr_text("(...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Вскоре автобус остановился.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("Так, давайте, это наша остановка.",noone,noone,noone,_mam);
-scr_text("(Мы забрали свои вещи, и быстро покинули автобус.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Ну, с собой у нас только очень малая часть вещей...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(Остальная их часть ехала отдельно от нас)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_text("(А автобус с другими людьми сразу же уехал дальше.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
-scr_No_option("First talk5");
-break;
-
-
-case "First talk5":
-scr_black(black_night,1);
-obj_pic.picture=noone;
-scr_sound_sette(0,Sng_Feeling_empty,true,0.5);
-scr_sound_sette(1,Sng_First_evening,true,1);
-obj_payer._sp[0]=40;
-scr_text("(На улице уже довольно темно и прохладно... Не думал, что мы будем ехать такдолго.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think");
-scr_No_option("First talk6");
-break;
-
-case "First talk6":
-obj_payer.faza[9]=156;
-obj_payer.faza[10]="sasha_down_no";
-obj_payer.faza[11]=1;
-scr_text("Ох, вы наконец-то тут.",noone,noone,"Mike","???");
-scr_text("А? Кто Вы?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,"Ah? Who are you?","?","mike",1);
+});
+scr_text("Wha?..",noone, _mike,noone,noone,noone,0.6,"Font_main",noone,function(){obj_payer.phy_position_x=200;obj_payer.phy_position_y=80;});
+scr_text("(I woke up.)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+scr_text("...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("(Was it just a dream?)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+scr_text("(But every feelings in was awfully real...)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+scr_text("Ты проснулся? Мы как раз скоро приедем.",noone,noone,noone,_mam,noone,0.6,"Font_main",noone);
+scr_text("You woke up? We will be there soon enough.",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,noone,"?","mike",2);
+scr_text("(This dream made me lost track of reality for a moment.)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+scr_text("(And here I am, sitting at the very and of this tiny bus)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+scr_text("Uh, once again... why are we moving?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("Me and mother had some important business...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("I heard that already, but will you tell me any details?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("...",noone,noone,noone,_dad,noone,0.6,"Font_main");
+scr_text("... Our move is related to your job, right?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("Well yeah. We got new work place.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("So you will spend whole day at work as always?",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("We can't change much in it.",noone,noone,noone,_mam,noone,0.6,"Font_main",noone);
+scr_text("By the way... what grade are you in now?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("Dad, I am 16 already.",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("Oh, time sure fly fast...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("Yeah...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("*sight*",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("You know, you will go to school tomorrow, right?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("Make sure to make as many friends as you can. Introduce yourself to all your classmates",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("So you definitly won't be alone",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("...",noone, _mike,noone,noone,noone,0.6,"Font_main",noone);
+scr_text("(I just looked through the window, almost like I didn't heard this warning)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone);
+scr_text("(Just want to appear at my old home once again.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(I closed my eyes, focusing on my thoughts)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(My parents waited for job imrpovement for so long, and now we're moving so far away...)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,function(){scr_black(black_no,-1);obj_payer.battle=0;});
+scr_text("(It was so hard to leave my home...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(As I didn't even ask it.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(Leave all my friends behind...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(Even if we had been preparing for it for a couple weeks...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(Yet I still didn't manage to say all goodbyes to my friends)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(Didn't want to say that aloud to them.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(And now I can only regret it...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(...)",noone, _mike,noone,noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=300;obj_payer.phy_position_y=125;obj_payer.sprite_index=spsd_;});
+scr_text("(Soon the bus stopped.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("Okay, that's our stop, let's hurry up.",noone,noone,noone,_mam);
+scr_text("(We took all our stuff with us and exited the bus.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(Well, we anyway haven't too many right now...)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(Good chunk of it moved separately from us)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(And the bus with other peoples inside already moved on.)",noone, _mike,noone,noone,noone,0.6,"Font_think");
+scr_text("(На улице уже довольно темно и прохладно... Не думал, что мы будем ехать такдолго.)",noone, _mike,"Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_night,1);obj_pic.picture=noone;scr_sound_sette(0,Sng_Feeling_empty,true,0.5);scr_sound_sette(1,Sng_First_evening,true,1);});
+scr_text("And you finally here.",noone,noone,"Mike","???");
+scr_text("Аh? Who are you?",noone, _mike,"Mike",noone,noone,0.6,"Font_main",noone,function(){obj_payer.faza[9]=156;obj_payer.faza[10]="sasha_down_no";obj_payer.faza[11]=1;},"?","mike",1);
 scr_text("Привет, Саша. Как долго ты уже тут?",noone,noone,"Mike",_dad,"Papa");
 scr_text("Буквально пару дней назад приехали.",noone,noone,"Mike",_sasha,"Sasha");
 scr_text("Ну, нам-то в отличие от вас ехать надо было совсем немного.",noone,noone,"Mike",_sasha,"Sasha");

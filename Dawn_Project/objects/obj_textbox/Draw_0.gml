@@ -235,7 +235,8 @@ if string_starts_with(text[page],"(")
 {	
 	draw_sprite_stretched(spr_textbox3,0, 2+_txtb_x+string_width(string(talk_who[page]))*0.3+_op_bord*2,_txtb_y - _op_space,string_width("Думает...")*0.3+_op_bord*2,string_height("Думает...")*0.3+2
 	);
-	scribble(string("[scale,0.3]")+string("Думает..."),12345).starting_format("Font_main").draw(_txtb_x+_op_bord*3+(string_width(string(talk_who[page]))*0.3)+2, _txtb_y - _op_space);
+	if global.lang==0 scribble(string("[scale,0.3]")+string("Думает..."),12345).starting_format("Font_main").draw(_txtb_x+_op_bord*3+(string_width(string(talk_who[page]))*0.3)+2, _txtb_y - _op_space);
+	else scribble(string("[scale,0.3]")+string("Thinking..."),12345).starting_format("Font_main").draw(_txtb_x+_op_bord*3+(string_width(string(talk_who[page]))*0.3)+2, _txtb_y - _op_space);
 }
 
 }
@@ -246,7 +247,8 @@ scribble(string("[scale,0.3]")+string(talk_who[page]),1411351).starting_format("
 if string_starts_with(text[page],"(")
 {
 	draw_sprite_stretched(spr_textbox3,0, _txtb_x,_txtb_y - _op_space,string_width("Думает...")*0.3+_op_bord*2,string_height("Думает...")*0.3+2);
-	scribble(string("[scale,0.3]")+string("Думает..."),12345).starting_format("Font_main").draw(_txtb_x+_op_bord, _txtb_y - _op_space);
+	if global.lang==0 scribble(string("[scale,0.3]")+string("Думает..."),12345).starting_format("Font_main").draw(_txtb_x+_op_bord, _txtb_y - _op_space);
+	else scribble(string("[scale,0.3]")+string("Thinking..."),12345).starting_format("Font_main").draw(_txtb_x+_op_bord, _txtb_y - _op_space);
 }
 
 }
