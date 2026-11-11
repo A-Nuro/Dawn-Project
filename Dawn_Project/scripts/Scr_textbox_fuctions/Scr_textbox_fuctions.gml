@@ -152,16 +152,15 @@ rand_sin_offset[_count]=_angle;
 
 }
 
-function scr_No_text(){
+function scr_No_text(_end){
 
-if argument_count>0
-
+if _end=false
 {obj_textbox.text_end=0;
 	__end=0;
 }
 else
 {
-obj_textbox.text_end=1;
+text_end=1;
 __end=1;
 }
 }

@@ -5,9 +5,18 @@ inv_drag = obj_inv_mouse.inv_drag
 slot_drag = obj_inv_mouse.slot_drag
 item_drag = obj_inv_mouse.item_drag
 depth=-9997
-if (inv_active==true and id==inst_my_best_inv and x<camera_get_view_x(view_camera[0])) display_mouse_set(display_get_width()/2,display_get_height()/4);	
+//if (inv_active==true and id==inst_my_best_inv and x<camera_get_view_x(view_camera[0])) display_mouse_set(display_get_width()/2,display_get_height()/4);	
 
-
+if (instance_exists(obj_textbox) and obj_inventory_give.inv_active==false and inv_active) or room==Main_menu
+{
+	inv_active = false;
+	inv_open_with_phone=false;
+	inv_hover = -1;
+	slot_hover = -1;
+	inv_drag = -1;
+	slot_drag = -1;
+	item_drag = -1;
+}
 
 if id=inst_my_best_inv
 {
@@ -29,6 +38,7 @@ if os_type == os_android and (mouse_x>x+12+row_length*32 or mouse_x<x or mouse_y
 }
 else
 {
+draw_delay = 4;
 x=camera_get_view_x(view_camera[0])-999;
 y=camera_get_view_y(view_camera[0]);
 }
@@ -61,6 +71,7 @@ if room!=Main_menu and room!=room_fight and (esk or (obj_inventory_give.y<=camer
 
 if inv_active==false
 {
+	draw_delay = 4;
 	obj_inv_mouse.state = obj_inv_mouse.state_free;
 	item_drag = -1;
 	inv_drag = -1;
@@ -84,6 +95,6 @@ if inv_active==true
 	if (stick_h<0.3 and stick_h>-0.3) stick_h=0;
 	if obj_payer.Gp_con 
 	{
-	display_mouse_set(display_mouse_get_x()+stick_h*6+obj_payer.Gp_padr*4-obj_payer.Gp_padl*4,display_mouse_get_y()+stick_v*6-obj_payer.Gp_padu*4+obj_payer.Gp_padd*4);
+	//display_mouse_set(display_mouse_get_x()+stick_h*6+obj_payer.Gp_padr*4-obj_payer.Gp_padl*4,display_mouse_get_y()+stick_v*6-obj_payer.Gp_padu*4+obj_payer.Gp_padd*4);
 	}
 }

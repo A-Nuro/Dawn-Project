@@ -18,7 +18,7 @@ y=156;
 }
 if obj_payer.faza[10]=="sasha_down_no" and obj_payer.faza[0]!=0.1
 {
-if (y<obj_payer.y-20) obj_payer.sprite_index=spsu_;
-if (y>=obj_payer.y-20) obj_payer.sprite_index=spsl_;
+if (y<obj_payer.phy_position_y-20) obj_payer.sprite_index=spsu_;
+if (y>=obj_payer.phy_position_y-20) obj_payer.sprite_index=spsl_;
 }
 }

@@ -3,8 +3,8 @@ if id=global.selected_unit and obj_payer.stil_moving=false
 {
 depth = obj_payer.depth
 event_inherited();
-x=obj_payer.x-17
-y=obj_payer.y
+x=obj_payer.phy_position_x-17
+y=obj_payer.phy_position_y
 }
 
 if (array_get_index(global.team,object_index)==obj_payer.playable_team) global.selected_unit=id

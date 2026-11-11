@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"room_room",
-  "creationCodeFile":"${project_dir}/rooms/room_room/RoomCreationCode.gml",
+  "creationCodeFile":"rooms/room_room/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
@@ -130,7 +130,7 @@
   "roomSettings":{
     "Height":525,
     "inheritRoomSettings":false,
-    "persistent":true,
+    "persistent":false,
     "Width":840,
   },
   "sequenceId":null,

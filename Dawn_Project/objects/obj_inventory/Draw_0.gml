@@ -1,3 +1,7 @@
+if (draw_delay > 0) {
+    draw_delay -= 1;
+} else {
+
 draw_sprite_stretched(spr_textbox2,0,x-3,y-3,12+row_length*32,12+(((INV_SLOTS-1) div row_length)+1)*32);
 if room!=room_fight and inv_active==true
 {
@@ -71,3 +75,4 @@ if (item_drag != -1)
 	
 }
 
+}

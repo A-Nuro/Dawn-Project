@@ -182,8 +182,8 @@ switch(pos1)
 	case 0: break;
 	case 1: break;
 	case 2:  	
-	obj_payer.x=-64
-	obj_payer.y=-64
+	//obj_payer.phy_position_x=-64
+	//obj_payer.phy_position_y=-64
 	obj_payer.actions=1;
 	room_goto(Main_menu);
 	scr_black(no_no,1);

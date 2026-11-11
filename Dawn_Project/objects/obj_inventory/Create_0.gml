@@ -5,7 +5,7 @@ inventory=[];
 
 for (var i = 0; i < INV_SLOTS; i++){array_push(inventory,{namein:"",num:-1,colvo:-1,activ: function(){}, use_no_battle: false, armour: -1, hp_change: 0, sp_change: 0,})}
 
-
+draw_delay = 4;
 
 depth=-9997;
 inv_active = false;

@@ -123,7 +123,7 @@ switch(state)
 		
 		if (array_contains(spawn_frame,round(image_index)) and !array_contains(spawned_frame,round(image_index)))
 		{
-			var _spw = instance_create_depth(obj_payer.x,obj_payer.y,depth,obj_b_atk,{
+			var _spw = instance_create_depth(obj_payer.phy_position_x,obj_payer.phy_position_y,depth,obj_b_atk,{
 			atk_spr_spawn: self.spawn_spr,
 			atk_hitbox_spawn: self.spawn_hitbox,
 			baseATK: self.base[ATK]

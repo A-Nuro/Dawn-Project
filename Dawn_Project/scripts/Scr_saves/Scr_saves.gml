@@ -111,8 +111,8 @@ ini_close()
 obj_quests.active_quests=[]
 global.team=[obj_b_player];
 room_goto(room_nightmare);
-obj_payer.x=300;
-obj_payer.y=120;
+obj_payer.phy_position_x=300;
+obj_payer.phy_position_y=120;
 global.save_slot=_name;
 }
 }
@@ -212,8 +212,8 @@ obj_payer.talk=0;
 obj_payer.actions=0;
 obj_payer.battle=0;
 room_goto(obj_payer.your_room); 
-obj_payer.x=obj_payer.playerx;
-obj_payer.y=obj_payer.playery;
+obj_payer.phy_position_x=obj_payer.playerx;
+obj_payer.phy_position_y=obj_payer.playery;
 switch(obj_payer.cloth)
 {
 	case "deff": obj_payer.sprite_index=spgd_ break;
@@ -230,8 +230,8 @@ function make_save(_name)
 {
 	ini_open(_name);
 
-ini_write_real("settings","player_x",obj_payer.x);
-ini_write_real("settings","player_y",obj_payer.y);
+ini_write_real("settings","player_x",obj_payer.phy_position_x);
+ini_write_real("settings","player_y",obj_payer.phy_position_y);
 for (var i = 0; i<10;i++)
 {
 	ini_write_real("faza",i,obj_payer.faza[i]);

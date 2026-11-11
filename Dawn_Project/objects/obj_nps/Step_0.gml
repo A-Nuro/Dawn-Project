@@ -35,14 +35,14 @@ if (obj_follower.y<y and (obj_follower.y>y-sprite_get_height(obj_follower.sprite
 if (obj_follower.y<y and (obj_follower.y>y-sprite_get_height(obj_follower.sprite_index)) and (x>obj_follower.x-sprite_get_width(obj_follower.sprite_index)) and (x<obj_follower.x+sprite_get_width(obj_follower.sprite_index)))
 {
 	
-if obj_follower.y>obj_payer.y
+if obj_follower.y>obj_payer.phy_position_y
 {
 	depth=obj_payer.depth - 2;
 	obj_follower.depth= depth + 1;
 }
 else
 {
-	if obj_payer.y>y
+	if obj_payer.phy_position_y>y
 	{
 	depth=obj_payer.depth + 1;
 	}
@@ -55,14 +55,14 @@ else
 if (obj_follower.y>y and (obj_follower.y<y+sprite_get_height(obj_follower.sprite_index)) and (x>obj_follower.x-sprite_get_width(obj_follower.sprite_index)) and (x<obj_follower.x+sprite_get_width(obj_follower.sprite_index)))
 {
 	
-if obj_follower.y<obj_payer.y
+if obj_follower.y<obj_payer.phy_position_y
 {
 	depth=obj_payer.depth + 2;
 	obj_follower.depth= depth - 1;
 }
 else
 {
-	if obj_payer.y<y
+	if obj_payer.phy_position_y<y
 	{
 	depth=obj_payer.depth - 1;
 	}
@@ -74,7 +74,7 @@ else
 }
 else
 {
-if y < obj_payer.y
+if y < obj_payer.phy_position_y
 {depth=obj_payer.depth + 2}
 else
 {depth=obj_payer.depth - 2}
@@ -82,7 +82,7 @@ else
 }
 else
 {
-if y < obj_payer.y
+if y < obj_payer.phy_position_y
 {depth=obj_payer.depth + 2}
 else
 {depth=obj_payer.depth - 2}
@@ -126,9 +126,9 @@ if talking == 0 and inst=0
 		if instant = false and dumb = false
 		{
 		obj_payer.talk=0
-		obj_payer.x=tp_x
+		obj_payer.phy_position_x=tp_x
 		room_goto(_room)
-		obj_payer.y=tp_y
+		obj_payer.phy_position_y=tp_y
 		}
 		else
 		{

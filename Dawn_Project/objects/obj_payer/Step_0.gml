@@ -1,4 +1,25 @@
 //camera_set_view_pos(view_camera[0],floor(camera_get_view_x(view_camera[0])),floor(camera_get_view_y(view_camera[0])))
+if keyboard_check(vk_f1) phy_position_x += moveSpeed
+
+if keyboard_check_pressed(vk_f2)
+{
+
+var _names = variable_instance_get_names(id);
+var _data = {};
+
+for (var i = 0; i < array_length(_names); i++) {
+    var _var_name = _names[i];
+    var _val = variable_instance_get(id, _var_name);
+    
+    // Исключаем массивы, структуры и методы, чтобы JSON точно не сломался
+    if (!is_struct(_val) && !is_array(_val) && !is_method(_val)) {
+        variable_struct_set(_data, _var_name, _val);
+    }
+}
+
+show_debug_message("PLAYER_DATA: " + json_stringify(_data));
+show_debug_message("PLAYER_COUNT: " + string(instance_number(object_index)));	
+}
 
 if (mouse_wheel_block>0) mouse_wheel_block--
 else mouse_wheel_block=0
@@ -506,8 +527,8 @@ for (var i = array_follow-1; i >0; i--){
 	follow_image[i] = follow_image[i-1]
 }	
 	
-follow_x[0] = x;
-follow_y[0] = y;
+follow_x[0] = phy_position_x;
+follow_y[0] = phy_position_y;
 follow_sprite[0]=sprite_index
 follow_image[0] = image_index
 }
@@ -562,5 +583,5 @@ if (actions = 1 or (Down = 0 and Up = 0 and Left = 0 and Right = 0 and Gp_stickh
 image_index=7;}
 if (moveOk==1) image_speed=1;	
 
-if (x>stop_x-1 and x<stop_x+1) {fake_left=0; fake_right=0}
-if (y>stop_y-1 and y<stop_y+1) {fake_down=0; fake_up=0}
+if ( phy_position_x>stop_x-1 and  phy_position_x<stop_x+1) {fake_left=0; fake_right=0}
+if ( phy_position_y>stop_y-2 and  phy_position_y<stop_y+2) {fake_down=0; fake_up=0}

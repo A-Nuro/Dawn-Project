@@ -1,4 +1,3 @@
-
 if (stil_moving = true) 
 {
 	player_move(global.selected_unit)

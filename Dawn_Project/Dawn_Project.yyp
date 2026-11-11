@@ -83,7 +83,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Dawn_Project",
   "resources":[
@@ -135,6 +135,7 @@
     {"id":{"name":"Obj_wall","path":"objects/Obj_wall/Obj_wall.yy",},},
     {"id":{"name":"object_main","path":"objects/object_main/object_main.yy",},},
     {"id":{"name":"_Room2","path":"rooms/_Room2/_Room2.yy",},},
+    {"id":{"name":"First_screen","path":"rooms/First_screen/First_screen.yy",},},
     {"id":{"name":"for_tests","path":"rooms/for_tests/for_tests.yy",},},
     {"id":{"name":"Main_menu","path":"rooms/Main_menu/Main_menu.yy",},},
     {"id":{"name":"room_car","path":"rooms/room_car/room_car.yy",},},
@@ -554,6 +555,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"First_screen","path":"rooms/First_screen/First_screen.yy",},},
     {"roomId":{"name":"Main_menu","path":"rooms/Main_menu/Main_menu.yy",},},
     {"roomId":{"name":"room_nightmare","path":"rooms/room_nightmare/room_nightmare.yy",},},
     {"roomId":{"name":"room_fight","path":"rooms/room_fight/room_fight.yy",},},

@@ -1,5 +1,5 @@
 
-if y < obj_payer.y
+if y < obj_payer.phy_position_y
 {depth=obj_payer.depth + 1}
 else
 {depth=obj_payer.depth - 1}
@@ -83,7 +83,7 @@ if (x != xprevious or y != yprevious)
 }
 
 
-if x<obj_payer.x-85 x = obj_payer.x
-if x>obj_payer.x+85 x = obj_payer.x
-if y<obj_payer.y-85 y = obj_payer.y
-if y>obj_payer.y+85 y = obj_payer.y
+if x<obj_payer.phy_position_x-85 x = obj_payer.phy_position_x
+if x>obj_payer.phy_position_x+85 x = obj_payer.phy_position_x
+if y<obj_payer.phy_position_y-85 y = obj_payer.phy_position_y
+if y>obj_payer.phy_position_y+85 y = obj_payer.phy_position_y

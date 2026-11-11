@@ -1,3 +1,6 @@
+if (draw_delay > 0) {
+    draw_delay -= 1;
+} else {
 draw_sprite_stretched(spr_textbox2,0,x-3,y-3,12+row_length*32,12+(((INV_ARM_SLOTS-1) div row_length)+1)*32);
 if room!=room_fight and inv_active==true
 {
@@ -48,4 +51,4 @@ if keyboard_check_pressed(vk_up) and inv_arm_who<array_length(global.playable_un
 {
 	inventory[i].num=global.armour[inv_arm_who][i]
 }}
-
+}

@@ -90,6 +90,7 @@
     {"name":"Obj_wall_round","order":1,"path":"objects/Obj_wall_round/Obj_wall_round.yy",},
     {"name":"Obj_wall","order":2,"path":"objects/Obj_wall/Obj_wall.yy",},
     {"name":"object_main","order":8,"path":"objects/object_main/object_main.yy",},
+    {"name":"First_screen","order":2,"path":"rooms/First_screen/First_screen.yy",},
     {"name":"for_tests","order":1,"path":"rooms/for_tests/for_tests.yy",},
     {"name":"Helper","order":2,"path":"scripts/Helper/Helper.yy",},
     {"name":"Scr_black","order":1,"path":"scripts/Scr_black/Scr_black.yy",},

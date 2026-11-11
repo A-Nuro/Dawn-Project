@@ -29,6 +29,7 @@ if inv_active == true
 }
 else
 {
+draw_delay = 4;
 x=camera_get_view_x(view_camera[0])-32*32;
 y=camera_get_view_y(view_camera[0]);
 for (var i = 0; i < INV_ARM_SLOTS; i++)
@@ -46,6 +47,7 @@ depth=obj_inventory.depth-1
 
 if inst_my_best_inv.inv_active=false
 {
+	draw_delay = 4;
 	inv_active=false
 	inv_active_box=false
 }
@@ -56,6 +58,7 @@ if inst_my_best_inv.inv_active==true
 
 if inv_active==false
 {
+	draw_delay = 4;
 	obj_inv_mouse.state = obj_inv_mouse.state_free;
 	item_drag = -1;
 	inv_drag = -1;
