@@ -2,7 +2,7 @@ if (stil_moving = true)
 {
 	player_move(global.selected_unit)
 }
-if (!danger) draw_self();
+if (!danger and room!=Main_menu) draw_self();
 
 if (danger==true and !instance_exists(obj_b_player)) 
 {
