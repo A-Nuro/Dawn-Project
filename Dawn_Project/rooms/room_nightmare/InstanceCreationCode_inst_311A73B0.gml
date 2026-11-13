@@ -30,12 +30,16 @@ obj_payer.faza[0]=0.112;
 }
 }
 
+if obj_payer.faza[0]=0.01
+{
+	id.x=-999
+}
+
 if obj_payer.faza[0]=0.112
 {
 	obj_saves.savekey=1;
 	obj_payer.faza[0]=0.113
 }
-if (obj_payer.faza[0]<0.01) obj_payer.moveOk=1;
 
 
 //(obj_payer.sprite_index==spgd_ or obj_payer.sprite_index==spgu_ or obj_payer.sprite_index==spgl_ or obj_payer.sprite_index==spgr_)

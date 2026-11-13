@@ -1,4 +1,6 @@
 
+if id==global.selected_unit
+{
 if mouse_wheel_down() and obj_payer.mouse_wheel_block==0
 {
 	if (obj_payer.playable_team<array_length(global.team)-1) obj_payer.playable_team+=1
@@ -13,7 +15,7 @@ if mouse_wheel_up() and obj_payer.mouse_wheel_block==0
 	obj_payer.stil_moving=true
 	obj_payer.mouse_wheel_block=30
 }
-
+}
 if (array_get_index(global.team,object_index)==obj_payer.playable_team) global.selected_unit=id
 
 
@@ -123,7 +125,9 @@ switch(state)
 		
 		if (array_contains(spawn_frame,round(image_index)) and !array_contains(spawned_frame,round(image_index)))
 		{
-			var _spw = instance_create_depth(obj_payer.phy_position_x,obj_payer.phy_position_y,depth,obj_b_atk,{
+			var _spawn_x = obj_payer.x + (obj_payer.sprite_width/2) - (sprite_get_width(asset_get_index(self.spawn_spr+self.dir)) / 2);
+			var _spawn_y = obj_payer.y + (obj_payer.sprite_height / 2) - (sprite_get_height(asset_get_index(self.spawn_spr+self.dir)) / 2);
+			var _spw = instance_create_depth(_spawn_x,_spawn_y,depth,obj_b_atk,{
 			atk_spr_spawn: self.spawn_spr,
 			atk_hitbox_spawn: self.spawn_hitbox,
 			baseATK: self.base[ATK]
@@ -131,51 +135,57 @@ switch(state)
 			array_push(spawned_frame,round(image_index))
 		}
 		
-		if sprite_index != asset_get_index(atk_spr+dir) //(layer_sequence_get_headpos(unit_sequence)<attack_start or layer_sequence_get_headpos(unit_sequence)>attack_end+1) 
-		{
-			if (id==global.selected_unit)obj_payer.battle=1
-			layer_sequence_headpos(unit_sequence, attack_start)
-			ds_list_clear(hit_by_attack)
-			sprite_index = asset_get_index(atk_spr+dir)
-			image_index = 0
-		}
-		
-		mask_index = asset_get_index(atk_hitbox+dir)
-		var hit_by_attack_now = ds_list_create();
-		var hits = instance_place_list(x,y,obj_unit,hit_by_attack_now,false);
-		if (hits>0)
-		{
-			for (var i = 0; i < hits; i++)
-			{
-				//not yet hitted
-				var hitID = hit_by_attack_now[| i];
-				if (ds_list_find_index(hit_by_attack,hitID) == -1 and hitID.state!=DEATH)
-				{
-					ds_list_add(hit_by_attack,hitID);
-					var _damagin = current[ATK]
-					with (hitID)
-					{
-						layer_sequence_headpos(unit_sequence, hurt_start)
-						state = HURT;
-						damage_unit(_damagin,false,false);
-					}
-				}
-			}
-		}
-		ds_list_destroy(hit_by_attack_now);
-		mask_index = asset_get_index(def_spr+dir);
+		var _atk_sprite = asset_get_index(atk_spr + dir);
+    
+    if (sprite_index != _atk_sprite) 
+    {
+        if (id == global.selected_unit) obj_payer.battle = 1;
+        layer_sequence_headpos(unit_sequence, attack_start);
+        ds_list_clear(hit_by_attack);
+        sprite_index = _atk_sprite;
+        image_index = 0;
+    }
+    
+    mask_index = asset_get_index(atk_hitbox + dir);
+    var _hit_now = ds_list_create();
+    var _hits = instance_place_list(x, y, obj_unit, _hit_now, false);
+    
+    if (_hits > 0)
+    {
+        for (var i = 0; i < _hits; i++)
+        {
+            var _hit_id = _hit_now[| i];
+            // Извлекаем числовой ID экземпляра (например, 1000006)
+            var _num_id = _hit_id.id; 
+            
+            if (ds_list_find_index(hit_by_attack, _num_id) == -1 && _hit_id.state != DEATH)
+            {
+                ds_list_add(hit_by_attack, _num_id);
+                var _dmg = current[ATK];
+                with (_hit_id)
+                {
+                    layer_sequence_headpos(unit_sequence, hurt_start);
+                    state = HURT;
+                    damage_unit(_dmg, false, false);
+                }
+            }
+        }
+    }
+    
+    ds_list_destroy(_hit_now);
+    mask_index = asset_get_index(def_spr + dir);
 
-		if (layer_sequence_get_headpos(unit_sequence) >= attack_end) or (floor(image_index) == image_number - 1)
-		{
-			//turn_finished = true;
-			spawned_frame=[]
-			if (id==obj_b_atk) instance_destroy()
-			if (id==global.selected_unit) obj_payer.battle=0
-			sprite_index = asset_get_index(def_spr+dir)
-			layer_sequence_headpos(unit_sequence, idle_start);
-			state = IDLE;	
-		}
-	break
+    if (layer_sequence_get_headpos(unit_sequence) >= attack_end || image_index >= image_number - 1)
+    {
+        spawned_frame = [];
+        if (object_index == obj_b_atk) instance_destroy();
+        if (id == global.selected_unit) obj_payer.battle = 0;
+        
+        sprite_index = asset_get_index(def_spr + dir);
+        layer_sequence_headpos(unit_sequence, idle_start);
+        state = IDLE;	
+    }
+break;
 	
 	case HURT:
 		if (sprite_index != asset_get_index(hur_spr)) sprite_index = asset_get_index(hur_spr)

@@ -7,7 +7,7 @@ for (var i = 0; i < INV_BOX_SLOTS; i++){array_push(inventory,{namein:"",num:-1,c
 
 
 
-depth=-9997;
+depth=-9999;
 inv_active = false;
 inv_active_box = false;
 inv_hover = -1;

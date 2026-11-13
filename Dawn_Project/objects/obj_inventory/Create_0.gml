@@ -7,7 +7,7 @@ for (var i = 0; i < INV_SLOTS; i++){array_push(inventory,{namein:"",num:-1,colvo
 
 draw_delay = 4;
 
-depth=-9997;
+depth=-9999;
 inv_active = false;
 inv_open_with_phone=false;
 inv_hover = -1;

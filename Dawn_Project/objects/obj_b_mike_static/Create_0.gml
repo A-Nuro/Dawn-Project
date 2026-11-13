@@ -5,6 +5,11 @@ unit_name = "???"
 unit_post_name = "ет"
 unit_name_atk = "???"
 
+def_spr = "spsd_stat"
+atk_spr = "spgd_stat";
+atk_hitbox = "no_no";
+hur_spr = "spsd_stat";
+
 base[HP] = 248;
 base[SP] = 60;
 base[SPEED] = 11;
@@ -21,7 +26,9 @@ current[ATK] = base[@ ATK];
 current[DEF] = base[@ DEF];
 current[ACC] = base[@ ACC];
 
-unit_sequence = layer_sequence_create("sequences",x,y,seq_mike_static);
+var _layer = layer_create(id.depth);
+
+unit_sequence = layer_sequence_create(_layer,x,y,seq_mike_static);
 
 idle_start = 0;
 idle_end = 59;
@@ -62,8 +69,15 @@ learned_skill[5] = global.skill[skills.no_skill];
 learned_skill[6] = global.skill[skills.no_skill];
 learned_skill[7] = global.skill[skills.no_skill];
 
+spawn_frame=[1]
+spawn_spr="s_mike_atk_static_spawn"
+spawn_hitbox="s_mike_atk_static_spawn_hit"
+
+our=false
+
 function ai_doings()
 {
+/*
 if obj_manager.turn_all>=5
 {
 	current[ATK]=9999;
@@ -102,7 +116,10 @@ if state != ATTACK and !instance_exists(obj_effects)
 state = ATTACK;
 layer_sequence_headpos(unit_sequence, attack_start)
 }
-
-
-
+*/
+if state != ATTACK and current_second mod 3 == 0
+{
+state = ATTACK;
+layer_sequence_headpos(unit_sequence, attack_start)
+}
 }

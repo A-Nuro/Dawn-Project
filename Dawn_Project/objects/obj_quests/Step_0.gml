@@ -1,4 +1,4 @@
-
+depth=-99999
 for (var z = 1; z < array_length(global.main_quests); z++) 
 {
 if global.main_quests[z].status==1 and (array_get_index(active_quests,global.main_quests[z])==0)

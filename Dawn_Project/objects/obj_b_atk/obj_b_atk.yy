@@ -40,8 +40,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_mike_atk_static_spawn",
-    "path":"sprites/s_mike_atk_static_spawn/s_mike_atk_static_spawn.yy",
+    "name":"s_mike_atk_static_spawnr",
+    "path":"sprites/s_mike_atk_static_spawnr/s_mike_atk_static_spawnr.yy",
   },
   "spriteMaskId":{
     "name":"point",

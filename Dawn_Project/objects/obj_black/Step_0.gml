@@ -1,5 +1,5 @@
 image_speed=black_speed;
-
+depth=-9998;
 if image_speed<0
 {
 if balck_==0

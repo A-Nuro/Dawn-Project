@@ -1,3 +1,4 @@
+depth=-9997;
 if (picture==noone or picture==no_no)
 {var _x=1
  var _y=1}

@@ -3,7 +3,7 @@ slot_hover = obj_inv_mouse.slot_hover
 inv_drag = obj_inv_mouse.inv_drag
 slot_drag = obj_inv_mouse.slot_drag
 item_drag = obj_inv_mouse.item_drag
-depth=-9998
+depth=-9999;
 
 
 if inv_active == true

@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_mike_fight_static",
-    "path":"sprites/spr_mike_fight_static/spr_mike_fight_static.yy",
+    "name":"spsd_statr",
+    "path":"sprites/spsd_statr/spsd_statr.yy",
   },
   "spriteMaskId":{
     "name":"point",

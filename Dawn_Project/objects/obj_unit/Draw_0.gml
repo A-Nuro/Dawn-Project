@@ -71,7 +71,6 @@ if (active_effects[s].active==true)
 //scribble(string(obj_manager.allow_input)).starting_format("Font_main",c_white).scale(0.16).draw(x,y);
 //scribble(string(turn_finished)).starting_format("Font_main",c_white).scale(0.16).draw(x,y+10);
 
-
 //if (multi_draw == true) 
 //{draw_sprite(point, 0, x, y)}
 if global.selected_unit!=noone

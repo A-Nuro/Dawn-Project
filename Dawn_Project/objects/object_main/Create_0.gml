@@ -1,6 +1,6 @@
 randomize();
 //show_debug_overlay(true);
-global.selected_unit=noone
+
 
 has_save1 = file_exists("unused_sound.mp3");
 has_save2 = file_exists("unused_sound_1.mp3");
@@ -24,11 +24,6 @@ if (has_save1) {
         ini_close();
     } else { save_rooms[2] = 0; }
 
-if os_get_language()=="ru"
-	global.lang=0
-else
-	global.lang=1
-global.rumble=0
 enter_key = keyboard_check_pressed(vk_enter) or gamepad_button_check_pressed(0,gp_face1)
 
 timer=40
@@ -42,7 +37,7 @@ x=(room_width/2)-72;
 y=(room_height/2)-52;
 op_border = 9;
 op_space = 16;
-global.screen0=0;
+
 pos =0;
 if global.lang==0
 {

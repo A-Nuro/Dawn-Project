@@ -1,3 +1,4 @@
+
 if (stil_moving = true) 
 {
 	player_move(global.selected_unit)
@@ -7,7 +8,7 @@ if (!danger and room!=Main_menu) draw_self();
 if (danger==true and !instance_exists(obj_b_player)) 
 {
 	global.selected_unit=instance_create_depth(x,y,depth,obj_b_player)
-	if (global.team[1]!="")instance_create_depth(x-64,y,depth,global.team[1])
+	//if (global.team[1]!="")instance_create_depth(x-64,y,depth,global.team[1])
 }
 air_alp=clamp(air_alp,0,1)
 

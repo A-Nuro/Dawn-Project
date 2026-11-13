@@ -43,7 +43,7 @@ idle_start = 0;
 idle_end = 59;
 
 attack_start = 60;
-attack_end = 119;
+attack_end = 179;
 
 cast_start = 120;
 cast_end = 239;

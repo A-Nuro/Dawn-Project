@@ -1,4 +1,5 @@
-if room != room_fight and room != Main_menu
+depth=-9997
+if room != room_fight and room != Main_menu and room !=First_screen
 {
 draw_sprite_stretched(sprite_index,image_index,camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])-46,camera_get_view_y(view_camera[0])+6,40,40)
 }

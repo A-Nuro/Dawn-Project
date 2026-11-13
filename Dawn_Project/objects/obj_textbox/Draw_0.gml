@@ -416,6 +416,8 @@ if draw_char == text_length[page] && page == page_number-1
 	else
 	{
 	option_pos += keyboard_check_pressed(vk_down) - keyboard_check_pressed(vk_up) + gamepad_button_check_pressed(gpl(),gp_padd) - gamepad_button_check_pressed(gpl(),gp_padu) ;
+	if (mouse_wheel_up() and obj_payer.mouse_wheel_block==0) option_pos-=1
+	if (mouse_wheel_down() and obj_payer.mouse_wheel_block==0) option_pos+=1
 	option_pos = clamp(option_pos, 0, option_number-1);
 	}
 	}

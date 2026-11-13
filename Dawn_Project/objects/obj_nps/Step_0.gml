@@ -126,9 +126,11 @@ if talking == 0 and inst=0
 		if instant = false and dumb = false
 		{
 		obj_payer.talk=0
-		obj_payer.phy_position_x=tp_x
 		room_goto(_room)
+		obj_payer.phy_position_x=tp_x
 		obj_payer.phy_position_y=tp_y
+		obj_payer.x=tp_x
+		obj_payer.y=tp_y
 		}
 		else
 		{

@@ -4,7 +4,7 @@ slot_hover = obj_inv_mouse.slot_hover
 inv_drag = obj_inv_mouse.inv_drag
 slot_drag = obj_inv_mouse.slot_drag
 item_drag = obj_inv_mouse.item_drag
-depth=-9997
+depth=-9999;
 //if (inv_active==true and id==inst_my_best_inv and x<camera_get_view_x(view_camera[0])) display_mouse_set(display_get_width()/2,display_get_height()/4);	
 
 if (instance_exists(obj_textbox) and obj_inventory_give.inv_active==false and inv_active) or room==Main_menu

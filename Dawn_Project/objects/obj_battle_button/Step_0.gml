@@ -12,8 +12,8 @@ if instance_exists(obj_b_player)
 
 if (active==true)
 {
-	x=120
-	y=240
+	x=camera_get_view_x(view_camera[0])+120
+	y=camera_get_view_y(view_camera[0])+240
 }
 else
 {

@@ -113,6 +113,8 @@ global.team=[obj_b_player];
 room_goto(room_nightmare);
 obj_payer.phy_position_x=300;
 obj_payer.phy_position_y=120;
+obj_payer.x=300;
+obj_payer.y=120;
 global.save_slot=_name;
 }
 }
@@ -214,6 +216,8 @@ obj_payer.battle=0;
 room_goto(obj_payer.your_room); 
 obj_payer.phy_position_x=obj_payer.playerx;
 obj_payer.phy_position_y=obj_payer.playery;
+obj_payer.x=obj_payer.playerx;
+obj_payer.y=obj_payer.playery;
 switch(obj_payer.cloth)
 {
 	case "deff": obj_payer.sprite_index=spgd_ break;

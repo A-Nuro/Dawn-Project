@@ -7,7 +7,7 @@ for (var i = 0; i < INV_ARM_SLOTS; i++){array_push(inventory,{namein:"",num:-1,c
 
 draw_delay = 4
 
-depth=-9997;
+depth=-9999;
 inv_arm_who = 0;
 inv_active = false;
 inv_active_box = false;

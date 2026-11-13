@@ -1,3 +1,4 @@
+global.screen0=0
 is_mouse=false;
 cur_mouse_x=mouse_x;
 cur_mouse_y=mouse_y;

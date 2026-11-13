@@ -1,25 +1,4 @@
 //camera_set_view_pos(view_camera[0],floor(camera_get_view_x(view_camera[0])),floor(camera_get_view_y(view_camera[0])))
-if keyboard_check(vk_f1) phy_position_x += moveSpeed
-
-if keyboard_check_pressed(vk_f2)
-{
-
-var _names = variable_instance_get_names(id);
-var _data = {};
-
-for (var i = 0; i < array_length(_names); i++) {
-    var _var_name = _names[i];
-    var _val = variable_instance_get(id, _var_name);
-    
-    // Исключаем массивы, структуры и методы, чтобы JSON точно не сломался
-    if (!is_struct(_val) && !is_array(_val) && !is_method(_val)) {
-        variable_struct_set(_data, _var_name, _val);
-    }
-}
-
-show_debug_message("PLAYER_DATA: " + json_stringify(_data));
-show_debug_message("PLAYER_COUNT: " + string(instance_number(object_index)));	
-}
 
 if (mouse_wheel_block>0) mouse_wheel_block--
 else mouse_wheel_block=0
@@ -134,7 +113,7 @@ if _sp[0]>=40 _sp[0]=40
 if _hp[1]>=65 _hp[1]=65
 if _sp[1]>=50 _sp[1]=50
 
-if battle==0 and depth==9999
+if battle==0 and depth!=-9990
 {
 depth=-9990	
 }
@@ -393,8 +372,8 @@ if keyboard_check_pressed(vk_control)
 {
 	if (danger==false) danger=true;
 	else danger=false;
-}
-*/
+}*/
+
 if faza[0]>0.01 
 {
 
@@ -575,8 +554,13 @@ air+=2;}
 air = clamp(air, 0, airLim);
 if  air>=airLim
 {moveOk=0;
-moveSpeed=2;
+if faza[0]>0.01
+{moveSpeed=2;
 moveMoreSpeed=2;}
+else
+{moveSpeed=1;
+moveMoreSpeed=0;}
+}
 
 if (actions = 1 or (Down = 0 and Up = 0 and Left = 0 and Right = 0 and Gp_stickh>=-0.3 and Gp_stickh<=0.3 and Gp_stickv<=0.3 and Gp_stickv>=-0.3)) and moveOk==0 and fake_down=0 and fake_up=0  and fake_left=0  and fake_right=0 //and (keyboard_check_released(ord("S")) or keyboard_check_released(ord("D")) or keyboard_check_released(ord("A")) or keyboard_check_released(ord("W")) ))
 {image_speed=0;

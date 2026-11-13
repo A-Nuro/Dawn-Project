@@ -56,8 +56,13 @@ scr_text("Тогда докажи что я неправ.",noone,noone,"Mike","?
 //scr_No_option("First talk1-");
 //break;
 //case "First talk1-":
-scr_text("Сразись со своими страхами!",noone,noone,"Mike","???",noone,0.6,"Font_main",noone,function(){/*obj_payer.faza[0]=0.01*/});
-scr_No_option("First talk2")
+scr_text("Сразись со своими страхами!",noone,noone,"Mike","???",noone,0.6,"Font_main");
+scr_No_option("First_talk1")
+break;
+
+case "First_talk1":
+obj_payer.faza[0]=0.01
+scr_No_text(true)
 break;
 
 case "Firstest fight0":
@@ -127,12 +132,11 @@ for (var i = 0; i < 2; i++)
 	inst_my_best_inv.inventory[i].hp_change=global.items[2].hp_change;
 	inst_my_best_inv.inventory[i].sp_change=global.items[2].sp_change;
 }
-
-scr_black(black_no,1);
 room_goto(room_car)
+scr_black(black_no,1);
 });
 scr_text("Что?..",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone,function(){obj_payer.phy_position_x=200;obj_payer.phy_position_y=80;});
-scr_text("(Я проснулся.)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
+scr_text("(Я проснулся.)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone,function(){room_goto(room_car)});
 scr_text("...",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
 scr_text("(Это был сон?)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
 scr_text("(А то все чувства в нём были уж слишком реальными...)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
@@ -151,7 +155,7 @@ scr_text("Тут мы особо ничего поменять не можем."
 scr_text("Кстати... а в какой ты там класс уже идёшь?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
 scr_text("Пап, если что, мне уже 16.",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
 scr_text("Как быстро время летит...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
-scr_text("Ага...",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
+scr_text("Ага...",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone,function(){room_goto(room_car)});
 scr_text("*вздох*",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
 scr_text("Знаешь, тебе же завтра надо будет идти в школу?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
 scr_text("Заведи там как можно больше друзей. Познакомься со всеми своими одноклассниками.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
