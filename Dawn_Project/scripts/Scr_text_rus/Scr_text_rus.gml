@@ -1,38 +1,13 @@
 
 function text_rus(_text_id){
-ini_open("character.name")
-/*
-switch(global.lang)
-{
-	case 0:*/
-	var _anya = ini_read_string(global.lang,"Аня","Аня");
-	var _mam = ini_read_string(global.lang,"Мама","Мама");
-	var _dad = ini_read_string(global.lang,"Папа","Папа");
-	var _sasha = ini_read_string(global.lang,"Александр","Александр");
-	var _faceless = ini_read_string(global.lang,"Безликий","Безликий");
-	var _masha = ini_read_string(global.lang,"Маша","Маша");
-	var _andrey = ini_read_string(global.lang,"Андрей","Андрей");
-	var _nastya = ini_read_string(global.lang,"Настя","Настя");
-	var _zhenya = ini_read_string(global.lang,"Женя","Женя");
-	var _adam = ini_read_string(global.lang,"Адам","Адам");
-	var _adam_soul = ini_read_string(global.lang,"Душа Адама","Душа Адама");
 
-
-ini_close()
-	switch(_text_id)
+switch(_text_id)
 	{
 	case "space":
 obj_payer.moment_skip=1;
 scr_text(" ",noone," ",noone,noone,noone,0.6,"Font_main","end");
 break;
 
-case "game_start":
-scr_text("Где я?",noone,"Майк","Mike",noone,noone,0.6,"Font_main",noone);
-scr_text("Этот дом...",noone,"Майк","Mike",noone,noone,0.6,"Font_main",noone);
-scr_text("Он выглядит прямо как мой родной дом.",noone,"Майк","Mike",noone,noone,0.6,"Font_main",noone);
-scr_text("Но совсем другой.",noone,"Майк","Mike",noone,noone,0.6,"Font_main",noone);
-scr_text("...",noone,"Майк","Mike",noone,noone,0.6,"Font_main","end");
-	break;
 	case "my_home":
 scr_text("Мой домик",noone,"Майк","Mike",noone,noone,0.6,"Font_main","end");
 break;
@@ -140,28 +115,26 @@ scr_text("(Я проснулся.)",noone, "Майк",noone,noone,noone,0.6,"Fon
 scr_text("...",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
 scr_text("(Это был сон?)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
 scr_text("(А то все чувства в нём были уж слишком реальными...)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
-scr_text("Ты проснулся? Мы как раз скоро приедем.",noone,noone,noone,_mam,noone,0.6,"Font_main",noone);
+scr_text("Ты проснулся? Мы как раз скоро приедем.",noone,noone,noone,"Мама",noone,0.6,"Font_main",noone);
 scr_text("(Что?)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone,noone,"?","mike",2);
 scr_text("(Из-за этого сна я совсем забыл про то, что сейчас происходит)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
-scr_text("(И вот он я, сижу в самом конце микроавтобуса)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
+scr_text("(А в реальности я всё ещё сижу в самом конце микроавтобуса)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
 scr_text("А ещё раз... зачем мы переежаем?",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
-scr_text("У нас с мамой там важные дела...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("У нас с мамой там важные дела...",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
 scr_text("Это я уже слышал, а по подробнее расскажете?",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
-scr_text("...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone,"...");
+scr_text("...",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone,"...");
 scr_text("... Наш переезд ведь связан с вашей работой?",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
-scr_text("Ну да. Нам было предложено новое место работы.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("Ну да. Нам было предложено новое место работы.",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
 scr_text("То есть вы снова будете весь день на работе?",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
-scr_text("Тут мы особо ничего поменять не можем.",noone,noone,noone,_mam,noone,0.6,"Font_main",noone);
-scr_text("Кстати... а в какой ты там класс уже идёшь?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
-scr_text("Пап, если что, мне уже 16.",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
-scr_text("Как быстро время летит...",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("Тут мы особо ничего поменять не можем.",noone,noone,noone,"Мама",noone,0.6,"Font_main",noone);
 scr_text("Ага...",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone,function(){room_goto(room_car)});
-scr_text("*вздох*",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
-scr_text("Знаешь, тебе же завтра надо будет идти в школу?",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
-scr_text("Заведи там как можно больше друзей. Познакомься со всеми своими одноклассниками.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
-scr_text("Так ты точно не останешься один.",noone,noone,noone,_dad,noone,0.6,"Font_main",noone);
+scr_text("*вздох*",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
+scr_text("Слушай, тебе же завтра надо будет идти в школу?",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
+scr_text("Заведи там как можно больше друзей. Познакомься со всеми своими одноклассниками.",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
+scr_text("Так ты сразу станешь душой компании.",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
+scr_text("Вот, например, когда твоя мама встретиля меня во время прогулки...",noone,noone,noone,"Папа",noone,0.6,"Font_main",noone);
 scr_text("...",noone, "Майк",noone,noone,noone,0.6,"Font_main",noone);
-scr_text("(Я посмотрел в окно, как будто игнорируя это предупреждение)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
+scr_text("(Я посмотрел в окно, как будто игнорируя продолжение этой фразы)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone);
 scr_text("(Хочу просто оказаться снова у себя в старом домике.)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
 scr_text("(Я попробовал прикрыть глаза, сфокусировавшись на своих мыслях)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
 scr_text("(Мои родители долго ждали повышения, и внезапно им предложили новое дело за тридевять земель...)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone,function(){scr_black(black_no,-1);obj_payer.battle=0;});
@@ -175,7 +148,7 @@ scr_text("(Боялся принять это.)",noone, "Майк",noone,noone,n
 scr_text("(Как же я жалею об этом...)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
 scr_text("(...)",noone, "Майк",noone,noone,noone,0.6,"Font_think",noone,function(){obj_payer.phy_position_x=300;obj_payer.phy_position_y=125;obj_payer.sprite_index=spsd_;});
 scr_text("(Вскоре автобус остановился.)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
-scr_text("Так, давайте, это наша остановка.",noone,noone,noone,_mam);
+scr_text("Так, давайте, это наша остановка.",noone,noone,noone,"Мама");
 scr_text("(Мы забрали свои вещи, и быстро покинули автобус.)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
 scr_text("(Ну, с собой у нас только очень малая часть вещей...)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
 scr_text("(Остальная их часть ехала отдельно от нас)",noone, "Майк",noone,noone,noone,0.6,"Font_think");
@@ -184,26 +157,29 @@ scr_text("(А автобус с другими людьми сразу же уе
 scr_text("(На улице уже довольно темно и прохладно... Не думал, что мы будем ехать так долго.)",noone, "Майк","Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_night,1);obj_pic.picture=noone;scr_sound_sette(0,Sng_Feeling_empty,true,0.5);scr_sound_sette(1,Sng_First_evening,true,1);});
 scr_text("Ох, вы наконец-то тут.",noone,noone,"Mike","???");
 scr_text("А? Кто Вы?",noone, "Майк","Mike",noone,noone,0.6,"Font_main",noone,function(){obj_payer.faza[9]=156;obj_payer.faza[10]="sasha_down_no";obj_payer.faza[11]=1;},"?","mike",1);
-scr_text("Привет, Саша. Как долго ты уже тут?",noone,noone,"Mike",_dad,"Papa");
-scr_text("Буквально пару дней назад приехали.",noone,noone,"Mike",_sasha,"Sasha");
-scr_text("Ну, нам-то в отличие от вас ехать надо было совсем немного.",noone,noone,"Mike",_sasha,"Sasha");
-scr_text("Майк, это Александр. Он наш знакомый по работе.",noone,noone,"Mike",_mam,"Mama");
+scr_text("Привет, Саша. Как долго ты уже тут?",noone,noone,"Mike","Папа","Papa");
+scr_text("Буквально пару дней назад приехали.",noone,noone,"Mike","Александр","Sasha");
+scr_text("Ну, нам-то в отличие от вас ехать надо было совсем немного.",noone,noone,"Mike","Александр","Sasha");
+scr_text("Майк, это Александр. Он наш знакомый по работе.",noone,noone,"Mike","Мама","Mama");
 scr_text("Здравствуйте...",noone, "Майк","Mike",noone,"Sasha");
-scr_text("Что такой бледный? Укачало в дороге?",noone,noone,"Mike",_sasha,"Sasha");
+scr_text("Что такой бледный? Укачало в дороге?",noone,noone,"Mike","Александр","Sasha");
 scr_text("(... да нет, просто чуть не умер во сне...)",noone, "Майк","Mike_awk",noone,"Sasha",0.6,"Font_think");
 scr_text("Нет, всё вроде нормально.",noone, "Майк","Mike",noone,"Sasha");
-scr_text("Чтож, тогда надеюсь что здесь тебе понравится.",noone,noone,"Mike",_sasha,"Sasha");
-scr_text("Наши вещи уже там?",noone,noone,"Mike",_mam,"Mama");
-scr_text("Да, Они приехали часов пять назад, Анечка помогла мне их занести.",noone,noone,"Mike",_sasha,"Sasha");
+scr_text("Чтож, тогда надеюсь что здесь тебе понравится.",noone,noone,"Mike","Александр","Sasha");
+scr_text("Наши вещи уже там?",noone,noone,"Mike","Мама","Mama");
+scr_text("Да, Они приехали часов пять назад, Анечка помогла мне их занести.",noone,noone,"Mike","Александр","Sasha");
 scr_text("О чём вы?",noone, "Майк","Mike",noone,"Sasha");
-scr_text("Понимаешь, из-за обстоятельств на работе вам была выделена часть общежития, рассчитанного на две семьи.",noone,noone,"Mike",_sasha,"Sasha");
-scr_text("И мы являемся второй семьёй в нём.",noone,noone,"Mike",_sasha,"Sasha");
+scr_text("Понимаешь, из-за обстоятельств на работе вам была выделена часть общежития, рассчитанного на две семьи.",noone,noone,"Mike","Александр","Sasha");
+scr_text("И мы являемся второй семьёй в нём.",noone,noone,"Mike","Александр","Sasha");
 scr_text("Ага... А что за обстоятельства такие?",noone, "Майк","Mike",noone,"Sasha");
-scr_text("Так нам просто будет проще работать.",noone,noone,"Mike",_sasha,"Sasha");
+scr_text("Так нам просто будет проще работать.",noone,noone,"Mike","Александр","Sasha");
 scr_text("Извините, но можно ещё один вопрос...",noone, "Майк","Mike_awk",noone,"Sasha");
 scr_text("А Аня - это, получается, ваша жена?",noone, "Майк","Mike",noone,"Sasha");
-scr_text("Это моя дочь.",noone,noone,"Mike",_sasha,"Sasha");
-//global.main_quests[1].activation=1
+scr_text("Это моя дочь.",noone,noone,"Mike","Александр","Sasha");
+scr_No_option("First talk quest")
+break;
+case "First talk quest":
+global.main_quests[1].activation=1;
 scr_text("Оу...",noone, "Майк","Mike_awk",noone,"Sasha",0.6,"Font_main",noone,function(){obj_payer.faza[0]=0.1;});
 
 if os_type = os_android
@@ -217,13 +193,13 @@ scr_text("*Для открытия меню исполшьзовать Еsc*",no
 break;
 
 case "car_sasha":
-scr_text("Хм...",noone,noone,"Mike",_sasha,"Sasha");
-scr_text("Ты ведь точно в порядке?",noone,noone,"Mike",_sasha,"Sasha");
+scr_text("Хм...",noone,noone,"Mike","Александр","Sasha");
+scr_text("Ты ведь точно в порядке?",noone,noone,"Mike","Александр","Sasha");
 scr_text("Да, всё хорошо.",noone, "Майк","Mike_awk",noone,"Sasha",0.6,"Font_main","end");
 break;
 
 case "car_papa":
-scr_text("Надеюсь, тебе понравится проводить время с сестрой.",noone,noone,"Mike",_dad,"Papa");
+scr_text("Надеюсь, тебе понравится проводить время с сестрой.",noone,noone,"Mike","Папа","Papa");
 scr_text("Я тоже...",noone, "Майк","Mike",noone,"Papa");
 scr_text("(Интересно, куда уехала её мама?)",noone, "Майк","Mike",noone,"Papa",0.6,"Font_think");
 scr_text("(Моя тётя?)",noone, "Майк","Mike",noone,"Papa",0.6,"Font_think");
@@ -231,17 +207,17 @@ scr_text("([c_yellow]Аврора[c_white])",noone, "Майк","Mike",noone,"Pap
 break;
 
 case "car_mama":
-scr_text("Ты готов идти домой?",noone,noone,"Mike",_mam,"Mama");
+scr_text("Ты готов идти домой?",noone,noone,"Mike","Мама","Mama");
 scr_option("Нет","car_mama_no","No");
 scr_option("Да","car_mama_yes","Yes");
 break;
 case "car_mama_no":
 scr_text("Ещё нет.",noone, "Майк","Mike",noone,"Mama");
-scr_text("Хорошо, тогда мы подождём твоей готовности.",noone,noone,"Mike",_mam,"Mama",0.6,"Font_main","end");
+scr_text("Хорошо, тогда мы подождём твоей готовности.",noone,noone,"Mike","Мама","Mama",0.6,"Font_main","end");
 break;
 case "car_mama_yes":
 scr_text("Ага.",noone, "Майк","Mike",noone,"Mama");
-scr_text("Ну, тогда пошли.",noone,noone,"Mike",_mam,"Mama");
+scr_text("Ну, тогда пошли.",noone,noone,"Mike","Мама","Mama");
 scr_text("(Александр сопроводил нас в наш новый дом)",noone, "Майк","Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_night,-1);scr_sound_sette(0,Sng_First_evening,true,1);});
 scr_text("(На улице уже так темно...)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("...",Snd_walk_ground,noone,noone,noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=0;obj_payer.faza[10]=0;obj_payer.faza[11]=0;});
@@ -251,36 +227,36 @@ scr_text("(И вот, мы пришли.)",noone, "Майк","Mike",noone,noone,
 //case "First_night_home":
 scr_text("...",Snd_walk_ground,noone,noone,noone,noone,0.6,"Font_think",noone,function(){room_goto(room_home);scr_black(black_no,1)});
 scr_text("Папа? Ты уже вернулся?",noone,noone,"Mike","???","Anya",0.6,"Font_main",noone,function(){scr_sound_sette(1,Sng_Slowly,true,0);});
-scr_text("Да.",noone,_sasha,"Sasha",noone,"Anya");
+scr_text("Да.",noone,"Александр","Sasha",noone,"Anya");
 scr_text("А кто эти люди? Это твои коллеги по работе?",noone,noone,"Sasha","???","Anya");
-scr_text("Я пока поговорю с ними, а ты познакомься с вот ним.",noone,_sasha,"Sasha",noone,"Anya");
+scr_text("Я пока поговорю с ними, а ты познакомься с вот ним.",noone,"Александр","Sasha",noone,"Anya");
 scr_text("Привет...",noone, "Майк","Mike","???","Anya",0.5,"Font_main",noone,function(){obj_payer.faza[10]="anna_s_left";obj_payer.sprite_index=spgr_});
 scr_text("Хм?",noone,noone,"Mike","???","Anya",);
 scr_text("...",noone,noone,"Mike","???","Anya",);
-scr_text("Меня зовут Аня.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А тебя как?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Меня зовут Аня.",noone,noone,"Mike","Аня","Anya");
+scr_text("А тебя как?",noone,noone,"Mike","Аня","Anya");
 scr_text("Меня?",noone, "Майк","Mike",noone,"Anya");
-scr_text("Ну, да.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ну, да.",noone,noone,"Mike","Аня","Anya");
 scr_text("Меня зовут Майк.",noone, "Майк","Mike",noone,"Anya");
-scr_text("Майк...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Майк...",noone,noone,"Mike","Аня","Anya");
 scr_text("Эм... и чем ты здесь занимаешься?",noone, "Майк","Mike",noone,"Anya");
-scr_text("Просто живу. А что ты вообще ожидаешь услышать?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Просто живу. А что ты вообще ожидаешь услышать?",noone,noone,"Mike","Аня","Anya");
 scr_text("Аа... да, я что-то не подумал.",noone, "Майк","Mike_awk",noone,"Anya_awk");
-scr_text("*вздох*",noone,noone,"Mike_awk",_anya,"Anya_awk");
-scr_text("А кстати, а зачем вы приехали сюда?",noone,noone,"Mike",_anya,"Anya");
+scr_text("*вздох*",noone,noone,"Mike_awk","Аня","Anya_awk");
+scr_text("А кстати, а зачем вы приехали сюда?",noone,noone,"Mike","Аня","Anya");
 scr_text("Ну... мама с папой получили повышение и...",noone, "Майк","Mike",noone,"Anya");
-scr_text("Не, это-то всё понятно.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Я говорю про [c_yellow]настоящую причину[c_white].",noone,noone,"Mike",_anya,"Anya");
+scr_text("Не, это-то всё понятно.",noone,noone,"Mike","Аня","Anya");
+scr_text("Я говорю про [c_yellow]настоящую причину[c_white].",noone,noone,"Mike","Аня","Anya");
 scr_text("А?",noone, "Майк","Mike",noone,"Anya");
-scr_text("Стой, так ты не придумывал это?",noone,noone,"Mike",_anya,"Anya_sur");
-scr_text("Мх, ладно, не важно...",noone,noone,"Mike",_anya,"Anya_awk");
-scr_text("...",noone,noone,"Mike",_anya,"Anya_awk");
+scr_text("Стой, так ты не придумывал это?",noone,noone,"Mike","Аня","Anya_sur");
+scr_text("Мх, ладно, не важно...",noone,noone,"Mike","Аня","Anya_awk");
+scr_text("...",noone,noone,"Mike","Аня","Anya_awk");
 scr_text("(Она попыталась быстро уйти от темы.)",noone, "Майк","Mike",noone,"Anya_awk",0.6,"Font_think");
-scr_text("Так или иначе, но я пойду в мою комнату.",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main",noone,function(){obj_payer.faza[9]=143;obj_payer.faza[10]="anna_up_no";obj_payer.faza[11]=1.5;});
-scr_text("... О, и кстати, не забывай стучать, прежде чем будешь входить ко мне.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Так или иначе, но я пойду в мою комнату.",noone,noone,"Mike","Аня","Anya",0.6,"Font_main",noone,function(){obj_payer.faza[9]=143;obj_payer.faza[10]="anna_up_no";obj_payer.faza[11]=1.5;});
+scr_text("... О, и кстати, не забывай стучать, прежде чем будешь входить ко мне.",noone,noone,"Mike","Аня","Anya");
 scr_text("(...)",noone, "Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("Ладно. Как будто я этого обычно не делаю...",noone, "Майк","Mike",noone,"Anya");
-scr_text("Не, ну а вдруг. Разные же люди попадаются",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main",noone,function(){scr_black(black_no,-1.5)});
+scr_text("Не, ну а вдруг. Разные же люди попадаются",noone,noone,"Mike","Аня","Anya",0.6,"Font_main",noone,function(){scr_black(black_no,-1.5)});
 scr_text("(C этими словами она поспешила вверх по лестнице)",noone, "Майк","Mike",noone,noone,0.6,"Font_think",noone,function(){obj_payer.faza[9]=-640;obj_payer.faza[10]="anna_left";obj_payer.faza[11]=2;});
 scr_text("(Видимо, наши комнаты находятся там.)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("Но что за [c_yellow]настоящая причина[c_white]?",noone, "Майк","Mike",noone,noone,0.6,"Font_main");
@@ -296,8 +272,8 @@ scr_text("(Надеюсь, там никто не прячется...)",noone, "
 break;
 
 case "home_adults":
-scr_text("Но они ведь ещё дети. Думаешь, стоит им говорить?",noone, noone,"Mike",_mam,"Mama");
-scr_text("Наверное, лучше будет подождать, дабы не делать опрометчивых действий.",noone, noone,"Mike",_dad,"Papa");
+scr_text("Но они ведь ещё дети. Думаешь, стоит им говорить?",noone, noone,"Mike","Мама","Mama");
+scr_text("Наверное, лучше будет подождать, дабы не делать опрометчивых действий.",noone, noone,"Mike","Папа","Papa");
 scr_text("...",noone, "Майк","Mike");
 scr_text("(Не думаю, что они готовы говорить со мной прямо сейчас...)",noone, "Майк","Mike_awk",noone,noone,0.6,"Font_think","end");
 break;
@@ -318,13 +294,13 @@ scr_text("Ой!",noone,noone,"Mike","???","Masha");
 scr_text("Майк, это ты!",noone,noone,"Mike","???","Masha");
 scr_text("(Маша... моя двоюродная сестра)",noone,"Майк","Mike",noone,"Masha",0.6,"Font_think");
 scr_text("(Она так выросла с момента последней нашей встречи)",noone,"Майк","Mike",noone,"Masha",0.6,"Font_think");
-scr_text("Мне обещали, что ты придешеь оооочень поздно, что я буду уже спать и тебя не увижу.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Мне обещали, что ты придешеь оооочень поздно, что я буду уже спать и тебя не увижу.",noone,noone,"Mike","Маша","Masha");
 scr_text("Видимо нам повезло со светофорами.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ииили я просто не легла спать...",noone,noone,"Mike",_masha,"Masha");
-scr_text("В любом случае, это оправдано!",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ииили я просто не легла спать...",noone,noone,"Mike","Маша","Masha");
+scr_text("В любом случае, это оправдано!",noone,noone,"Mike","Маша","Masha");
 scr_text("О чём ты?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ну, кто ещё бы тут провёл тебе экскурсию по дому?",noone,noone,"Mike",_masha,"Masha");
-scr_text("Правда, только по второму этажу...						...не хочу чтоб взрослые увидели что я ещё не в кровати.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ну, кто ещё бы тут провёл тебе экскурсию по дому?",noone,noone,"Mike","Маша","Masha");
+scr_text("Правда, только по второму этажу...						...не хочу чтоб взрослые увидели что я ещё не в кровати.",noone,noone,"Mike","Маша","Masha");
 scr_No_option("home_2floor1");
 break
 case "home_2floor1":
@@ -333,11 +309,11 @@ obj_payer.faza[10]="masha_up_no";
 obj_payer.faza[11]=1.5;
 obj_payer.fake_up=1;
 obj_payer.stop_y=373;
-scr_text("Итак, слева- ой, то есть справа от нас комната, где будут жить дядя с тётей.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Ну, мои дядя с тётей, твои мама с папой.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Итак, слева- ой, то есть справа от нас комната, где будут жить дядя с тётей.",noone,noone,"Mike","Маша","Masha");
+scr_text("Ну, мои дядя с тётей, твои мама с папой.",noone,noone,"Mike","Маша","Masha");
 scr_text("Не волнуйся, я понял.",noone,"Майк","Mike",noone,"Masha");
-scr_text("А слева от нас живёт папа у Ани.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Аня - это такая девочка тут живёт, она там только что проходила.",noone,noone,"Mike",_masha,"Masha");
+scr_text("А слева от нас живёт папа у Ани.",noone,noone,"Mike","Маша","Masha");
+scr_text("Аня - это такая девочка тут живёт, она там только что проходила.",noone,noone,"Mike","Маша","Masha");
 scr_text("Да, я уже с ней виделся.",noone,"Майк","Mike",noone,"Masha");
 scr_No_option("home_2floor2");
 break
@@ -347,9 +323,9 @@ obj_payer.faza[10]="masha_up_no";
 obj_payer.faza[11]=2;
 obj_payer.fake_up=1;
 obj_payer.stop_y=256;
-scr_text("Аа...",noone,noone,"Mike",_masha,"Masha");
-scr_text("Ну, дальше у нас справа моя комната, а слева Анина.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Представь, мы вот так рядом совсем!",noone,noone,"Mike",_masha,"Masha");
+scr_text("Аа...",noone,noone,"Mike","Маша","Masha");
+scr_text("Ну, дальше у нас справа моя комната, а слева Анина.",noone,noone,"Mike","Маша","Masha");
+scr_text("Представь, мы вот так рядом совсем!",noone,noone,"Mike","Маша","Masha");
 scr_text("Мхм.",noone,"Майк","Mike",noone,"Masha");
 scr_No_option("home_2floor3");
 break
@@ -359,25 +335,25 @@ obj_payer.faza[10]="masha_up_no";
 obj_payer.faza[11]=2.6;
 obj_payer.fake_up=1;
 obj_payer.stop_y=130;
-scr_text("И вот тут уже твоя комната слева- ой, то есть справа...",noone,noone,"Mike",_masha,"Masha");
+scr_text("И вот тут уже твоя комната слева- ой, то есть справа...",noone,noone,"Mike","Маша","Masha");
 scr_text("А слева тогда кто?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ммм... Я не знаю.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Вроде бы там брат Ани, но я его особо вообще не видела.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ммм... Я не знаю.",noone,noone,"Mike","Маша","Masha");
+scr_text("Вроде бы там брат Ани, но я его особо вообще не видела.",noone,noone,"Mike","Маша","Masha");
 scr_text("А подожди, а где тогда ванная?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Она вместе с туалетом на первом этаже.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Может показаться, что там под лестницей кладовка или что-то такое, но это не так!",noone,noone,"Mike",_masha,"Masha");
-scr_text("Этот дом не так прост как кажется.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Она вместе с туалетом на первом этаже.",noone,noone,"Mike","Маша","Masha");
+scr_text("Может показаться, что там под лестницей кладовка или что-то такое, но это не так!",noone,noone,"Mike","Маша","Masha");
+scr_text("Этот дом не так прост как кажется.",noone,noone,"Mike","Маша","Masha");
 scr_text("Звучиш так, будто ты сама его проектировала.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ну нет конечтно... мне просто нравится...",noone,noone,"Mike",_masha,"Masha");
-scr_text("*зивок*",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ну нет конечтно... мне просто нравится...",noone,noone,"Mike","Маша","Masha");
+scr_text("*зивок*",noone,noone,"Mike","Маша","Masha");
 scr_text("Мне кажется, тебе уже пора спать.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Но я не хочу ешё...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Но я не хочу ешё...",noone,noone,"Mike","Маша","Masha");
 scr_text("Но подожди, разве тебе завтра не надо будет уже идти в школу?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ой...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ой...",noone,noone,"Mike","Маша","Masha");
 scr_text("Хмх, давай, завтра должен быть насыщенный день для нас обоих.",noone,"Майк","Mike",noone,"Masha");
-scr_text("ладно...",noone,noone,"Mike",_masha,"Masha");
+scr_text("ладно...",noone,noone,"Mike","Маша","Masha");
 scr_text("Спокойной ночи.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Спокойной ночи, приятных снов, и добрых сказок!",noone,noone,"Mike",_masha,"Masha");
+scr_text("Спокойной ночи, приятных снов, и добрых сказок!",noone,noone,"Mike","Маша","Masha");
 scr_text("Хехе, это ты откуда взяла?",noone,"Майк","Mike",noone,"Masha");
 scr_No_option("home_2floor4");
 break
@@ -386,16 +362,16 @@ obj_payer.faza[9]=248;
 obj_payer.faza[10]="masha_down";
 obj_payer.faza[11]=2;
 obj_payer.sprite_index=spgd_
-scr_text("Сама придумала.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Сама придумала.",noone,noone,"Mike","Маша","Masha");
 scr_text("Ну ладно...",noone,"Майк","Mike",noone,"Masha");
-scr_text("Маме всегда нравилась эта фраза.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Маме всегда нравилась эта фраза.",noone,noone,"Mike","Маша","Masha");
 scr_No_option("home_2floor4.1");
 break
 case "home_2floor4.1":
 obj_payer.faza[9]=248;
 obj_payer.faza[10]="masha_down_no";
 obj_payer.faza[11]=2;
-scr_text("Поскорей бы она уже вернулась...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Поскорей бы она уже вернулась...",noone,noone,"Mike","Маша","Masha");
 scr_No_option("home_2floor5");
 break
 case "home_2floor5":
@@ -421,9 +397,9 @@ break;
 
 case "home_door_anna_0":
 scr_text("(Заперто)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Я же сказала, стучись перед тем как войти!",noone,noone,"Mike",_anya,"Anya");
+scr_text("Я же сказала, стучись перед тем как войти!",noone,noone,"Mike","Аня","Anya");
 scr_text("[jitter]Извини[/jitter], я даже не знал, что это твоя комната.",noone, "Майк","Mike_awk",noone,"Anya");
-scr_text("*вздох*",noone,noone,"Mike_awk",_anya,"Anya",0.6,"Font_main","end");
+scr_text("*вздох*",noone,noone,"Mike_awk","Аня","Anya",0.6,"Font_main","end");
 break;
 
 case "home_door_make_0":
@@ -524,8 +500,7 @@ scr_text("Скованные, Вы не могли двигаться, не мо
 scr_No_option("home_make_faceless_1.");
 break*/
 case "home_make_faceless_1":
-//global.main_quests[1].activation=2
-//scr_text("(Так вот что произошло со мной тогда...)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
+
 //scr_text("(Сказав это он протянул мне чашу воды.)",noone, "Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("Вы хотите пить? Впервые попав в этот мир, Вы можете испытывать усталость.",noone,noone,"Mike","???","Faceless");
 scr_option("Нет","home_make_faceless_1.1","No");
@@ -556,37 +531,37 @@ scr_text("Именно Ваше старание позволило мне на�
 scr_text("А кто вы такой?",noone, "Майк","Mike",noone,"Faceless");
 scr_text("Как вас зовут?",noone, "Майк","Mike",noone,"Faceless");
 scr_text("Моё имя?.. ...",noone,noone,"Mike","???","Faceless");
-scr_text("Безликий.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Безликий.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Необычное имя.",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Да, но подходит мне оно лучше некуда.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Да, но подходит мне оно лучше некуда.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Почему?",noone, "Майк","Mike",noone,"Faceless");
-scr_text("У меня буквально нет лица.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Иначе я бы не носил свою маску...",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("У меня буквально нет лица.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Иначе я бы не носил свою маску...",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone, "Майк","Mike_awk",noone,"Faceless");
-scr_text("Что-то не так?",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Что-то не так?",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Просто-",noone, "Майк","Mike",noone,"Faceless");
 scr_text("Просто... я задумался.",noone, "Майк","Mike",noone,"Faceless");
 scr_text("Это ведь сон, так ведь?",noone, "Майк","Mike",noone,"Faceless");
 scr_text("Ведь ложиться спать в своей комнате, а просыпаться чёрт знает где... немного необычно.",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Да, это действительно сон.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Да, это действительно сон.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Но тогда почему мои чувства в нём столь реалистичны?",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Всё потому что ''сон'' этот не обычный.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Всё потому что ''сон'' этот не обычный.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Что это значит?",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Видите ли... Я создатель всех людских снов.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("И реальным этот ''сон'' для Вас сделало моё [c_yellow]Доверие[c_white].",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Видите ли... Я создатель всех людских снов.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("И реальным этот ''сон'' для Вас сделало моё [c_yellow]Доверие[c_white].",noone,noone,"Mike","Безликий","Faceless");
 scr_text("До...верие?",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Это то, что такие существа как я могут дать Вам.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("С его помощью Вы можете находиться в этом мире так же, как и в своём собственном.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Это то, что такие существа как я могут дать Вам.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("С его помощью Вы можете находиться в этом мире так же, как и в своём собственном.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Мх... У меня ещё так много вопросов...",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Извините меня, но похоже Вам придётся сохранить свои вопросы до нашей следующей встречи.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Извините меня, но похоже Вам придётся сохранить свои вопросы до нашей следующей встречи.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("А?",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Всё-таки будет на правильно продолжать нашу беседу не дождавшись [c_yellow]второго гостя[c_white].",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Всё-таки будет на правильно продолжать нашу беседу не дождавшись [c_yellow]второго гостя[c_white].",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Ч- что?",noone, "Майк","Mike",noone,"Faceless");
 scr_text("(Не успев закончить мысль я начал как будто выпадать из своего окружения)",noone, "Майк","Mike",noone,"Faceless",0.6,"Font_think",noone,function(){/*scr_black(white_no,-0.5)*/});
 scr_text("Стойте!",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Не волнуйтесь. У нас ещё будет время.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("А пока что...",noone,noone,"Mike",_faceless,"Faceless",0.6,"Font_main");
-scr_text("До свидания. Надеюсь, мы встретимся следующей ночью.",noone,noone,"Mike",_faceless,"Faceless",0.6,"Font_main",noone,function(){room_goto(room_room)});
+scr_text("Не волнуйтесь. У нас ещё будет время.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("А пока что...",noone,noone,"Mike","Безликий","Faceless",0.6,"Font_main");
+scr_text("До свидания. Надеюсь, мы встретимся следующей ночью.",noone,noone,"Mike","Безликий","Faceless",0.6,"Font_main",noone,function(){room_goto(room_room)});
 scr_text("?!",noone, "Майк","Mike",noone,noone,0.6,"Font_think",noone,function(){scr_black(black_no,1);obj_time.time_change=0;obj_pic.picture=no_no;scr_sound_sette(0,Sng_Timeless,true,0);obj_payer.sprite_index=spgl_});
 scr_text("(Внезапно я вернулся в реальность, от чего чуть ли не выпал с кровати)",noone, "Майк","Mike",noone,noone,0.6,"Font_think",noone);
 scr_text("(Быстро огляделся вокруг)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
@@ -600,11 +575,11 @@ obj_payer.sprite_index=spgl_
 scr_text("*Тук тук тук*",noone,noone,noone,noone,noone,0.6,"Font_main",noone,function(){obj_payer.phy_position_x=490;obj_payer.phy_position_y=180;});
 scr_text("А?",noone, "Майк","Mike",noone,noone);
 scr_text("(Внезапные стуки в дверь снова встревожили меня)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Вставай, а то в школу опоздаешь.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Вставай, а то в школу опоздаешь.",noone,noone,"Mike","Аня","Anya");
 scr_text("[jitter]Д- да[/jitter]... я уже встал.",noone, "Майк","Mike",noone,noone);
-scr_text("И одеться для школы не забудь.",noone, noone,"Mike",_anya,"Anya");
+scr_text("И одеться для школы не забудь.",noone, noone,"Mike","Аня","Anya");
 scr_text("? Но мне ведь ещё не выдали школьную форму.",noone, "Майк","Mike",noone,noone);
-scr_text("У нас и не будет личной школьной формы. Просто надень какую-нибудь нарядную одежду.",noone, noone,"Mike",_anya,"Anya");
+scr_text("У нас и не будет личной школьной формы. Просто надень какую-нибудь нарядную одежду.",noone, noone,"Mike","Аня","Anya");
 
 scr_No_option("home_make_school");
 break;
@@ -679,7 +654,7 @@ case "home_make_school2":
 scr_black(black_black,0);
 obj_payer.phy_position_x=190;
 obj_payer.phy_position_y=300;
-scr_text("Ты уже готов?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ты уже готов?",noone,noone,"Mike","Аня","Anya");
 scr_text("Почти...",noone, "Майк","Mike",noone,"Anya");
 scr_text("(Стоит ли мне так же надеть жилет?)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
 scr_option("Нет","home_make_school2.1","No");
@@ -690,7 +665,7 @@ obj_payer.cloth="school"
 obj_payer.sprite_index=spgd_s
 scr_black(black_no,1)
 room_goto(room_home1);
-scr_text("[shake]...[/shake]",noone,noone,"Mike",_anya,"Anya");
+scr_text("[shake]...[/shake]",noone,noone,"Mike","Аня","Anya");
 scr_No_option("home_make_school3");
 break;
 case "home_make_school2.2":
@@ -698,12 +673,12 @@ obj_payer.cloth="school_1"
 obj_payer.sprite_index=spgd_s_1
 scr_black(black_no,1)
 room_goto(room_home1);
-scr_text("[shake]...[/shake]",noone,noone,"Mike",_anya,"Anya");
+scr_text("[shake]...[/shake]",noone,noone,"Mike","Аня","Anya");
 scr_No_option("home_make_school3");
 break;
 case "home_make_school3":
-scr_text("А по лучше ничего не было?",noone,noone,"Mike_awk",_anya,"Anya");
-scr_text("Хотя... ладно, и так сойдёт.",noone,noone,"Mike_awk",_anya,"Anya");
+scr_text("А по лучше ничего не было?",noone,noone,"Mike_awk","Аня","Anya");
+scr_text("Хотя... ладно, и так сойдёт.",noone,noone,"Mike_awk","Аня","Anya");
 scr_No_option("home_make_school4");
 break;
 case "home_make_school4":
@@ -721,49 +696,45 @@ switch(obj_payer.cloth)
 	break;
 	}
 scr_text("О? Майк, это ты?",noone,noone,"Mike",noone,"Anya");
-scr_text("Привет...",noone,noone,"Mike","???","Masha");
+scr_text("Привет...",noone,noone,"Mike","Маша","Masha");
 scr_text("*вздох*",noone, "Майк","Mike",noone,"Masha");
-scr_text("(Маша... моя двоюродная сестра...)",noone, "Майк","Mike",noone,"Masha",0.6,"Font_think");
-scr_text("(И когда она успела так вырасти?)",noone, "Майк","Mike",noone,"Masha",0.6,"Font_think");
-scr_text("(Она уже носит мою старую футболку...)",noone, "Майк","Mike",noone,"Masha",0.6,"Font_think");
-scr_text("(Хоть она ей всё ещё велика.)",noone, "Майк","Mike",noone,"Masha",0.6,"Font_think");
 scr_text("Привет, Маш... Давно не виделись.",noone, "Майк","Mike",noone,"Masha");
-scr_text(":D",noone,noone,"Mike",_masha,"Masha");
-scr_text("Кстати... А можно мне...",noone,noone,"Mike",_masha,"Masha");
-scr_text("Маш, поговоришь с ним попозже? А то мы можем опоздать.",noone, _anya,"Anya",noone,"Masha");
-scr_text("А куда? Вы идёте куда-то?",noone,noone,"Anya",_masha,"Masha");
+scr_text(":D",noone,noone,"Mike","Маша","Masha");
+scr_text("Кстати... А можно мне...",noone,noone,"Mike","Маша","Masha");
+scr_text("Маш, поговоришь с ним попозже? А то мы можем опоздать.",noone,"Аня","Anya",noone,"Masha");
+scr_text("А куда? Вы идёте куда-то?",noone,noone,"Anya","Маша","Masha");
 scr_text("Да, мы идём в школу.",noone, "Майк","Mike",noone,"Masha");
-scr_text("[wave]Школу[wave]? А зачем?",noone,noone,"Mike",_masha,"Masha");
+scr_text("[wave]Школу[wave]? А зачем?",noone,noone,"Mike","Маша","Masha");
 scr_text("Хороший вопрос...",noone, "Майк","Mike",noone,"Masha");
-scr_text("Нам необходимо это для нашего развития.",noone, _anya,"Anya",noone,"Masha");
-scr_text("А в мультиках не так говорилось...",noone,noone,"Anya",_masha,"Masha");
-scr_text("Там сказали, что в школе общаются с друзьями.",noone,noone,"Anya",_masha,"Masha");
-scr_text("И что все дети там - это супер герои, что скрывают это...",noone,noone,"Anya",_masha,"Masha");
-scr_text("О! И ещё там должно быть много интересных игр.",noone,noone,"Anya",_masha,"Masha");
+scr_text("Нам необходимо это для нашего развития.",noone,"Аня","Anya",noone,"Masha");
+scr_text("А в мультиках не так говорилось...",noone,noone,"Anya","Маша","Masha");
+scr_text("Там сказали, что в школе общаются с друзьями.",noone,noone,"Anya","Маша","Masha");
+scr_text("И что все дети там - это супер герои, что скрывают это...",noone,noone,"Anya","Маша","Masha");
+scr_text("О! И ещё там должно быть много интересных игр.",noone,noone,"Anya","Маша","Masha");
 scr_text("Но в реальности там больше учатся, чем играют.",noone, "Майк","Mike",noone,"Masha");
-scr_text("А почему нельзя и то и другое?",noone,noone,"Mike",_masha,"Masha");
-scr_text("Учиться и играть вместе?",noone,noone,"Mike",_masha,"Masha");
+scr_text("А почему нельзя и то и другое?",noone,noone,"Mike","Маша","Masha");
+scr_text("Учиться и играть вместе?",noone,noone,"Mike","Маша","Masha");
 scr_text("Наверное, потому что это слишком сложно.",noone, "Майк","Mike",noone,"Masha");
-scr_text("(0 __ 0)",noone,noone,"Mike",_masha,"Masha")
-scr_text("А... когда ты вернёшься, мы поиграем вместе?",noone,noone,"Mike",_masha,"Masha")
-scr_text("...а то без мамы скучно...",noone,noone,"Mike",_masha,"Masha")
+scr_text("(0 __ 0)",noone,noone,"Mike","Маша","Masha")
+scr_text("А... когда ты вернёшься, мы поиграем вместе?",noone,noone,"Mike","Маша","Masha")
+scr_text("...а то без мамы скучно...",noone,noone,"Mike","Маша","Masha")
 scr_text("Хорошо.",noone, "Майк","Mike",noone,"Masha");
-scr_text("Майк, пошли быстрее, если не хочешь опоздать.",noone, _anya,"Anya",noone,"Masha");
+scr_text("Майк, пошли быстрее, если не хочешь опоздать.",noone,"Аня","Anya",noone,"Masha");
 scr_text("Ладно, ладно...",noone, "Майк","Mike",noone,"Masha");
-scr_text("Но тогда хотя бы возьми эту конфетку!",noone, noone,"Mike",_masha,"Masha");
-scr_text("Я её специально для тебя подготовила.",noone, noone,"Mike",_masha,"Masha");
+scr_text("Но тогда хотя бы возьми эту конфетку!",noone, noone,"Mike","Маша","Masha");
+scr_text("Я её специально для тебя подготовила.",noone, noone,"Mike","Маша","Masha");
 scr_No_option("home_make_school5");
 break;
 case "home_make_school5":
 inv_add(obj_inventory_give,2)
 inv_swap(obj_inventory_give,0,obj_inventory_give,4)
-scr_text("Просто возьми и перетащи её себе в карманы).",noone, noone,"Mike",_masha,"Masha");
+scr_text("Просто возьми и перетащи её себе в карманы).",noone, noone,"Mike","Маша","Masha");
 scr_text("С- спасибо...",noone, "Майк","Mike",noone,"Masha");
-scr_text("Всегда пожалйста!",noone, noone,"Mike",_masha,"Masha");
+scr_text("Всегда пожалйста!",noone, noone,"Mike","Маша","Masha");
 scr_text("Ладно, нам уже пора идти...",noone, "Майк","Mike",noone,"Masha");
-scr_text("Пока, Маш.",noone, _anya,"Anya",noone,"Masha");
+scr_text("Пока, Маш.",noone,"Аня","Anya",noone,"Masha");
 scr_text("Увидимся после школы.",noone, "Майк","Mike",noone,"Masha");
-scr_text("...",noone,noone,"Mike",_masha,"Masha")
+scr_text("...",noone,noone,"Mike","Маша","Masha")
 scr_No_option("home_make_school_end");
 break;
 
@@ -773,8 +744,8 @@ obj_payer.faza[9]=740;
 obj_payer.faza[10]="anna_down";
 obj_payer.faza[11]=1.35;
 scr_black(black_no,-0.7)
-scr_text("А ''после школы'' - это когда?",noone,noone,"Mike",_masha,"Masha")
-scr_text("...",noone,noone,"Mike",_masha,"Masha")
+scr_text("А ''после школы'' - это когда?",noone,noone,"Mike","Маша","Masha")
+scr_text("...",noone,noone,"Mike","Маша","Masha")
 scr_No_option("home_go_school");
 break;
 
@@ -806,7 +777,7 @@ switch(obj_payer.cloth)
 scr_text("Улица...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Когда я в прошлый раз был тут было очень темно.",noone,"Майк","Mike",noone,"Anya");
 scr_text("Сейчас здесь намного красивее...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ладно. Пошли скорее...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ладно. Пошли скорее...",noone,noone,"Mike","Аня","Anya");
 scr_No_option("home_go_school3");
 break;
 case "home_go_school3":
@@ -844,7 +815,7 @@ scr_text("Новенькие? Наконец то, а то тут уже ста�
 scr_text("А сколько нас должно быть в итоге то?",noone,noone,"Mike",noone,"Anya");
 scr_text("Вроде четырнадцать.",noone,noone,"Mike",noone,"Anya");
 scr_text("Там ещё скоро должна моя сестра прийти.",noone,noone,"Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
 scr_text("Привет...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Ой, да что вы там в проходе встали, идите к нам, тут и поговорим.",noone,noone,"Mike",noone,"Anya");
 scr_No_option("school1.1");
@@ -854,7 +825,7 @@ case "school1.1":
 obj_payer.faza[9]=72;
 obj_payer.faza[10]="zhenya_up";
 obj_payer.faza[11]=1;
-scr_text("Поздороваешься с ними, а затем я спрошу у тебя кое-что...",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Поздороваешься с ними, а затем я спрошу у тебя кое-что...",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 break;
 
 
@@ -868,18 +839,18 @@ scr_No_option("andrew_1.1");
 
 if (obj_payer.faza[1]=1)
 {
-scr_text("О, и снова привет.",noone,noone,"Mike",_andrey,noone);
+scr_text("О, и снова привет.",noone,noone,"Mike","Андрей",noone);
 scr_text("...",noone,"Майк","Mike",noone,noone,0.6,"Font_main","end");
 }
 
 if (obj_payer.faza[1]=2) 
 {
-scr_text("И снова привет.",noone,noone,"Mike",_andrey,noone);
+scr_text("И снова привет.",noone,noone,"Mike","Андрей",noone);
 scr_text("А ты часто рисуешь?",noone,"Майк","Mike",noone,noone);
-scr_text("Да. Тебе об этом Настя рассказала?",noone,noone,"Mike",_andrey,noone);
+scr_text("Да. Тебе об этом Настя рассказала?",noone,noone,"Mike","Андрей",noone);
 scr_text("Ну да. А что?",noone,"Майк","Mike",noone,noone);
-scr_text("Ничего.",noone,noone,"Mike",_andrey,noone);
-scr_text("...",noone,noone,"Mike",_andrey,noone);
+scr_text("Ничего.",noone,noone,"Mike","Андрей",noone);
+scr_text("...",noone,noone,"Mike","Андрей",noone);
 scr_No_option("andrew_1_give")
 obj_payer.faza[1]=1
 
@@ -891,28 +862,28 @@ break;
 
 case "andrew_1.1":
 obj_payer.moment_skip=0;
-scr_text("[wave]Привет[/wave]. Меня Андрей зовут.",noone,noone,"Mike",_andrey,noone);
+scr_text("[wave]Привет[/wave]. Меня Андрей зовут.",noone,noone,"Mike","Андрей",noone);
 scr_text("А меня Майк.",noone,"Майк","Mike",noone,noone);
-scr_text("[wave]Привет[/wave], Майк.",noone,noone,"Mike",_andrey,noone);
+scr_text("[wave]Привет[/wave], Майк.",noone,noone,"Mike","Андрей",noone);
 scr_text("...но ты же уже здоровался...",noone,"Майк","Mike",noone,noone);
-scr_text("А я могу ещё раз.",noone,noone,"Mike",_andrey,noone);
-scr_text("[wave]Привет[/wave], Майк.",noone,noone,"Mike",_andrey,noone);
+scr_text("А я могу ещё раз.",noone,noone,"Mike","Андрей",noone);
+scr_text("[wave]Привет[/wave], Майк.",noone,noone,"Mike","Андрей",noone);
 scr_text("(... и каждый раз он жмёт мне руку)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("А её как зовут?",noone,noone,"Mike",_andrey,noone);
+scr_text("А её как зовут?",noone,noone,"Mike","Андрей",noone);
 scr_text("А, это Аня.",noone,"Майк","Mike",noone,noone);
-scr_text("[pulse]ПРИВЕТ[/pulse], [pulse]АНЯ[/pulse].",noone,noone,"Mike",_andrey,noone);
-scr_text("господи...",noone,_anya,"Anya",noone,noone);
+scr_text("[wave]ПРИВЕТ[/wave], Аня!",noone,noone,"Mike","Андрей",noone);
+scr_text("господи...",noone,"Аня","Anya",noone,noone);
 scr_text("А ты любишь здороваться?",noone,"Майк","Mike",noone,noone);
-scr_text("Да. Просто хочется.",noone,noone,"Mike",_andrey,noone);
+scr_text("А почему бы и нет.",noone,noone,"Mike","Андрей",noone);
 if (obj_payer.faza[1]==1.5)
 {
 scr_text("Ладно, буду знать.",noone,"Майк","Mike",noone);
 scr_text("...",noone,"Майк","Mike",noone);
 scr_text("Так ты часто рисуешь?",noone,"Майк","Mike",noone,noone);
-scr_text("Да. Тебе об этом Настя рассказала?",noone,noone,"Mike",_andrey,noone);
+scr_text("Да. Тебе об этом Настя рассказала?",noone,noone,"Mike","Андрей",noone);
 scr_text("Ну да. А что?",noone,"Майк","Mike",noone,noone);
-scr_text("Ничего.",noone,noone,"Mike",_andrey,noone);
-scr_text("...",noone,noone,"Mike",_andrey,noone);
+scr_text("Ничего.",noone,noone,"Mike","Андрей",noone);
+scr_text("...",noone,noone,"Mike","Андрей",noone);
 scr_No_option("andrew_1_give")
 }
 else
@@ -925,11 +896,11 @@ break
 case "andrew_1_give":
 inv_add(obj_inventory_give,1)
 inv_swap(obj_inventory_give,0,obj_inventory_give,4)
-scr_text("Вот смотри. Можешь спокойно взять его.",noone,"Майк","Mike",_andrey,noone);
+scr_text("Вот смотри. Можешь спокойно взять его.",noone,"Майк","Mike","Андрей",noone);
 scr_text("*Получен рисунок со смайликом*",noone,noone,"Mike",noone,noone);
-scr_text("Правда он прикольный?",noone,noone,"Mike",_andrey,noone);
+scr_text("Правда он прикольный?",noone,noone,"Mike","Андрей",noone);
 scr_text("Да, красивый.",noone,"Майк","Mike",noone,noone);
-scr_text("Можешь оставить его себе. У меня куча таких, и других, и всяких...",noone,noone,"Mike",_andrey,noone);
+scr_text("Можешь оставить его себе. У меня куча таких, и других, и всяких...",noone,noone,"Mike","Андрей",noone);
 scr_text("Ладно, спасибо.",noone,"Майк","Mike",noone,noone,0.6,"Font_main","end");
 
 obj_payer.faza[1]=1
@@ -943,86 +914,88 @@ if obj_payer.faza[0]!=3
 
 if obj_payer.faza[3]==0
 {
-scr_text("Привет, меня зовут Женя.",noone,noone,"Mike",_zhenya);
+scr_text("Привет, меня зовут Женя.",noone,noone,"Mike","Женя");
 scr_text("Меня Майк зовут.",noone,"Майк","Mike",noone);
-scr_text("Ну привет, Майк. Мне очень приятно познакомиться с тобой.",noone,noone,"Mike",_zhenya);
-scr_text("А меня зовут Аня.",noone,_anya,"Anya");
-scr_text("И тебе привет, Аня. Мне и с тобой очень приятно познакомиться.",noone,noone,"Anya",_zhenya);
-scr_text("...",noone,_anya,"Anya");
-scr_text("Что-то не так?",noone,noone,"Anya",_zhenya);
-scr_text("Не, я просто думаю... мне кажется, я уже где-то тебя видела...",noone,_anya,"Anya");
-scr_text("Нуу... Может, вчера? У меня было выступление с моими работами что были нарисованны мной за прошедшее лето.",noone,noone,"Anya",_zhenya);
+scr_text("Ну привет, Майк. Мне очень приятно познакомиться с тобой.",noone,noone,"Mike","Женя");
+scr_text("А меня зовут Аня.",noone,"Аня","Anya");
+scr_text("И тебе привет, Аня. Мне и с тобой очень приятно познакомиться.",noone,noone,"Anya","Женя");
+scr_text("...",noone,"Аня","Anya");
+scr_text("Что-то не так?",noone,noone,"Anya","Женя");
+scr_text("Не, я просто думаю... мне кажется, я уже где-то тебя видела...",noone,"Аня","Anya");
+scr_text("Нуу... Может, вчера? У меня было выступление с картинами.",noone,noone,"Anya","Женя");
+scr_text("Кстати, может быть...",noone,"Аня","Anya");
 scr_text("А ты умеешь рисовать?",noone,"Майк","Mike",noone);
-scr_text("Ну, я обожаю рисовать. Передать все свои эмоции у меня намного лучше получается именно через холст, нежели объяснить их словами.",noone,noone,"Mike",_zhenya);
+scr_text("Рисовать умеет каждый, а я рисовать обожаю",noone,noone,"Mike","Женя");
+scr_text("Передать все свои эмоции у меня намного лучше получается именно через холст, нежели объяснить их словами.",noone,noone,"Mike","Женя");
 scr_text("Хм, наверное рисование отнимает у тебя много времени.",noone,"Майк","Mike",noone);
-scr_text("Ну, если честно, то да...",noone,noone,"Mike",_zhenya);
-scr_text("...иногда я просто не нахожу времени на еду и сон.",noone,noone,"Mike",_zhenya);
+scr_text("Ну, если честно, то да...",noone,noone,"Mike","Женя");
+scr_text("...иногда я просто не нахожу времени на еду и сон.",noone,noone,"Mike","Женя");
 scr_text("Даже так!?",noone,"Майк","Mike",noone);
-scr_text("... хм, а как твои родители относятся к этому?",noone,_anya,"Anya",noone);
-scr_text("Ну... они поддерживают мои начинания, но иногда папа говорит что я слишком сильно погружаюсь в свою работу...",noone,noone,"Anya",_zhenya);
-scr_text("Хотя с ними я вижусь не так часто… Они всё время работают.",noone,noone,"Mike",_zhenya);
-scr_text("Ну... даже с братиком я общаюсь больше, чем с родителями...",noone,noone,"Mike",_zhenya);
+scr_text("... хм, а как твои родители относятся к этому?",noone,"Аня","Anya",noone);
+scr_text("Ну... они поддерживают мои начинания, но иногда папа говорит что я слишком сильно погружаюсь в свою работу...",noone,noone,"Anya","Женя");
+scr_text("Хотя с ними я вижусь не так часто… Они всё время работают.",noone,noone,"Mike","Женя");
+scr_text("Ну... даже с братиком я общаюсь больше, чем с родителями...",noone,noone,"Mike","Женя");
 scr_text("У тебя есть брат?",noone,"Майк","Mike",noone);
-scr_text("Ну да, у меня есть младший брат. Его Лео зовут.",noone,noone,"Mike",_zhenya);
+scr_text("Ну да, у меня есть младший брат. Его Лео зовут.",noone,noone,"Mike","Женя");
 scr_text("А у меня младшая сестра есть.",noone,"Майк","Mike",noone);
-scr_text("Да ну, и какая она? Хорошая?",noone,noone,"Mike",_zhenya);
+scr_text("Да ну, и какая она? Хорошая?",noone,noone,"Mike","Женя");
 scr_text("Наверное, как и все дети?",noone,"Майк","Mike",noone);
-scr_text("Майк, не говори того чего не знаешь.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Майк, не говори того чего не знаешь.",noone,noone,"Mike","Аня","Anya");
 scr_text("А что?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Обычно дети куда более надоедливы.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Ну, я, вроде, был нормальным ребёнокм...",noone,noone,"Mike",_zhenya);
+scr_text("Обычно дети куда более надоедливы.",noone,noone,"Mike","Аня","Anya");
+scr_text("Ну, я, вроде, был нормальным ребёнокм...",noone,noone,"Mike","Женя");
 scr_text("...",noone,"Майк","Mike",noone);
-scr_text("Ладно, не важно...",noone,noone,"Mike",_zhenya);
+scr_text("Ладно, не важно...",noone,noone,"Mike","Женя");
 
 
 scr_text("Хм... Наверное, говоря со мной и с нашими одноклассниками ты сможешь научиться понятней общаться.",noone,"Майк","Mike",noone);
-scr_text("Наверное.",noone,noone,"Mike",_zhenya);
-scr_text("Ну я хочу научиться понятно выражать свои мысли и чувства...",noone,noone,"Mike",_zhenya);
-scr_text("Майк, а сможешь помочь мне научиться общаться лучше?",noone,noone,"Mike",_zhenya);
+scr_text("Наверное.",noone,noone,"Mike","Женя");
+scr_text("Ну я хочу научиться понятно выражать свои мысли и чувства...",noone,noone,"Mike","Женя");
+scr_text("Майк, а сможешь помочь мне научиться общаться лучше?",noone,noone,"Mike","Женя");
 scr_text("Вероятно....",noone,"Майк","Mike",noone);
 
-scr_text("Хорошо.",noone,noone,"Mike",_zhenya);
-scr_text("Ну тогда потом я приду к тебе домой? Или ты придёшь ко мне?",noone,noone,"Mike",_zhenya);
+scr_text("Хорошо.",noone,noone,"Mike","Женя");
+scr_text("Ну тогда потом я приду к тебе домой? Или ты придёшь ко мне?",noone,noone,"Mike","Женя");
 scr_text("Эм... а может лучше просто поговорим на улице?",noone,"Майк","Mike",noone);
-scr_text("Ой, снова глупость?",noone,noone,"Mike",_zhenya);
-scr_text("...",noone,noone,"Mike",_zhenya);
-scr_text("Ну... да... рано нам ещё домой друг к другу ходить...",noone,noone,"Mike",_zhenya,noone,0.8);
-scr_text("Н-нет... я не про то что мы ещё малы для такого...",noone,noone,"Mike",_zhenya,noone,1);
-scr_text("В смысле я и про это тоже, но мы же буквально только что познакомились...",noone,noone,"Mike",_zhenya,noone,1.2);
+scr_text("Ой, снова глупость?",noone,noone,"Mike","Женя");
+scr_text("...",noone,noone,"Mike","Женя");
+scr_text("Ну... да... рано нам ещё домой друг к другу ходить...",noone,noone,"Mike","Женя",noone,0.8);
+scr_text("Н-нет... я не про то что мы ещё малы для такого...",noone,noone,"Mike","Женя",noone,1);
+scr_text("В смысле я и про это тоже, но мы же буквально только что познакомились...",noone,noone,"Mike","Женя",noone,1.2);
 scr_No_option("zhenya_1.1");
 }
 
 if obj_payer.faza[3]==1
 {
 
-scr_text("Ну... если вдруг ты уже готов помочь мне в обучении общению с людьми, то мне ещё требуется подготовка...",noone,noone,"Mike",_zhenya,0.6,"Font_main","end");
+scr_text("Ну... если вдруг ты уже готов помочь мне в обучении общению с людьми, то мне ещё требуется подготовка...",noone,noone,"Mike","Женя",0.6,"Font_main","end");
 scr_No_option("school1.1");
 }
 }
 
 break
 case "zhenya_1.1":
-scr_text("...Ну в общем-",noone,noone,"Mike",_zhenya);
+scr_text("...Ну в общем-",noone,noone,"Mike","Женя");
 obj_payer.moment_skip=1;
 scr_No_option("zhenya_1.2");
 break
 case "zhenya_1.2":
 obj_payer.moment_skip=0;
 scr_text("Да я понял тебя...",noone,"Майк","Mike",noone);
-scr_text("...",noone,_anya,"Anya",noone,noone);
+scr_text("...",noone,"Аня","Anya",noone,noone);
 scr_text("Ммм? Ж- Женя, ты тут?...",noone,noone,"Anya","???",noone);
 scr_text("(В кабинет зашёл какой-то мальчик)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("О, а вот и он!",noone,noone,"Mike",_zhenya,noone);
+scr_text("О, а вот и он!",noone,noone,"Mike","Женя",noone);
 scr_text("(Услышав Женин голос, он сразу побежал ближе)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("Мх, ты не сопроводил меня до кабинета(",noone,noone,"Mike","Женин брат",noone);
 scr_text("А если бы я потерялся?",noone,noone,"Mike","Женин брат",noone);
-scr_text("М-да, извини... Данная мысль даже и не пришла ко мне в голову.",noone,noone,"Mike",_zhenya,noone);
-scr_text("Знакомьтесь, это Лео.",noone,noone,"Mike",_zhenya,noone);
+scr_text("М-да, извини... Данная мысль даже и не пришла ко мне в голову.",noone,noone,"Mike","Женя",noone);
+scr_text("Знакомьтесь, это Лео.",noone,noone,"Mike","Женя",noone);
 scr_text("Вообще, Леонард, но можно просто Лео...",noone,noone,"Mike","Лео",noone);
-scr_text("Хм, интересно что вы оказались в одном классе...",noone,_anya,"Anya",noone,noone);
+scr_text("Хм, интересно что вы оказались в одном классе...",noone,"Аня","Anya",noone,noone);
 
 scr_text("(После этого Лео задумался о чём-то)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Ты в порядке?",noone,noone,"Mike",_zhenya,noone);
+scr_text("Ты в порядке?",noone,noone,"Mike","Женя",noone);
 scr_text("Да! Простая прогулка до школы же не могла меня утомить...",noone,noone,"Mike","Лео",noone);
 scr_text("...",noone,noone,"Anya","Лео",noone);
 scr_text("(На эту фразу ответ Жени составил тихое ''хмх''...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
@@ -1030,10 +1003,10 @@ scr_text("(интересно, что всё это значит...)",noone,"М�
 
 scr_text("(не успел я до конца обдумать эту мысль, как дверь внезапно распахнулась от очередного ученика, что зашёл сюда)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("Ух... И это тот класс, с которым я буду учиться?...",noone,noone,"Mike","???",noone);
-scr_text("...Поччему он звучит столь презрительно?",noone,_anya,"Anya",noone,noone);
+scr_text("...Поччему он звучит столь презрительно?",noone,"Аня","Anya",noone,noone);
 scr_text("Эм... Привет. Меня зовут Майк, а тебя как?",noone,"Майк","Mike",noone);
 scr_text("Роман.",noone,noone,"Mike","Роман",noone);
-scr_text("А можно просто Рома?",noone,_anya,"Anya",noone,noone);
+scr_text("А можно просто Рома?",noone,"Аня","Anya",noone,noone);
 scr_text("Мх, наверное..?",noone,noone,"Anya","Рома",noone);
 scr_text("Я не думал об этом раньше",noone,noone,"Anya","Рома",noone);
 
@@ -1047,13 +1020,13 @@ break
 case "nastya_1":
 if obj_payer.faza[2]==0
 {
-scr_text("Привет, меня зовут Настя.",noone,noone,"Mike",_nastya);
+scr_text("Привет, меня зовут Настя.",noone,noone,"Mike","Настя");
 scr_text("А меня Майк.",noone,"Майк","Mike",noone);
-scr_text("А я Аня",noone,_anya,"Anya");
-scr_text("А чем вы увлекаетесь? ",noone,noone,"Anya",_nastya);
-scr_text("Ну, там... рисование, или музыка, или что-нибудь ещё...",noone,noone,"Anya",_nastya);
-scr_text("Я часто читаю детективы.",noone,_anya,"Anya");
-scr_text("А ты?",noone,noone,"Mike",_nastya);
+scr_text("А я Аня",noone,"Аня","Anya");
+scr_text("А чем вы увлекаетесь? ",noone,noone,"Anya","Настя");
+scr_text("Ну, там... рисование, или музыка, или что-нибудь ещё...",noone,noone,"Anya","Настя");
+scr_text("Я часто читаю детективы.",noone,"Аня","Anya");
+scr_text("А ты?",noone,noone,"Mike","Настя");
 scr_text("(Не то чтобы я чем либо увлекался...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Но не думаю, что будет хорошо, если я скажу ей это...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_option("Рисую","nastya_1_Рисую","I draw");
@@ -1064,23 +1037,23 @@ scr_option("Играю","nastya_1_Играю","I play");
 
 if obj_payer.faza[2]==1
 {
-scr_text("Уже пришёл за историями?",noone,noone,"Mike",_nastya);
-scr_text("Я не думаю, что у меня хватит времени, чтоб рассказать их сейчас.",noone,noone,"Mike",_nastya);
-scr_text("Поговорим позже, ладно?",noone,noone,"Mike",_nastya,noone,0.6,"Font_main","end");
+scr_text("Уже пришёл за историями?",noone,noone,"Mike","Настя");
+scr_text("Я не думаю, что у меня хватит времени, чтоб рассказать их сейчас.",noone,noone,"Mike","Настя");
+scr_text("Поговорим позже, ладно?",noone,noone,"Mike","Настя",noone,0.6,"Font_main","end");
 
 }
 break;
 
 case "nastya_1_Рисую":
 scr_text("Ну... я рисованием занимаюсь.",noone,"Майк","Mike",noone);
-scr_text("О, тогда тебе надо будет подойти к Жене. Сможешь поговорить с профи изобразительного искусства.",noone,noone,"Mike",_nastya);
+scr_text("О, тогда тебе надо будет подойти к Жене. Сможешь поговорить с профи изобразительного искусства.",noone,noone,"Mike","Настя");
 scr_text("Ну... я не очень то уж и хороший художник.",noone,"Майк","Mike",noone);
 scr_text("Так, иногда, по приколу...",noone,"Майк","Mike",noone);
-scr_text("А, ну можешь с Андреем поговорить, он тоже по приколу рисует.",noone,noone,"Mike",_nastya);
+scr_text("А, ну можешь с Андреем поговорить, он тоже по приколу рисует.",noone,noone,"Mike","Настя");
 scr_text("(Хм, нверное надо будет поговорить с Андреем об этом)",noone, "Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("Здесь что, все художники?",noone,"Майк","Mike",noone);
-scr_text("Ну... я не рисую...",noone,noone,"Mike",_nastya);
-scr_text("Я на сцене люблю выступать.",noone,noone,"Mike",_nastya);
+scr_text("Ну... я не рисую...",noone,noone,"Mike","Настя");
+scr_text("Я на сцене люблю выступать.",noone,noone,"Mike","Настя");
 if (obj_payer.faza[1]==1) obj_payer.faza[1]=2;
 if (obj_payer.faza[1]==0) obj_payer.faza[1]=1.5;
 scr_No_option("nastya_1.1");
@@ -1088,60 +1061,60 @@ break;
 
 case "nastya_1_Пою":
 scr_text("Я там песни пою разные...",noone,"Майк","Mike",noone);
-scr_text("А, ну, значит, мы с тобой найдем общий язык.",noone,noone,"Mike",_nastya);
+scr_text("А, ну, значит, мы с тобой найдем общий язык.",noone,noone,"Mike","Настя");
 scr_text("А ты любишь петь?",noone,"Майк","Mike",noone);
-scr_text("Иногда приходится делать это для моих интересов.",noone,noone,"Mike",_nastya);
-scr_text("А насколько сильно ты этим увлекаешься?",noone,noone,"Mike",_nastya);
+scr_text("Иногда приходится делать это для моих интересов.",noone,noone,"Mike","Настя");
+scr_text("А насколько сильно ты этим увлекаешься?",noone,noone,"Mike","Настя");
 scr_text("Ну... я не то чтобы прям часто пою...",noone,"Майк","Mike",noone);
 scr_text("...",noone,"Майк","Mike",noone);
 scr_text("А для каких твоих интересов ты поёшь?",noone,"Майк","Mike",noone);
-scr_text("Для своих выступлений на сцене.",noone,noone,"Mike",_nastya);
+scr_text("Для своих выступлений на сцене.",noone,noone,"Mike","Настя");
 scr_No_option("nastya_1.1");
 break;
 
 case "nastya_1_Читаю":
 scr_text("Ну... я читать люблю.",noone,"Майк","Mike",noone);
-scr_text("А что читаешь?",noone,noone,"Mike",_nastya);
+scr_text("А что читаешь?",noone,noone,"Mike","Настя");
 scr_text("Да так... всякое.",noone,"Майк","Mike",noone);
 scr_text("Что под руку попадётся.",noone,"Майк","Mike",noone);
-scr_text("То есть любимого жанра у тебя нет?",noone,noone,"Mike",_nastya);
+scr_text("То есть любимого жанра у тебя нет?",noone,noone,"Mike","Настя");
 scr_text("Ну, можно и так сказать.",noone,"Майк","Mike",noone);
-scr_text("У меня тоже любимого жанра нет.",noone,noone,"Mike",_nastya);
-scr_text("Хотя и читаю я не часто.",noone,noone,"Mike",_nastya);
+scr_text("У меня тоже любимого жанра нет.",noone,noone,"Mike","Настя");
+scr_text("Хотя и читаю я не часто.",noone,noone,"Mike","Настя");
 scr_text("Почему же?",noone,"Майк","Mike",noone);
-scr_text("Времени не хватает.",noone,noone,"Mike",_nastya);
-scr_text("Я просто часто выступаю на сцене.",noone,noone,"Mike",_nastya);
+scr_text("Времени не хватает.",noone,noone,"Mike","Настя");
+scr_text("Я просто часто выступаю на сцене.",noone,noone,"Mike","Настя");
 scr_No_option("nastya_1.1");
 break;
 
 case "nastya_1_Играю":
 scr_text("...играть люблю...",noone,"Майк","Mike",noone);
 scr_text("(ну, хотя бы не вру...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("В игрушки?",noone,noone,"Mike",_nastya);
+scr_text("В игрушки?",noone,noone,"Mike","Настя");
 scr_text("(Смешок прошёлся по её лицу)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("*вздох*",noone,_anya,"Anya");
-scr_text("Да ладно, я понимаю, что в компьютер.",noone,noone,_anya,_nastya);
+scr_text("*вздох*",noone,"Аня","Anya");
+scr_text("Да ладно, я понимаю, что в компьютер.",noone,noone,"Аня","Настя");
 scr_text("...",noone,"Майк","Mike",noone);
-scr_text("А какие именно игры?",noone,noone,"Mike",_nastya);
+scr_text("А какие именно игры?",noone,noone,"Mike","Настя");
 scr_text("А без разницы.",noone,"Майк","Mike",noone);
 scr_text("Главное, чтоб было интересно.",noone,"Майк","Mike",noone);
-scr_text("Ясно... а я вот в ни во что не играю.",noone,noone,"Mike",_nastya);
-scr_text("Слишком много важных дел.",noone,noone,"Mike",_nastya);
+scr_text("Ясно... а я вот в ни во что не играю.",noone,noone,"Mike","Настя");
+scr_text("Слишком много важных дел.",noone,noone,"Mike","Настя");
 scr_text("А каких именно?",noone,"Майк","Mike",noone);
-scr_text("Подготовка к выступлениям.",noone,noone,"Mike",_nastya);
+scr_text("Подготовка к выступлениям.",noone,noone,"Mike","Настя");
 scr_text("Что?",noone,"Майк","Mike",noone);
-scr_text("Я на сцене выступаю.",noone,noone,"Mike",_nastya);
+scr_text("Я на сцене выступаю.",noone,noone,"Mike","Настя");
 scr_No_option("nastya_1.1");
 break;
 
 case "nastya_1.1":
-scr_text("Правда?",noone,_anya,"Anya",noone);
-scr_text("Ага.",noone,noone,"Anya",_nastya);
-scr_text("Прожить чужую жизнь на большой сцене под овации зрителей...",noone,noone,"Anya",_nastya);
-scr_text("А ещё лучше, когда мне дают главную роль.",noone,noone,"Anya",_nastya);
-scr_text("Сиять главной звездой всего представления...",noone,noone,"Anya",_nastya);
+scr_text("Правда?",noone,"Аня","Anya",noone);
+scr_text("Ага.",noone,noone,"Anya","Настя");
+scr_text("Прожить чужую жизнь на большой сцене под овации зрителей...",noone,noone,"Anya","Настя");
+scr_text("А ещё лучше, когда мне дают главную роль.",noone,noone,"Anya","Настя");
+scr_text("Сиять главной звездой всего представления...",noone,noone,"Anya","Настя");
 scr_text("Хм, вижу тебе это и правда нравится.",noone,"Майк","Mike",noone);
-scr_text("Ага.",noone,noone,"Mike",_nastya);
+scr_text("Ага.",noone,noone,"Mike","Настя");
 
 
 scr_text("Я подумаю.",noone,"Майк","Mike",noone,noone,0.6,"Font_main","end");
@@ -1151,8 +1124,7 @@ break;
 case "edan_1":
 if obj_payer.faza[4]==1
 {
-inv_open_box();
-scr_text("...",noone,noone,"Mike",_adam,"Adam");
+scr_text("...",noone,noone,"Mike","Адам","Adam");
 scr_text("(И снова он молчит)",noone, "Майк","Mike",noone,"Adam",0.6,"Font_think");
 scr_text("(Как будто обдумывает какой-то сложный вопрос)",noone, "Майк","Mike",noone,"Adam",0.6,"Font_think","end");
 }
@@ -1162,22 +1134,22 @@ if obj_payer.faza[4]==0
 scr_text("Привет…",noone,noone,"Mike","???","Adam");
 scr_text("Привет, меня зовут Майк.",noone,"Майк","Mike",noone,"Adam");
 scr_text("А это Аня.",noone,"Майк","Mike",noone,"Adam");
-scr_text("Я и сама могла представиться.",noone,_anya,"Anya",noone,"Adam");
+scr_text("Я и сама могла представиться.",noone,"Аня","Anya",noone,"Adam");
 scr_text("...",noone,noone,"Anya","???","Adam");
 scr_text("А тебя как?",noone,"Майк","Mike",noone,"Adam");
-scr_text("Адам.",noone,noone,"Mike",_adam,"Adam");
+scr_text("Адам.",noone,noone,"Mike","Адам","Adam");
 scr_text("Хм... необычное имя.",noone,"Майк","Mike",noone,"Adam");
-scr_text("А мы с тобой знакомы...",noone,noone,"Mike",_adam,"Adam");
+scr_text("А мы с тобой знакомы...",noone,noone,"Mike","Адам","Adam");
 scr_text("?",noone,"Майк","Mike",noone,"Adam");
 scr_text("Да вроде нет...",noone,"Майк","Mike",noone,"Adam");
 scr_text("Я не помню, чтоб я видел человека, похожего на тебя.",noone,"Майк","Mike",noone,"Adam");
-scr_text("... ясно.",noone,noone,"Mike",_adam,"Adam");
-scr_text("...",noone,noone,"Mike",_adam,"Adam");
+scr_text("... ясно.",noone,noone,"Mike","Адам","Adam");
+scr_text("...",noone,noone,"Mike","Адам","Adam");
 scr_text("(Какой же он не общительный.)",noone, "Майк","Mike",noone,"Adam",0.6,"Font_think");
-scr_text("Тебе что то от меня нужно?",noone,noone,"Mike",_adam,"Adam");
+scr_text("Тебе что то от меня нужно?",noone,noone,"Mike","Адам","Adam");
 scr_text("...нет",noone,"Майк","Mike",noone,"Adam");
 scr_text("Я просто хотел узнать как тебя зовут, там пообщаться немного.",noone,"Майк","Mike",noone,"Adam");
-scr_text("... ладно.",noone,noone,"Mike",_adam,"Adam",0.6,"Font_main","end");
+scr_text("... ладно.",noone,noone,"Mike","Адам","Adam",0.6,"Font_main","end");
 obj_payer.faza[4]=1
 }
 
@@ -1185,14 +1157,14 @@ obj_payer.faza[4]=1
 break;
 
 case "home_door_anna_0.1":
-scr_text("Эй, зачем ты пытаешся попасть ко мне в комнату?",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Эй, зачем ты пытаешся попасть ко мне в комнату?",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 break
 case "home_door_make_0.1":
 scr_text("Не думаю, что мне нужно возвращаться в свою комнату...",noone,"Майк","Mike",noone,noone,0.6,"Font_main","end");
 break
 
 case "anna_school_1":
-scr_text("Ну как, ты готов?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ну как, ты готов?",noone,noone,"Mike","Аня","Anya");
 scr_option("Нет","anna_school_1.1","No");
 if (obj_payer.faza[1]==1 and obj_payer.faza[2]==1 and obj_payer.faza[3]==1 and obj_payer.faza[4]==1)
 {
@@ -1202,14 +1174,14 @@ break;
 
 case "anna_school_1.1":
 scr_text("Вроде ещё нет.",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ну тогда давай закончим говорить со всеми.",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Ну тогда давай закончим говорить со всеми.",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 break;
 
 case "anna_school_1.2":
 scr_text("Наверное да.",noone,"Майк","Mike",noone,"Anya");
-scr_text("Хорошо... Тогда я могу пообщаться с тобой, пока есть время.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А кстати, можешь сказать...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Что тебе снились ночью?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Хорошо... Тогда я могу пообщаться с тобой, пока есть время.",noone,noone,"Mike","Аня","Anya");
+scr_text("А кстати, можешь сказать...",noone,noone,"Mike","Аня","Anya");
+scr_text("Что тебе снились ночью?",noone,noone,"Mike","Аня","Anya");
 scr_text("?",noone,"Майк","Mike",noone,"Anya");
 scr_option("*Соврать*","anna_school_1.3","*Lie*");
 scr_option("*Сказать правду*","anna_school_1.4","*Tell the truth*");
@@ -1218,22 +1190,22 @@ break;
 case "anna_school_1.3":
 scr_text("А мне... это...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Да так... ничего не приснилось...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ты говоришь правду?",noone,noone,"Mike",_anya,"Anya");
-scr_text("А то весь мой опыт, как дочери профессионального детектива говорит мне об обратном...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ты говоришь правду?",noone,noone,"Mike","Аня","Anya");
+scr_text("А то весь мой опыт, как дочери профессионального детектива говорит мне об обратном...",noone,noone,"Mike","Аня","Anya");
 scr_text("... ну...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Тогда давай я в начале скажу, что приснилось мне.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Существо, с синей кожей и маской на лице.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Он был одет в чёрный фрак поверх белой рубашки, на его шее висел галстук.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Тогда давай я в начале скажу, что приснилось мне.",noone,noone,"Mike","Аня","Anya");
+scr_text("Существо, с синей кожей и маской на лице.",noone,noone,"Mike","Аня","Anya");
+scr_text("Он был одет в чёрный фрак поверх белой рубашки, на его шее висел галстук.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Он назвал себя ''Безликим''.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Возможно, именно поэтому он носит маску.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Он назвал себя ''Безликим''.",noone,noone,"Mike","Аня","Anya");
+scr_text("Возможно, именно поэтому он носит маску.",noone,noone,"Mike","Аня","Anya");
 scr_text("Но... мне тоже приснился Безликий...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Я думал, что это звучало бы слишком странно...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Хм... правда?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Интересно...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Он сказал мне, что той ночью он также появился во снах других людей, некоторых из которых я знаю.",noone,noone,"Mike",_anya,"Anya");
-scr_text("По началу я считала это обычным причудливым сном.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Но если и тебе он тоже приснился...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Хм... правда?",noone,noone,"Mike","Аня","Anya");
+scr_text("Интересно...",noone,noone,"Mike","Аня","Anya");
+scr_text("Он сказал мне, что той ночью он также появился во снах других людей, некоторых из которых я знаю.",noone,noone,"Mike","Аня","Anya");
+scr_text("По началу я считала это обычным причудливым сном.",noone,noone,"Mike","Аня","Anya");
+scr_text("Но если и тебе он тоже приснился...",noone,noone,"Mike","Аня","Anya");
 scr_No_option("anna_school_1.5");
 break;
 
@@ -1243,40 +1215,40 @@ scr_text("Мне приснился человек… с синей кожей, 
 scr_text("Он был одет так... стильно?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Он говорил, что скоро что-то может там произойти...",noone,"Майк","Mike",noone,"Anya");
 scr_text("В общем, ничего интересного...",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Хм...",noone,noone,"Mike",_anya,"Anya");
-scr_text("То есть он и тебе приснился?",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Хм...",noone,noone,"Mike","Аня","Anya");
+scr_text("То есть он и тебе приснился?",noone,noone,"Mike","Аня","Anya");
 scr_text("Что?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Сегодня ночью мне тоже приснилось это существо.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Он назвал себя ''Безликим''...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Возможно, именно поэтому он носит маску.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Он сказал мне, что той ночью он также появился во снах других людей, некоторых из которых я знаю.",noone,noone,"Mike",_anya,"Anya");
-scr_text("По началу я считала это обычным причудливым сном.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Но когда ты так подробно его пересказал...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Сегодня ночью мне тоже приснилось это существо.",noone,noone,"Mike","Аня","Anya");
+scr_text("Он назвал себя ''Безликим''...",noone,noone,"Mike","Аня","Anya");
+scr_text("Возможно, именно поэтому он носит маску.",noone,noone,"Mike","Аня","Anya");
+scr_text("Он сказал мне, что той ночью он также появился во снах других людей, некоторых из которых я знаю.",noone,noone,"Mike","Аня","Anya");
+scr_text("По началу я считала это обычным причудливым сном.",noone,noone,"Mike","Аня","Anya");
+scr_text("Но когда ты так подробно его пересказал...",noone,noone,"Mike","Аня","Anya");
 scr_No_option("anna_school_1.5");
 break;
 
 case "anna_school_1.5":
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Как это возможно?",noone,noone,"Mike",_anya,"Anya");
-scr_text("И, что не менее важно, зачем Безликий делает это?",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Как это возможно?",noone,noone,"Mike","Аня","Anya");
+scr_text("И, что не менее важно, зачем Безликий делает это?",noone,noone,"Mike","Аня","Anya");
 scr_text("Он сказал мне, что ищет людей, что могут помочь ему...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Но в чём именно помочь он объяснить не смог.",noone,"Майк","Mike",noone,"Anya");
 scr_text("Он только упомянул, что это связано с моим переездом сюда.",noone,"Майк","Mike",noone,"Anya");
 scr_text("Тем, что ты назвала ''[c_yellow]настоящей причиной[c_white]''.",noone,"Майк","Mike",noone,"Anya");
-scr_text("То есть и с этими преступлениями тоже...",noone,noone,"Mike",_anya,"Anya");
+scr_text("То есть и с этими преступлениями тоже...",noone,noone,"Mike","Аня","Anya");
 scr_text("О чём ты?",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("неважно.",noone,noone,"Mike",_anya,"Anya");
-scr_text("В общем, нам остаётся только ждать, пока он приснится снова.",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("неважно.",noone,noone,"Mike","Аня","Anya");
+scr_text("В общем, нам остаётся только ждать, пока он приснится снова.",noone,noone,"Mike","Аня","Anya");
 scr_text("И... тогда он скажет нам правду?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Не знаю. С чего мы вообще можем ему доверять?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Не знаю. С чего мы вообще можем ему доверять?",noone,noone,"Mike","Аня","Anya");
 scr_text("А? О чём ты?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Мы не знаем кто он, зачем он пришёл к нам...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Мы даже не знаем, что у него на уме.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А если он злой?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Мы не знаем кто он, зачем он пришёл к нам...",noone,noone,"Mike","Аня","Anya");
+scr_text("Мы даже не знаем, что у него на уме.",noone,noone,"Mike","Аня","Anya");
+scr_text("А если он злой?",noone,noone,"Mike","Аня","Anya");
 scr_text("То... мы можем отказаться от помощи ему...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Хех, ну учти: ''Контракт с дьяволом расторгнуть не просто''.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Хех, ну учти: ''Контракт с дьяволом расторгнуть не просто''.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("хм...",noone,"Майк","Mike",noone,"Anya");
 
@@ -1314,9 +1286,9 @@ case "zhenya_2":
 obj_payer.faza[9]=73;
 obj_payer.faza[10]="zhenya_down";
 obj_payer.faza[11]=1;
-scr_text("О, привет.",noone,noone,"Mike",_zhenya);
-scr_text("Сейчас класс пустует, так что это неплохое место чтобы поговорить.",noone,noone,"Mike",_zhenya);
-scr_text("Ну, если у тебя есть время на меня…",noone,noone,"Mike",_zhenya);
+scr_text("О, привет.",noone,noone,"Mike","Женя");
+scr_text("Сейчас класс пустует, так что это неплохое место чтобы поговорить.",noone,noone,"Mike","Женя");
+scr_text("Ну, если у тебя есть время на меня…",noone,noone,"Mike","Женя");
 scr_text("(Стоит ли мне провести время с Женей?)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_option("Нет","zhenya_2.no","No");
 scr_option("Да","zhenya_2.yes","Yes");
@@ -1324,67 +1296,67 @@ break
 
 case "zhenya_2.no":
 scr_text("Извини, я ещё занят.",noone,"Майк","Mike");
-scr_text("Ясно…",noone,noone,"Mike",_zhenya);
-scr_text(":(",noone,noone,"Mike",_zhenya,noone,0.6,"Font_main","end");
+scr_text("Ясно…",noone,noone,"Mike","Женя");
+scr_text(":(",noone,noone,"Mike","Женя",noone,0.6,"Font_main","end");
 break
 
 case "zhenya_2.yes":
 scr_text("Хорошо. Ну давай поговорим.",noone,"Майк","Mike");
-scr_text("Восхитительно! Ну... о чём именно мне говорить с тобой?",noone,noone,"Mike",_zhenya);
+scr_text("Восхитительно! Ну... о чём именно мне говорить с тобой?",noone,noone,"Mike","Женя");
 scr_text("Хм... можешь рассказать о себе... Как ты обычно общаешься с другими людьми.",noone,"Майк","Mike");
-scr_text("...Ну в этом главная проблема...",noone,noone,"Mike",_zhenya);
-scr_text("Обычно я не общаюсь с другими.",noone,noone,"Mike",_zhenya);
-scr_text("Большую часть своего времени я провожу дома.",noone,noone,"Mike",_zhenya);
-scr_text("Этот год вообще первый, когда я не учусь дистанционно.",noone,noone,"Mike",_zhenya);
+scr_text("...Ну в этом главная проблема...",noone,noone,"Mike","Женя");
+scr_text("Обычно я не общаюсь с другими.",noone,noone,"Mike","Женя");
+scr_text("Большую часть своего времени я провожу дома.",noone,noone,"Mike","Женя");
+scr_text("Этот год вообще первый, когда я не учусь дистанционно.",noone,noone,"Mike","Женя");
 scr_text("Почему?",noone,"Майк","Mike");
-scr_text("Просто мне не хотелось покидать рабочее место... Ну и людей в школе как-то слишком много...",noone,noone,"Mike",_zhenya);
+scr_text("Просто мне не хотелось покидать рабочее место... Ну и людей в школе как-то слишком много...",noone,noone,"Mike","Женя");
 scr_text("Но тобой было приятно решение изменить это?",noone,"Майк","Mike");
-scr_text("Да... Ну я понимаю, что по жизни мне часто придётся общаться с людьми...",noone,noone,"Mike",_zhenya);
+scr_text("Да... Ну я понимаю, что по жизни мне часто придётся общаться с людьми...",noone,noone,"Mike","Женя");
 scr_text("И ты не хочешь выглядеть глупо перед другими?",noone,"Майк","Mike");
-scr_text("Нет. Мне плевать, что обо мне скажут окружающие.",noone,noone,"Mike",_zhenya);
-scr_text("Будь то ''Ты вроде и парень, а красишь свои волосы как девчонка…'' или ''Вроде ты и девушка, а ведёшь себя неподобающе...''",noone,noone,"Mike",_zhenya);
-scr_text("Ну ты прикинь, они даже мой пол точно назвать не могут...",noone,noone,"Mike",_zhenya);
+scr_text("Нет. Мне плевать, что обо мне скажут окружающие.",noone,noone,"Mike","Женя");
+scr_text("Будь то ''Ты вроде и парень, а красишь свои волосы как девчонка…'' или ''Вроде ты и девушка, а ведёшь себя неподобающе...''",noone,noone,"Mike","Женя");
+scr_text("Ну ты прикинь, они даже мой пол точно назвать не могут...",noone,noone,"Mike","Женя");
 scr_text("(Интересно, а кто из них именно ошибся?)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Не думаю, что сейчас подходящий момент чтоб задать подобный вопрос)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Умение внятно общаться мне нужно совсем для другого.",noone,noone,"Mike",_zhenya);
-scr_text("Просто я понимаю, что в нынешнем веке тяжело жить, не используя все свои навыки коммуникации.",noone,noone,"Mike",_zhenya);
+scr_text("Умение внятно общаться мне нужно совсем для другого.",noone,noone,"Mike","Женя");
+scr_text("Просто я понимаю, что в нынешнем веке тяжело жить, не используя все свои навыки коммуникации.",noone,noone,"Mike","Женя");
 scr_text("..?",noone,"Майк","Mike");
-scr_text("Ну, про это я и говорю.",noone,noone,"Mike",_zhenya);
-scr_text("Мои мысли не каждый может понять...",noone,noone,"Mike",_zhenya);
-scr_text("Это значительно усложняет даже простую беседу...",noone,noone,"Mike",_zhenya);
+scr_text("Ну, про это я и говорю.",noone,noone,"Mike","Женя");
+scr_text("Мои мысли не каждый может понять...",noone,noone,"Mike","Женя");
+scr_text("Это значительно усложняет даже простую беседу...",noone,noone,"Mike","Женя");
 scr_text("Я вроде бы понял тебя...",noone,"Майк","Mike")
-scr_text("Ну... Уже не так плохо.",noone,noone,"Mike",_zhenya);
-scr_text("Хотя на рисунках эмоции передавать намного легче...",noone,noone,"Mike",_zhenya);
-scr_text("Как говорится: ''Искусство - диалог, в котором собеседник молчит''...",noone,noone,"Mike",_zhenya);
-scr_text("И я тоже молчу, ''говорит моя рука''.",noone,noone,"Mike",_zhenya);
+scr_text("Ну... Уже не так плохо.",noone,noone,"Mike","Женя");
+scr_text("Хотя на рисунках эмоции передавать намного легче...",noone,noone,"Mike","Женя");
+scr_text("Как говорится: ''Искусство - диалог, в котором собеседник молчит''...",noone,noone,"Mike","Женя");
+scr_text("И я тоже молчу, ''говорит моя рука''.",noone,noone,"Mike","Женя");
 scr_text("Первая фраза прозвучала лучше...",noone,"Майк","Mike")
-scr_text("Ну... она попалась мне в какой-то книжке… а вторая сама ко мне пришла.",noone,noone,"Mike",_zhenya);
-scr_text("Наверное, поэтому первая звучит лучше, чем вторая.",noone,noone,"Mike",_zhenya);
-scr_text("Хех...",noone,noone,"Mike",_zhenya);
+scr_text("Ну... она попалась мне в какой-то книжке… а вторая сама ко мне пришла.",noone,noone,"Mike","Женя");
+scr_text("Наверное, поэтому первая звучит лучше, чем вторая.",noone,noone,"Mike","Женя");
+scr_text("Хех...",noone,noone,"Mike","Женя");
 scr_text("...хм...",noone,"Майк","Mike")
 scr_text("А ты действительно профи в искусстве?",noone,"Майк","Mike")
-scr_text("Ну да...",noone,noone,"Mike",_zhenya);
-scr_text("Я просто очень часто делаю всякие зарисовки.",noone,noone,"Mike",_zhenya);
-scr_text("Ну а потом они дорабатываются...",noone,noone,"Mike",_zhenya);
-scr_text("И вот у меня уже есть своя фан-база, что ждёт моих новых работ.",noone,noone,"Mike",_zhenya);
-scr_text("Количество породило качество… так сказать.",noone,noone,"Mike",_zhenya);
+scr_text("Ну да...",noone,noone,"Mike","Женя");
+scr_text("Я просто очень часто делаю всякие зарисовки.",noone,noone,"Mike","Женя");
+scr_text("Ну а потом они дорабатываются...",noone,noone,"Mike","Женя");
+scr_text("И вот у меня уже есть своя фан-база, что ждёт моих новых работ.",noone,noone,"Mike","Женя");
+scr_text("Количество породило качество… так сказать.",noone,noone,"Mike","Женя");
 scr_text("Прям фан-база?",noone,"Майк","Mike")
-scr_text("Ну да.",noone,noone,"Mike",_zhenya);
-scr_text("Но популярность меня не очень интересует.",noone,noone,"Mike",_zhenya);
-scr_text("Она лишь даст мне больше людей, что буду критиковать мою внешность, моё поведение, или даже мои мысли и идеи.",noone,noone,"Mike",_zhenya);
-scr_text("Единственное, это даст мне деньги на самостоятельную жизнь...",noone,noone,"Mike",_zhenya);
-scr_text("Ну а пока что мне помогают родители.",noone,noone,"Mike",_zhenya)
+scr_text("Ну да.",noone,noone,"Mike","Женя");
+scr_text("Но популярность меня не очень интересует.",noone,noone,"Mike","Женя");
+scr_text("Она лишь даст мне больше людей, что буду критиковать мою внешность, моё поведение, или даже мои мысли и идеи.",noone,noone,"Mike","Женя");
+scr_text("Единственное, это даст мне деньги на самостоятельную жизнь...",noone,noone,"Mike","Женя");
+scr_text("Ну а пока что мне помогают родители.",noone,noone,"Mike","Женя")
 scr_text("Хм... интересно.",noone,"Майк","Mike")
-scr_text("Знаешь, сейчас мне стало явно проще общаться с тобой...",noone,noone,"Mike",_zhenya);
-scr_text("Как будто слова сами начали произноситься, без моей помощи.",noone,noone,"Mike",_zhenya);
-scr_text("Ну, давай потом ещё раз пообщаемся так же.",noone,noone,"Mike",_zhenya);
-scr_text("Ты... такой приятный...",noone,noone,"Mike",_zhenya);
-scr_text("Д- для общения!... Только для общения!",noone,noone,"Mike",_zhenya);
-scr_text("Чтобы ты не подумал, не думай!",noone,noone,"Mike",_zhenya,noone,10);
-scr_text("В смысле не об этом думай...",noone,noone,"Mike",_zhenya,noone,1.4);
+scr_text("Знаешь, сейчас мне стало явно проще общаться с тобой...",noone,noone,"Mike","Женя");
+scr_text("Как будто слова сами начали произноситься, без моей помощи.",noone,noone,"Mike","Женя");
+scr_text("Ну, давай потом ещё раз пообщаемся так же.",noone,noone,"Mike","Женя");
+scr_text("Ты... такой приятный...",noone,noone,"Mike","Женя");
+scr_text("Д- для общения!... Только для общения!",noone,noone,"Mike","Женя");
+scr_text("Чтобы ты не подумал, не думай!",noone,noone,"Mike","Женя",noone,10);
+scr_text("В смысле не об этом думай...",noone,noone,"Mike","Женя",noone,1.4);
 scr_text("Да я понял...",noone,"Майк","Mike",noone,noone,0.6);
-scr_text("… ну да…",noone,noone,"Mike",_zhenya);
-scr_text("Становится поздно… Думаю, что мне уже пора идти домой.",noone,noone,"Mike",_zhenya);
+scr_text("… ну да…",noone,noone,"Mike","Женя");
+scr_text("Становится поздно… Думаю, что мне уже пора идти домой.",noone,noone,"Mike","Женя");
 scr_text("Ладно. Тогда пока.",noone,"Майк","Mike");
 scr_No_option("zhenya_2.yes1");
 break
@@ -1394,7 +1366,7 @@ scr_black(black_no,-2);
 obj_payer.faza[9]=900;
 obj_payer.faza[10]="zhenya_down";
 obj_payer.faza[11]=1;
-scr_text("До свидания.",noone,noone,"Mike",_zhenya);
+scr_text("До свидания.",noone,noone,"Mike","Женя");
 scr_text("(Женя уходит домой.)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Думаю, я действительно хорошо провёл время с-)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(С ним?... С ней?...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
@@ -1423,19 +1395,19 @@ obj_payer.phy_position_x=180;
 obj_payer.phy_position_y=300;
 scr_black(black_no,1);
 scr_text("Я дома.",noone,"Майк","Mike");
-scr_text("Снова привет.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А что ты так долго?",noone,noone,"Mike",_masha,"Masha")
-scr_text("Я надеялась поиграть с тобой...",noone,noone,"Mike",_masha,"Masha")
-scr_text("Но, видимо, у меня уже не хватает времени...",noone,noone,"Mike",_masha,"Masha")
+scr_text("Снова привет.",noone,noone,"Mike","Аня","Anya");
+scr_text("А что ты так долго?",noone,noone,"Mike","Маша","Masha")
+scr_text("Я надеялась поиграть с тобой...",noone,noone,"Mike","Маша","Masha")
+scr_text("Но, видимо, у меня уже не хватает времени...",noone,noone,"Mike","Маша","Masha")
 scr_No_option("day2_evening");
 break
 
 
 
 case "nastya_1.2":
-scr_text("Привет, Майк.",noone,noone,"Mike",_nastya);
-scr_text("Хочешь поговорить?",noone,noone,"Mike",_nastya);
-scr_text("У меня есть несколько историй для тебя…",noone,noone,"Mike",_nastya);
+scr_text("Привет, Майк.",noone,noone,"Mike","Настя");
+scr_text("Хочешь поговорить?",noone,noone,"Mike","Настя");
+scr_text("У меня есть несколько историй для тебя…",noone,noone,"Mike","Настя");
 scr_text("(Стоит ли мне провести время с Настей?)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_option("Нет","nastya_1.2.no","No");
 scr_option("Да","nastya_1.2.yes","Yes");
@@ -1443,59 +1415,59 @@ break
 
 case "nastya_1.2.no":
 scr_text("Извини, я ещё занят.",noone,"Майк","Mike");
-scr_text("Жаль.",noone,noone,"Mike",_nastya);
-scr_text("Но, если найдётся минутка, то ты приходи.",noone,noone,"Mike",_nastya,noone,0.6,"Font_main","end");
+scr_text("Жаль.",noone,noone,"Mike","Настя");
+scr_text("Но, если найдётся минутка, то ты приходи.",noone,noone,"Mike","Настя",noone,0.6,"Font_main","end");
 break
 
 case "nastya_1.2.yes":
 scr_text("Да. Если хочешь, я могу провести время с тобой.",noone,"Майк","Mike");
-scr_text("Круть! Давай поговорим тут? Не хочу никуда ходить.",noone,noone,"Mike",_nastya);
+scr_text("Круть! Давай поговорим тут? Не хочу никуда ходить.",noone,noone,"Mike","Настя");
 scr_text("Ладно.",noone,"Майк","Mike");
-scr_text("В общем, как я и говорила, я люблю выступать на сцене.",noone,noone,"Mike",_nastya);
-scr_text("И не просто появится на сцене любительского шоу...",noone,noone,"Mike",_nastya);
-scr_text("А брать главную роль в самом большом театре в городе!",noone,noone,"Mike",_nastya);
+scr_text("В общем, как я и говорила, я люблю выступать на сцене.",noone,noone,"Mike","Настя");
+scr_text("И не просто появится на сцене любительского шоу...",noone,noone,"Mike","Настя");
+scr_text("А брать главную роль в самом большом театре в городе!",noone,noone,"Mike","Настя");
 scr_text("...",noone,"Майк","Mike");
-scr_text("? Ты не удивлён?",noone,noone,"Mike",_nastya);
+scr_text("? Ты не удивлён?",noone,noone,"Mike","Настя");
 scr_text("...*молчаливый шок*...",noone,"Майк","Mike");
 scr_text("...ого...",noone,"Майк","Mike");
 scr_text("И ты играла там главную роль?",noone,"Майк","Mike");
-scr_text("Ну... не совсем главную...",noone,noone,"Mike",_nastya);
+scr_text("Ну... не совсем главную...",noone,noone,"Mike","Настя");
 scr_text("А какую?",noone,"Майк","Mike");
-scr_text("Просто для выступления нужна была маленькая девочка.",noone,noone,"Mike",_nastya);
-scr_text("А мне тогда было лет десять...",noone,noone,"Mike",_nastya);
-scr_text("Хоть действия для меня было не так много, но роль моя была очень важна для сюжета...",noone,noone,"Mike",_nastya);
-scr_text("И когда я вышла на сцену...",noone,noone,"Mike",_nastya);
-scr_text("Я видела это...",noone,noone,"Mike",_nastya);
-scr_text("Весь зал смотрел на меня.",noone,noone,"Mike",_nastya);
-scr_text("Некоторые бы начали волноваться от этого, но мне это лишь прибавило уверенности.",noone,noone,"Mike",_nastya);
-scr_text("Что я важна для них, и я сделаю всё, чтобы им понравилось!",noone,noone,"Mike",_nastya);
-scr_text("После того выступления... я по-настоящему полюбила это.",noone,noone,"Mike",_nastya);
-scr_text("Жаль, что подобных ролей для меня больше не было...",noone,noone,"Mike",_nastya);
-scr_text("Но зато, именно это и даёт мне мотивацию...",noone,noone,"Mike",_nastya);
-scr_text("Мотив стать лучше.",noone,noone,"Mike",_nastya);
+scr_text("Просто для выступления нужна была маленькая девочка.",noone,noone,"Mike","Настя");
+scr_text("А мне тогда было лет десять...",noone,noone,"Mike","Настя");
+scr_text("Хоть действия для меня было не так много, но роль моя была очень важна для сюжета...",noone,noone,"Mike","Настя");
+scr_text("И когда я вышла на сцену...",noone,noone,"Mike","Настя");
+scr_text("Я видела это...",noone,noone,"Mike","Настя");
+scr_text("Весь зал смотрел на меня.",noone,noone,"Mike","Настя");
+scr_text("Некоторые бы начали волноваться от этого, но мне это лишь прибавило уверенности.",noone,noone,"Mike","Настя");
+scr_text("Что я важна для них, и я сделаю всё, чтобы им понравилось!",noone,noone,"Mike","Настя");
+scr_text("После того выступления... я по-настоящему полюбила это.",noone,noone,"Mike","Настя");
+scr_text("Жаль, что подобных ролей для меня больше не было...",noone,noone,"Mike","Настя");
+scr_text("Но зато, именно это и даёт мне мотивацию...",noone,noone,"Mike","Настя");
+scr_text("Мотив стать лучше.",noone,noone,"Mike","Настя");
 scr_text("Надеюсь у тебя получится.",noone,"Майк","Mike");
-scr_text("Я тоже.",noone,noone,"Mike",_nastya);
-scr_text("Хотя я в этом сомневаюсь.",noone,noone,"Mike",_nastya);
-scr_text("Ведь сколько бы я не старалась...",noone,noone,"Mike",_nastya);
-scr_text("Пока что всё тщетно.",noone,noone,"Mike",_nastya);
-scr_text("Хех...",noone,noone,"Mike",_nastya);
-scr_text("...",noone,noone,"Mike",_nastya);
-scr_text("Надеюсь, что у меня получится...",noone,noone,"Mike",_nastya);
-scr_text("Когда-нибудь.",noone,noone,"Mike",_nastya);
+scr_text("Я тоже.",noone,noone,"Mike","Настя");
+scr_text("Хотя я в этом сомневаюсь.",noone,noone,"Mike","Настя");
+scr_text("Ведь сколько бы я не старалась...",noone,noone,"Mike","Настя");
+scr_text("Пока что всё тщетно.",noone,noone,"Mike","Настя");
+scr_text("Хех...",noone,noone,"Mike","Настя");
+scr_text("...",noone,noone,"Mike","Настя");
+scr_text("Надеюсь, что у меня получится...",noone,noone,"Mike","Настя");
+scr_text("Когда-нибудь.",noone,noone,"Mike","Настя");
 scr_text("Если достаточно стараться, то у тебя всё получится. Я уверен в этом.",noone,"Майк","Mike");
 scr_text("Хотя я ещё ни разу не видел твоей актерской игры...",noone,"Майк","Mike");
-scr_text("Хехе...",noone,noone,"Mike",_nastya);
-scr_text("Я обязательно покажу тебе это.",noone,noone,"Mike",_nastya);
-scr_text("Но... сейчас похоже уже вечереет...",noone,noone,"Mike",_nastya);
-scr_text("Думаю, мне стоит поспешить домой.",noone,noone,"Mike",_nastya);
-scr_text("А то родители будут... волноваться.",noone,noone,"Mike",_nastya);
-scr_text("хех...",noone,noone,"Mike",_nastya);
-scr_text("...",noone,noone,"Mike",_nastya);
+scr_text("Хехе...",noone,noone,"Mike","Настя");
+scr_text("Я обязательно покажу тебе это.",noone,noone,"Mike","Настя");
+scr_text("Но... сейчас похоже уже вечереет...",noone,noone,"Mike","Настя");
+scr_text("Думаю, мне стоит поспешить домой.",noone,noone,"Mike","Настя");
+scr_text("А то родители будут... волноваться.",noone,noone,"Mike","Настя");
+scr_text("хех...",noone,noone,"Mike","Настя");
+scr_text("...",noone,noone,"Mike","Настя");
 scr_text("Да, думаю, мне тоже.",noone,"Майк","Mike");
-scr_text("Знаешь, мне было приятно рассказать о себе...",noone,noone,"Mike",_nastya);
-scr_text("Надеюсь, потом ты расскажешь мне о себе!",noone,noone,"Mike",_nastya);
-scr_text("*подмиг*",noone,noone,"Mike",_nastya);
-scr_text("Пока, Майк.",noone,noone,"Mike",_nastya);
+scr_text("Знаешь, мне было приятно рассказать о себе...",noone,noone,"Mike","Настя");
+scr_text("Надеюсь, потом ты расскажешь мне о себе!",noone,noone,"Mike","Настя");
+scr_text("*подмиг*",noone,noone,"Mike","Настя");
+scr_text("Пока, Майк.",noone,noone,"Mike","Настя");
 scr_text("Пока.",noone,"Майк","Mike");
 scr_text("...",noone,"Майк","Mike");
 scr_No_option("nastya_1.2.yes1");
@@ -1530,10 +1502,10 @@ obj_payer.phy_position_x=180;
 obj_payer.phy_position_y=300;
 scr_black(black_no,1)
 scr_text("Я дома.",noone,"Майк","Mike");
-scr_text("Снова привет.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А что ты так долго?",noone,noone,"Mike",_masha,"Masha")
-scr_text("Я надеялась поиграть с тобой...",noone,noone,"Mike",_masha,"Masha")
-scr_text("Но, видимо, у меня уже не хватает времени...",noone,noone,"Mike",_masha,"Masha")
+scr_text("Снова привет.",noone,noone,"Mike","Аня","Anya");
+scr_text("А что ты так долго?",noone,noone,"Mike","Маша","Masha")
+scr_text("Я надеялась поиграть с тобой...",noone,noone,"Mike","Маша","Masha")
+scr_text("Но, видимо, у меня уже не хватает времени...",noone,noone,"Mike","Маша","Masha")
 scr_No_option("day2_evening");
 break
 
@@ -1569,20 +1541,20 @@ obj_payer.phy_position_x=180;
 obj_payer.phy_position_y=300;
 scr_black(black_no,1);
 scr_text("Я дома.",noone,"Майк","Mike",noone,noone);
-scr_text("Ура! Привет, Майк.",noone,noone,"Mike",_masha,"Masha");
-scr_text("А... а где Аня?",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ура! Привет, Майк.",noone,noone,"Mike","Маша","Masha");
+scr_text("А... а где Аня?",noone,noone,"Mike","Маша","Masha");
 scr_text("Не знаю. Наверное, гуляет где-то.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ясно...",noone,noone,"Mike",_masha,"Masha");
-scr_text("А пока она не пришла... давай поиграем?",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ясно...",noone,noone,"Mike","Маша","Masha");
+scr_text("А пока она не пришла... давай поиграем?",noone,noone,"Mike","Маша","Masha");
 scr_text("Во что?",noone,"Майк","Mike",noone,"Masha");
-scr_text("А во что ты хочешь?",noone,noone,"Mike",_masha,"Masha");
+scr_text("А во что ты хочешь?",noone,noone,"Mike","Маша","Masha");
 scr_text("Хм... давай в настольные игры?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Они скучные...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Они скучные...",noone,noone,"Mike","Маша","Masha");
 scr_text("А тогда что ты хочешь?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Хоть что-нибудь. Пока мой садик закрыт на ремонт мне весь день приходится сидеть дома.",noone,noone,"Mike",_masha,"Masha");
-scr_text("И это ТАК скучно-о-о-о...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Хоть что-нибудь. Пока мой садик закрыт на ремонт мне весь день приходится сидеть дома.",noone,noone,"Mike","Маша","Masha");
+scr_text("И это ТАК скучно-о-о-о...",noone,noone,"Mike","Маша","Masha");
 scr_text("Хм... Может, я почитаю тебе книжку?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ну давай. Мама тоже часто читала книжки мне по вечерам.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Ну давай. Мама тоже часто читала книжки мне по вечерам.",noone,noone,"Mike","Маша","Masha");
 
 scr_No_option("home_masha0_yes.2");
 break
@@ -1593,7 +1565,7 @@ scr_sound_sette(0,Sng_Colorful_Flowers,true,2);
 scr_text("Хорошо. Пойду найду что-нибудь.",noone,"Майк","Mike",noone,"Masha");
 scr_text("(После небольшого поиска я вернулся с книжкой сказок в руках)",noone,"Майк","Mike",noone,"Masha",0.6,"Font_think");
 scr_text("Какую ты хочешь?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Давай вот эту. Я её раньше не слышала.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Давай вот эту. Я её раньше не слышала.",noone,noone,"Mike","Маша","Masha");
 scr_text("Хорошо...",noone,"Майк","Mike",noone,"Masha",0.6,"Font_main");
 scr_No_option("home_masha0_yes.3");
 break
@@ -1655,16 +1627,16 @@ case "home_masha0_yes.4":
 scr_black(black_no,1);
 scr_text("...",noone,"Майк","Mike",noone,"Masha",0.6,"Font_main");
 scr_text("Интересная такая сказка.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Мне так понравилось, что у принцессы в конце всё стало хорошо.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Так и представляю: девочка, в длинном зелёном платье, в окружении своей мамы, и её рыцаря в синих доспехах…",noone,noone,"Mike",_masha,"Masha");
-scr_text("Когда мама вернётся, попрошу, чтоб она тоже прочитала мне эту сказку!",noone,noone,"Mike",_masha,"Masha");
+scr_text("Мне так понравилось, что у принцессы в конце всё стало хорошо.",noone,noone,"Mike","Маша","Masha");
+scr_text("Так и представляю: девочка, в длинном зелёном платье, в окружении своей мамы, и её рыцаря в синих доспехах…",noone,noone,"Mike","Маша","Masha");
+scr_text("Когда мама вернётся, попрошу, чтоб она тоже прочитала мне эту сказку!",noone,noone,"Mike","Маша","Masha");
 scr_text("То есть тебе понравилось?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Да. Особенно принцесса.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Она прямо как я.",noone,noone,"Mike",_masha,"Masha");
-scr_text("...",noone,noone,"Mike",_masha,"Masha");
-scr_text("Мне даже немного её жаль...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Да. Особенно принцесса.",noone,noone,"Mike","Маша","Masha");
+scr_text("Она прямо как я.",noone,noone,"Mike","Маша","Masha");
+scr_text("...",noone,noone,"Mike","Маша","Masha");
+scr_text("Мне даже немного её жаль...",noone,noone,"Mike","Маша","Masha");
 scr_text("Почему?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Она потеряла отца... ещё до своего рождения.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Она потеряла отца... ещё до своего рождения.",noone,noone,"Mike","Маша","Masha");
 scr_No_option("home_masha0_yes.5");
 break
 
@@ -1674,24 +1646,24 @@ case "home_masha0_yes.5":
 obj_time.time_change=2;
 scr_text("(После этих слов я не смог ничего ответить.)",noone,"Майк","Mike",noone,"Masha",0.6,"Font_think");
 scr_text("(Лишь позволил ей прилечь на моё плечо.)",noone,"Майк","Mike",noone,"Masha",0.6,"Font_think");
-scr_text("Майк... спасибо, что ты есть.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Потом... давай ты прочитаешь мне ещё сказку?",noone,noone,"Mike",_masha,"Masha");
+scr_text("Майк... спасибо, что ты есть.",noone,noone,"Mike","Маша","Masha");
+scr_text("Потом... давай ты прочитаешь мне ещё сказку?",noone,noone,"Mike","Маша","Masha");
 scr_text("Столько сказок, сколько ты захочешь.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Спасибо.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Спасибо...",noone,noone,"Mike",_masha,"Masha");
-scr_text("спасибо...",noone,noone,"Mike",_masha,"Masha");
-scr_text("А ты не знаешь, когда мама вернётся?",noone,noone,"Mike",_masha,"Masha");
+scr_text("Спасибо.",noone,noone,"Mike","Маша","Masha");
+scr_text("Спасибо...",noone,noone,"Mike","Маша","Masha");
+scr_text("спасибо...",noone,noone,"Mike","Маша","Masha");
+scr_text("А ты не знаешь, когда мама вернётся?",noone,noone,"Mike","Маша","Masha");
 scr_text("Нет. Мне про это ничего не говорили.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Интересно, у неё всё хорошо?",noone,noone,"Mike",_masha,"Masha");
-scr_text("Почему она не звонит нам?",noone,noone,"Mike",_masha,"Masha");
-scr_text("Наверное, она скучает по мне...",noone,noone,"Mike",_masha,"Masha");
-scr_text("...",noone,noone,"Mike",_masha,"Masha");
+scr_text("Интересно, у неё всё хорошо?",noone,noone,"Mike","Маша","Masha");
+scr_text("Почему она не звонит нам?",noone,noone,"Mike","Маша","Masha");
+scr_text("Наверное, она скучает по мне...",noone,noone,"Mike","Маша","Masha");
+scr_text("...",noone,noone,"Mike","Маша","Masha");
 scr_text("Я в этом уверен.",noone,"Майк","Mike",noone,"Masha");
 scr_text("Возможно, она сейчас просто сильно занята... чем-нибудь.",noone,"Майк","Mike",noone,"Masha");
 scr_text("Не волнуйся, всё будет хорошо.",noone,"Майк","Mike",noone,"Masha");
-scr_text("... уже так поздно.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Обычно, примерно сейчас мама отправляла меня спать...",noone,noone,"Mike",_masha,"Masha");
-scr_text("*Зевок*",noone,noone,"Mike",_masha,"Masha");
+scr_text("... уже так поздно.",noone,noone,"Mike","Маша","Masha");
+scr_text("Обычно, примерно сейчас мама отправляла меня спать...",noone,noone,"Mike","Маша","Masha");
+scr_text("*Зевок*",noone,noone,"Mike","Маша","Masha");
 obj_payer.faza[0]=3.2;
 scr_No_option("home_masha0_yes.7");
 break
@@ -1703,7 +1675,7 @@ obj_payer.faza[10]="anna_up";
 obj_payer.faza[11]=1.5;
 scr_text("Привет. Я дома.",noone, _anya,"Anya",noone,"Masha");
 scr_text("А почему Маша ещё не готовится ко сну?",noone, _anya,"Anya",noone,"Masha");
-scr_text("Я как раз собиралась.",noone,noone,"Anya",_masha,"Masha");
+scr_text("Я как раз собиралась.",noone,noone,"Anya","Маша","Masha");
 scr_No_option("day2_evening");
 break
 
@@ -1714,30 +1686,30 @@ obj_payer.faza[9]=-64;
 obj_payer.faza[10]="masha_left";
 obj_payer.faza[11]=3;
 scr_text("(После этих слов Маша поднялась вверх по лестнице.)",noone, "Майк","Mike",noone,"Anya",0.6,"Font_think");
-scr_text("Хм.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Хм.",noone,noone,"Mike","Аня","Anya");
 scr_No_option("day2_evening0");
 break
 
 case "day2_evening0":
 obj_payer.faza[0]=3.33;
 scr_black(black_no,1)
-scr_text("... Майк.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Как ты считаешь... этот сон...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Это действительно не просто сон?",noone,noone,"Mike",_anya,"Anya");
+scr_text("... Майк.",noone,noone,"Mike","Аня","Anya");
+scr_text("Как ты считаешь... этот сон...",noone,noone,"Mike","Аня","Anya");
+scr_text("Это действительно не просто сон?",noone,noone,"Mike","Аня","Anya");
 scr_text("А?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Хм...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Наверное, единственный способ проверить это - ждать, пока этот сон приснится снова.",noone,"Майк","Mike",noone,"Anya");
-scr_text("Пожалуй ты прав.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Просто это в голове не укладывается...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Безликий сказал мне, что он создаёт все сны для всех людей...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Значит, он - это некий бог?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Это так сложно понять... и принять.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Пожалуй ты прав.",noone,noone,"Mike","Аня","Anya");
+scr_text("Просто это в голове не укладывается...",noone,noone,"Mike","Аня","Anya");
+scr_text("Безликий сказал мне, что он создаёт все сны для всех людей...",noone,noone,"Mike","Аня","Anya");
+scr_text("Значит, он - это некий бог?",noone,noone,"Mike","Аня","Anya");
+scr_text("Это так сложно понять... и принять.",noone,noone,"Mike","Аня","Anya");
 scr_text("*вздох*",noone,"Майк","Mike",noone,"Anya");
 scr_text("Тогда в школе, ты упомянула какие-то преступления...",noone,"Майк","Mike",noone,"Anya");
 scr_text("О чём ты говорила?",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Давай, я расскажу тебе это в том ''мире снов''?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Если он всё-таки приснится снова.",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Давай, я расскажу тебе это в том ''мире снов''?",noone,noone,"Mike","Аня","Anya");
+scr_text("Если он всё-таки приснится снова.",noone,noone,"Mike","Аня","Anya");
 scr_text("А если нет?",noone,"Майк","Mike",noone,"Anya");
 scr_text("То ответа ты не услышишь.",noone,"Майк","Mike",noone,"Anya");
 scr_No_option("day2_evening1");
@@ -1750,10 +1722,10 @@ obj_payer.faza[9]=143;
 obj_payer.faza[10]="anna_up";
 obj_payer.faza[11]=1.5;
 scr_text("Эй, и куда ты пошла?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Спать.",noone,noone,"Mike",_anya,"Anya");
-scr_text("И тебе советую тоже.",noone,noone,"Mike",_anya,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Спокойной ночи.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Спать.",noone,noone,"Mike","Аня","Anya");
+scr_text("И тебе советую тоже.",noone,noone,"Mike","Аня","Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Спокойной ночи.",noone,noone,"Mike","Аня","Anya");
 scr_No_option("day2_evening2");
 break
 
@@ -1831,10 +1803,10 @@ obj_payer.sprite_index=spgu_
 scr_black(black_no,1);
 scr_sound_sette(1,Sng_Timeless,true,1);
 scr_text("...",noone,noone,"Mike","???",noone);
-scr_text("Вы... Вы пришли.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Вы... Вы пришли.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("А?",noone, "Майк","Mike",noone,"Faceless");
 scr_text("Это... снова ты?",noone, "Майк","Mike",noone,"Faceless");
-scr_text("Хм... на этот раз Вы пришли вместе.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Хм... на этот раз Вы пришли вместе.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Что?",noone, "Майк","Mike",noone,"Faceless");
 obj_payer.faza[9]=660;
 obj_payer.faza[10]="anna_right";
@@ -1849,122 +1821,122 @@ obj_payer.faza[10]="anna_right";
 obj_payer.faza[11]=1;
 scr_text("Майк? Это...",noone,noone,"Mike","???",noone);
 obj_payer.sprite_index=spgl_
-scr_text("...ты?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Добро пожаловать в мир снов.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("...Безликий, так?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Да, Анна.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Но- я ведь вам так и не представилась...",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Мне не нужно ждать, пока Вы скажете мне Ваше имя, дабы я узнал его.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("...ты?",noone,noone,"Mike","Аня","Anya");
+scr_text("Добро пожаловать в мир снов.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("...Безликий, так?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Да, Анна.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Но- я ведь вам так и не представилась...",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Мне не нужно ждать, пока Вы скажете мне Ваше имя, дабы я узнал его.",noone,noone,"Anya","Безликий","Faceless");
 scr_No_option("day2_faceless2");
 break
 
 case "day2_faceless2":
 obj_payer.faza[0]=3.4;
 scr_text("О чём вы говорите?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("О том, что я знаю имя каждого, кто посетил меня.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("И Ваше тоже, Майкл.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("О том, что я знаю имя каждого, кто посетил меня.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("И Ваше тоже, Майкл.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Зачем... Вы позвали нас ещё раз?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("В первый раз я проверял, достойны ли Вы моей просьбы.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Зачем... Вы позвали нас ещё раз?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("В первый раз я проверял, достойны ли Вы моей просьбы.",noone,noone,"Anya","Безликий","Faceless");
 scr_text("(Те цепи...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("(Как я пытался дотянуться до света...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Пройдя мою проверку Вы удостоились моего [c_yellow]Доверия[c_white].",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Пройдя мою проверку Вы удостоились моего [c_yellow]Доверия[c_white].",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Доверия?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Доверие такого существа как я позволяет Вам попадать в этот мир.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Но увы, своё Доверие я могу дать только одному человеку за раз.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Доверие такого существа как я позволяет Вам попадать в этот мир.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Но увы, своё Доверие я могу дать только одному человеку за раз.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Но нас же двое...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Действительно.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Благодаря нему Вы можете спокойно попадать сюда, и находится здесь сколько Вам нужно.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Действительно.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Благодаря нему Вы можете спокойно попадать сюда, и находится здесь сколько Вам нужно.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("А Аня?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Из-за отсутствия у неё моего Доверия она можешь попадать в этот мир только пока Вы находитесь в нём.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Я уже сказал об этом Ане при первой встрече. Извините, что забыл сообщить об этом Вам.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Из-за отсутствия у неё моего Доверия она можешь попадать в этот мир только пока Вы находитесь в нём.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Я уже сказал об этом Ане при первой встрече. Извините, что забыл сообщить об этом Вам.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("(Ане нужна моя помощь для нахождения тут?)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Хм...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Я чувствую нечто странное в Вас...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Как будто недавно Вы встретились с чем-то сильным...",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Хм...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Я чувствую нечто странное в Вас...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Как будто недавно Вы встретились с чем-то сильным...",noone,noone,"Mike","Безликий","Faceless");
 scr_text("?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Аура зла соприкоснулась с Вашим телом...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Вчера я этого не чувствовал...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("С кем Вы виделись сегодня?",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Аура зла соприкоснулась с Вашим телом...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Вчера я этого не чувствовал...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("С кем Вы виделись сегодня?",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Ну... только со своими одноклассниками.",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Хм... значит, прошу Вас не говорить им, что Вы можете переходить между мирами сна и реали.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Хм... значит, прошу Вас не говорить им, что Вы можете переходить между мирами сна и реали.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Почему?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Видимо, кто-то из них умеет точно так же.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("И использует он свои силы не во благо...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("О чём Вы?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Ради этого я и хотел попросить у вас помощи.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Недавно я узнал, что кто-то из людей научился перемещаться между реальностью и этим миром, без каких либо последствий.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Вы же понимаете, чем это плохо?",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Видимо, кто-то из них умеет точно так же.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("И использует он свои силы не во благо...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("О чём Вы?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Ради этого я и хотел попросить у вас помощи.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Недавно я узнал, что кто-то из людей научился перемещаться между реальностью и этим миром, без каких либо последствий.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Вы же понимаете, чем это плохо?",noone,noone,"Anya","Безликий","Faceless");
 scr_text("Не особо...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Находясь в этом мире, этот человек может заходить во Внутренние миры других людей.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("И делать с ними всё, что он захочет.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Находясь в этом мире, этот человек может заходить во Внутренние миры других людей.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("И делать с ними всё, что он захочет.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Внутренние миры?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Это... Наше сознание?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Вы как всегда правы, Анна.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Но... если кто-то может изменить сознание любого человека...",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Он так же спокойно может его разрушить.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Теперь Вы понимаете всю серьёзность происходящего.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Благо, пока что сам этот человек видимо не понимает всех его сил.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Это... Наше сознание?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Вы как всегда правы, Анна.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Но... если кто-то может изменить сознание любого человека...",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Он так же спокойно может его разрушить.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Теперь Вы понимаете всю серьёзность происходящего.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Благо, пока что сам этот человек видимо не понимает всех его сил.",noone,noone,"Anya","Безликий","Faceless");
 scr_text("А что он тогда делает?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("По какой-то причине он похищает людей в этот мир, и ждёт, пока они не погибнут.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("По какой-то причине он похищает людей в этот мир, и ждёт, пока они не погибнут.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("(Кто-то из моих одноклассников действительно способен на подобное?!)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Похищает? Я не слышала, чтобы люди пропадали...",noone,_anya,"Anya",noone,"Faceless");
-scr_text("В этом и дело.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Он похищает сознание этих людей пока они спят.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("От этого после пробуждения эти люди становятся... безэмоциональными, я бы сказал.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("После кого-то времени нахождения их личности вне их тела, они умирают.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Внезапная смерть?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Да, на первый взгляд это именно так и выглядит.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Похищает? Я не слышала, чтобы люди пропадали...",noone,"Аня","Anya",noone,"Faceless");
+scr_text("В этом и дело.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Он похищает сознание этих людей пока они спят.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("От этого после пробуждения эти люди становятся... безэмоциональными, я бы сказал.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("После кого-то времени нахождения их личности вне их тела, они умирают.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Внезапная смерть?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Да, на первый взгляд это именно так и выглядит.",noone,noone,"Anya","Безликий","Faceless");
 scr_text("Это те преступления, о котором ты говорила?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ага...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Подобное происходило раньше.",noone,noone,"Mike",_anya,"Anya");
-scr_text("И Вы снова правы. Почти семь лет назад один человек тоже научился переходить между мирами.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("И... тогда вы тоже звали людей на помощь?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Да...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("*вздох*",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Но... и как прошлый человек справился с этим?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Он собрал себе сильную команду, выяснил, какой человек стоит за всем этим...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("И убил его... ценой своей жизни.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Ага...",noone,noone,"Mike","Аня","Anya");
+scr_text("Подобное происходило раньше.",noone,noone,"Mike","Аня","Anya");
+scr_text("И Вы снова правы. Почти семь лет назад один человек тоже научился переходить между мирами.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("И... тогда вы тоже звали людей на помощь?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Да...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("*вздох*",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Но... и как прошлый человек справился с этим?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Он собрал себе сильную команду, выяснил, какой человек стоит за всем этим...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("И убил его... ценой своей жизни.",noone,noone,"Anya","Безликий","Faceless");
 scr_text("То есть мы...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Нет. Вы спокойно сможете остаться живыми после этой миссии.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Тот человек... Обстоятельства сложились не в его сторону.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Вам просто нужно будет забрать его силу переходить между мирами.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("А что вообще может угрожать нашей жизни?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Видите ли... Для того, чтобы Вы могли полноценно находиться в этом мире, мне пришлось сделать, Ваши здесь чувства сродни реальности.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Иначе бы Ваше восприятие этого мира было бы обрывистым.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Вам бы было практически невозможно запомнить всё, что происходит здесь.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Как обычный сон, отстранённый от реальности.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("И что?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Вследствие этого Вы ощущаете всё здесь происходящее подобно реальности.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("И боль тоже.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Если Вы пострадаете в этом мире слишком сильно...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Несовместимо с жизнью...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("То Вы умрёте.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Нет. Вы спокойно сможете остаться живыми после этой миссии.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Тот человек... Обстоятельства сложились не в его сторону.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Вам просто нужно будет забрать его силу переходить между мирами.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("А что вообще может угрожать нашей жизни?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Видите ли... Для того, чтобы Вы могли полноценно находиться в этом мире, мне пришлось сделать, Ваши здесь чувства сродни реальности.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Иначе бы Ваше восприятие этого мира было бы обрывистым.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Вам бы было практически невозможно запомнить всё, что происходит здесь.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Как обычный сон, отстранённый от реальности.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("И что?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Вследствие этого Вы ощущаете всё здесь происходящее подобно реальности.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("И боль тоже.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Если Вы пострадаете в этом мире слишком сильно...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Несовместимо с жизнью...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("То Вы умрёте.",noone,noone,"Anya","Безликий","Faceless");
 scr_text("[shake]Что[/shake]!?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Хм... То есть, умрёт наше сознание?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Да... Ваше тело никак не пострадает. Ведь это всего лишь сон.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Но боль здесь реальна...",noone,_anya,"Anya",noone,"Faceless");
+scr_text("Хм... То есть, умрёт наше сознание?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Да... Ваше тело никак не пострадает. Ведь это всего лишь сон.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Но боль здесь реальна...",noone,"Аня","Anya",noone,"Faceless");
 scr_text("То есть, все теоретические ранения, что мы можем получить здесь, никак не отразится на реальности?...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("...пока они не смертельны?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Именно так.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Именно так.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("А для тех, кого тот человек похищает в этот мир, действуют такие же правила?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Именно так.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Хм... умирает личность, а не тело...",noone,_anya,"Anya",noone,"Faceless");
-scr_text("А если у человека будет несколько личностей?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Если одна из них погибнет, то вторая, вероятно, полностью возьмёт контроль над телом.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Хм...",noone,_anya,"Anya",noone,"Faceless");
+scr_text("А для тех, кого тот человек похищает в этот мир, действуют такие же правила?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Именно так.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Хм... умирает личность, а не тело...",noone,"Аня","Anya",noone,"Faceless");
+scr_text("А если у человека будет несколько личностей?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Если одна из них погибнет, то вторая, вероятно, полностью возьмёт контроль над телом.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Хм...",noone,"Аня","Anya",noone,"Faceless");
 scr_text("Но... почему именно мы?",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Разве нету более способных людей?",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Не простых детей?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Чем старше человек, тем сложнее ему взаимодействовать с этим миром на вашем уровне.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("А Вы являетесь самыми наилучшими кандидатами для данной миссии.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Чем старше человек, тем сложнее ему взаимодействовать с этим миром на вашем уровне.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("А Вы являетесь самыми наилучшими кандидатами для данной миссии.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("А чего ты хочешь?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Хочу, чтоб Вы начали помогать мне разобраться с этой ситуацией.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Спасать тех, чьё сознание оказалось в этом мире, в конечном итоге найти ответственного за это, и сказать мне о нём.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("А я уже позабочусь о наказании.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("А чего ты хочешь?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Хочу, чтоб Вы начали помогать мне разобраться с этой ситуацией.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Спасать тех, чьё сознание оказалось в этом мире, в конечном итоге найти ответственного за это, и сказать мне о нём.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("А я уже позабочусь о наказании.",noone,noone,"Anya","Безликий","Faceless");
 scr_No_option("day2_faceless3");
 break
 case "day2_faceless3":
@@ -1974,26 +1946,26 @@ scr_No_option("day2_faceless4");
 break
 case "day2_faceless4":
 obj_payer.moment_skip=0;
-scr_text("Мы подумаем.",noone,_anya,"Anya",noone,"Faceless");
+scr_text("Мы подумаем.",noone,"Аня","Anya",noone,"Faceless");
 scr_text("(Внезапно Аня перебила меня, не дав ответить)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("*шёпот* Не вздумай говорить лишнего!",noone,_anya,"Anya",noone,"Faceless");
-scr_text("[wave]Акхем[/wave]. Мы подумаем, и скажем наше решение завтра.",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Завтра? Надеюсь, у Вас хватит времени...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("А что такое?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Мне кажется, что завтра произойдёт очередное похищение.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("С чего ты так решил?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Не знаю. Я чувствую беспокойстве в воздухе.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Но, раз Вы настроены на завтра...",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("То так тому и быть.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Хорошо.",noone,_anya,"Anya",noone,"Faceless");
+scr_text("*шёпот* Не вздумай говорить лишнего!",noone,"Аня","Anya",noone,"Faceless");
+scr_text("[wave]Акхем[/wave]. Мы подумаем, и скажем наше решение завтра.",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Завтра? Надеюсь, у Вас хватит времени...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("А что такое?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Мне кажется, что завтра произойдёт очередное похищение.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("С чего ты так решил?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Не знаю. Я чувствую беспокойстве в воздухе.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Но, раз Вы настроены на завтра...",noone,noone,"Anya","Безликий","Faceless");
+scr_text("То так тому и быть.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Хорошо.",noone,"Аня","Anya",noone,"Faceless");
 scr_text("А...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("А как нам выйти?",noone,"Майк","Mike",noone,"Faceless");
 scr_No_option("day2_faceless5");
 break
 case "day2_faceless5":
 obj_payer.faza[0]=3.5;
-scr_text("Справа дверь.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Специально для Вас сделал.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Справа дверь.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Специально для Вас сделал.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Хорошо...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("(Хотя мне казалось, что её там небыло буквально несколько секунд назад...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think","end");
 break;
@@ -2001,22 +1973,22 @@ break;
 case "day2_faceless6":
 scr_text("(Безликий рисует что-то...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("(Это картинка, на которой изображена поляна)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Это один из снов, что я недавно дорисовал.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Это один из снов, что я недавно дорисовал.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Вы... рисуете сны?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Да. Я - бог сновидений. И я отвечаю за все сны, что видит человечество.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("...то есть теперь отвечаю...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Что ж, Вы собираетесь уходить...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("В таком случае, буду ждать Вас завтра.",noone,noone,"Mike",_faceless,"Faceless",0.6,"Font_main","end");
+scr_text("Да. Я - бог сновидений. И я отвечаю за все сны, что видит человечество.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("...то есть теперь отвечаю...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Что ж, Вы собираетесь уходить...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("В таком случае, буду ждать Вас завтра.",noone,noone,"Mike","Безликий","Faceless",0.6,"Font_main","end");
 break;
 
 case "day2_faceless_anna":
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
 scr_text("Ты уверена?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Про завтра?",noone,"Майк","Mike",noone,"Anya");
-scr_text("*шёпотом* не сейчас.",noone,noone,"Mike",_anya,"Anya");
-scr_text("*шёпотом*  не хочу, чтобы он нас услышал...",noone,noone,"Mike",_anya,"Anya");
-scr_text("...",noone,noone,"Mike",_faceless,"Faceless",0.6,"Font_main","end");
+scr_text("*шёпотом* не сейчас.",noone,noone,"Mike","Аня","Anya");
+scr_text("*шёпотом*  не хочу, чтобы он нас услышал...",noone,noone,"Mike","Аня","Anya");
+scr_text("...",noone,noone,"Mike","Безликий","Faceless",0.6,"Font_main","end");
 break;
 
 case "day2_faceless_door":
@@ -2029,16 +2001,16 @@ case "day2_faceless_door1":
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Хм...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("... Значит, мы снова увидимся завтра?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Именно так.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Именно так.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("*вздох*",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Досвидания...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("До новых встреч.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("До новых встреч.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Майк, подожди.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Майк, подожди.",noone,noone,"Mike","Аня","Anya");
 scr_text("Что такое?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Завтра утром я пойду в школу...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Пораньше.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Так что ты пойдешь туда один. Хорошо?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Завтра утром я пойду в школу...",noone,noone,"Mike","Аня","Anya");
+scr_text("Пораньше.",noone,noone,"Mike","Аня","Anya");
+scr_text("Так что ты пойдешь туда один. Хорошо?",noone,noone,"Mike","Аня","Anya");
 scr_text("Ладно...",noone,"Майк","Mike",noone,"Anya");
 scr_text("*вздох*",noone,"Майк","Mike",noone,"Anya");
 scr_No_option("day2_faceless_door2");
@@ -2149,18 +2121,18 @@ scr_black(black_no,1)
 room_goto(room_school);
 scr_sound_sette(0,Sng_Slowly,true,1);
 scr_sound_sette(1,Sng_Colorful_Flowers,true,1);
-scr_text("О, [wave]привет[/wave], Майк.",noone,noone,"Mike",_andrey,noone);
+scr_text("О, [wave]привет[/wave], Майк.",noone,noone,"Mike","Андрей",noone);
 scr_text("Привет...",noone,"Майк","Mike",noone,noone);
 scr_text("А где Аня?",noone,"Майк","Mike",noone,noone);
-scr_text("Хм... не знаю.",noone,noone,"Mike",_andrey,noone);
-scr_text("Я не видел её сегодня.",noone,noone,"Mike",_andrey,noone);
+scr_text("Хм... не знаю.",noone,noone,"Mike","Андрей",noone);
+scr_text("Я не видел её сегодня.",noone,noone,"Mike","Андрей",noone);
 scr_text("Но она же сказала, что придёт раньше...",noone,"Майк","Mike",noone,noone);
 scr_text("Может, что-то случилось?",noone,"Майк","Mike",noone,noone);
-scr_text("Я думаю, что всё будет хорошо.",noone,noone,"Mike",_andrey,noone);
-scr_text("... жаль только, что голова болит.",noone,noone,"Mike",_andrey,noone);
+scr_text("Я думаю, что всё будет хорошо.",noone,noone,"Mike","Андрей",noone);
+scr_text("... жаль только, что голова болит.",noone,noone,"Mike","Андрей",noone);
 scr_text("Почему?",noone,"Майк","Mike",noone,noone);
-scr_text("Из-за погоды.",noone,noone,"Mike",_andrey,noone);
-scr_text("Погоде хреново, и мне хреново.",noone,noone,"Mike",_andrey,noone);
+scr_text("Из-за погоды.",noone,noone,"Mike","Андрей",noone);
+scr_text("Погоде хреново, и мне хреново.",noone,noone,"Mike","Андрей",noone);
 scr_text("*вздох*",noone,"Майк","Mike",noone,noone);
 scr_text("(Безликий говорил...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Но ведь не может же Аня пропасть!)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
@@ -2170,7 +2142,7 @@ break;
 
 case "day3_andrew_0":
 scr_text("Ты уверен, что всё будет хорошо?",noone,"Майк","Mike",noone,noone);
-scr_text("Ну... я надеюсь на это.",noone,noone,"Mike",_andrey,noone);
+scr_text("Ну... я надеюсь на это.",noone,noone,"Mike","Андрей",noone);
 scr_text("(Безликий говорил...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Но ведь не может же Аня пропасть!)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(... по нашей вине...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
@@ -2183,7 +2155,7 @@ scr_No_text(true);
 break;
 
 case "day3_zhenya_0":
-scr_text("Ну... погода сегодня не очень...",noone,noone,"Mike",_zhenya,noone);
+scr_text("Ну... погода сегодня не очень...",noone,noone,"Mike","Женя",noone);
 scr_text("И не говори.",noone,"Майк","Mike",noone,noone);
 scr_No_option("day3_zhenya_1");
 break;
@@ -2192,11 +2164,11 @@ case "day3_zhenya_1":
 obj_payer.faza[9]=73;
 obj_payer.faza[10]="zhenya_down";
 obj_payer.faza[11]=1;
-scr_text("Почему мне не говорить?",noone,noone,"Mike",_zhenya,noone);
+scr_text("Почему мне не говорить?",noone,noone,"Mike","Женя",noone);
 scr_text("... это фигура речи такая.",noone,"Майк","Mike",noone,noone);
-scr_text("Ну что же так сложно...",noone,noone,"Mike",_zhenya,noone);
-scr_text("Сказал человек что-нибудь, а ты понимай, какой из тысячи смыслов он вложил в свои слова...",noone,noone,"Mike",_zhenya,noone);
-scr_text("Эх...",noone,noone,"Mike",_zhenya,noone);
+scr_text("Ну что же так сложно...",noone,noone,"Mike","Женя",noone);
+scr_text("Сказал человек что-нибудь, а ты понимай, какой из тысячи смыслов он вложил в свои слова...",noone,noone,"Mike","Женя",noone);
+scr_text("Эх...",noone,noone,"Mike","Женя",noone);
 scr_No_option("day3_zhenya_2");
 break;
 
@@ -2209,26 +2181,26 @@ scr_No_text(true);
 break;
 
 case "day3_nastya_0":
-scr_text("Хм, привет Майк.",noone,noone,"Mike",_nastya,noone);
+scr_text("Хм, привет Майк.",noone,noone,"Mike","Настя",noone);
 scr_text("Привет...",noone,"Майк","Mike",noone,noone);
-scr_text("А где Аня?",noone,noone,"Mike",_nastya,noone);
+scr_text("А где Аня?",noone,noone,"Mike","Настя",noone);
 scr_text("Я вот сам не знаю...",noone,"Майк","Mike",noone,noone);
-scr_text("Хм...",noone,noone,"Mike",_nastya,noone);
-scr_text("И Адама сегодня я не вижу.",noone,noone,"Mike",_nastya,noone);
+scr_text("Хм...",noone,noone,"Mike","Настя",noone);
+scr_text("И Адама сегодня я не вижу.",noone,noone,"Mike","Настя",noone);
 scr_text("А?",noone,"Майк","Mike",noone,noone);
 scr_text("(И ведь действительно...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Думаешь, это как-то связано?",noone,noone,"Mike",_nastya,noone);
+scr_text("Думаешь, это как-то связано?",noone,noone,"Mike","Настя",noone);
 scr_text("Я не знаю...",noone,"Майк","Mike",noone,noone);
 scr_text("...",noone,"Майк","Mike",noone,noone);
 scr_text("А что бы ты сделала, если-",noone,"Майк","Mike",noone,noone);
 scr_text("(Нет)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Я не могу спрашивать о подобном)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Если что?",noone,noone,"Mike",_nastya,noone);
+scr_text("Если что?",noone,noone,"Mike","Настя",noone);
 scr_text("Не, забудь.",noone,"Майк","Mike",noone,noone);
 scr_text("Я неправильно подобрал слова...",noone,"Майк","Mike",noone,noone);
 scr_text("Как думаешь, всё в порядке?",noone,"Майк","Mike",noone,noone);
-scr_text("Ты об Ане с Адамом, или о погоде?",noone,noone,"Mike",_nastya,noone);
-scr_text("А то и там, и там ситуация сомнительная.",noone,noone,"Mike",_nastya,noone);
+scr_text("Ты об Ане с Адамом, или о погоде?",noone,noone,"Mike","Настя",noone);
+scr_text("А то и там, и там ситуация сомнительная.",noone,noone,"Mike","Настя",noone);
 scr_text("...",noone,"Майк","Mike",noone,noone);
 scr_No_option("day3_nastya_1");
 break;
@@ -2256,9 +2228,9 @@ break;
 
 case "day3_anna_2":
 obj_payer.moment_skip=0;
-scr_text("Можно вопрос?",noone,noone,noone,_nastya,noone);
+scr_text("Можно вопрос?",noone,noone,noone,"Настя",noone);
 scr_text("Что такое?",noone,"Учитель",noone,noone,noone);
-scr_text("Вы не знаете, почему отсутствуют Адам и Аня?",noone,noone,noone,_nastya,noone);
+scr_text("Вы не знаете, почему отсутствуют Адам и Аня?",noone,noone,noone,"Настя",noone);
 scr_text("Адам отсутствует по... уважительной причине.",noone,"Учитель",noone,noone,noone);
 scr_No_option("day3_anna_3");
 break;
@@ -2289,12 +2261,12 @@ obj_payer.faza[2]=0;
 obj_payer.faza[3]=0;
 scr_sound_sette(1,Sng_Colorful_Flowers,true,2);
 scr_text("Здравствуйте, извините за опоздание.",noone,noone,noone,"???",noone);
-scr_text("Можно войти?",noone,noone,noone,_anya,"Anya");
-scr_text("[wave]Привет[/wave], Аня!",noone,_andrey,noone,noone,"Anya");
-scr_text("Мы думали, что тебя сдуло ветром!",noone,_andrey,noone,noone,"Anya");
+scr_text("Можно войти?",noone,noone,noone,"Аня","Anya");
+scr_text("[wave]Привет[/wave], Аня!",noone,"Андрей",noone,noone,"Anya");
+scr_text("Мы думали, что тебя сдуло ветром!",noone,"Андрей",noone,noone,"Anya");
 scr_text("Нет, мы так не думали.",noone,"Майк","Mike",noone,"Anya");
 scr_text("...ты ведь говорила, что придёшь пораньше...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ну задержалась, с кем не бывает...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ну задержалась, с кем не бывает...",noone,noone,"Mike","Аня","Anya");
 scr_text("*вздох*",noone,"Учитель",noone,noone,"Anya");
 scr_text("Присаживайся.",noone,"Учитель",noone,noone,"Anya");
 scr_text("(И весь урок я не мог сконцентрироваться на учёбе.)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
@@ -2312,33 +2284,33 @@ scr_text("Кхем...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Где ты была?!",noone,"Майк","Mike",noone,"Anya");
 scr_text("Ты понимаешь, как я волновался?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Особенно после вчерашнего ''кто-то может пропасть''...",noone,"Майк","Mike",noone,"Anya");
-scr_text("У меня были свои причины.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Перед тем, как я хотела выйти из дома, папе написали по работе.",noone,noone,"Mike",_anya,"Anya");
-scr_text("После этого он сразу побежал на работу... даже телефон забыл взять.",noone,noone,"Mike",_anya,"Anya");
-scr_text("И на всякий случай, я тихонько взяла его.",noone,noone,"Mike",_anya,"Anya");
+scr_text("У меня были свои причины.",noone,noone,"Mike","Аня","Anya");
+scr_text("Перед тем, как я хотела выйти из дома, папе написали по работе.",noone,noone,"Mike","Аня","Anya");
+scr_text("После этого он сразу побежал на работу... даже телефон забыл взять.",noone,noone,"Mike","Аня","Anya");
+scr_text("И на всякий случай, я тихонько взяла его.",noone,noone,"Mike","Аня","Anya");
 scr_text("Ты что!?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Мне нужно подобрать пароль от него...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Мне нужно подобрать пароль от него...",noone,noone,"Mike","Аня","Anya");
 scr_text("Зачем?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Там явно есть информация об этих преступлениях...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Там явно есть информация об этих преступлениях...",noone,noone,"Mike","Аня","Anya");
 scr_text("Тех, о которых говорил Безликий?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Да...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Я подберу пароль, но это займёт время.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Да...",noone,noone,"Mike","Аня","Anya");
+scr_text("Я подберу пароль, но это займёт время.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Тебе так важна эта информация?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Конечно!",noone,noone,"Mike",_anya,"Anya");
-scr_text("Без неё я не смогу сама разобраться в этих преступлениях.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А я должна это сделать.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Раньше, чем мой папа.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Конечно!",noone,noone,"Mike","Аня","Anya");
+scr_text("Без неё я не смогу сама разобраться в этих преступлениях.",noone,noone,"Mike","Аня","Anya");
+scr_text("А я должна это сделать.",noone,noone,"Mike","Аня","Anya");
+scr_text("Раньше, чем мой папа.",noone,noone,"Mike","Аня","Anya");
 scr_text("Почему?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Он считает, что мне не стать детективом.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Что я не способна на это.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Я разберусь во всём этом, и докажу ему обратное.",noone,noone,"Mike",_anya,"Anya");
-scr_text("И ты мне в этом поможешь.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Он считает, что мне не стать детективом.",noone,noone,"Mike","Аня","Anya");
+scr_text("Что я не способна на это.",noone,noone,"Mike","Аня","Anya");
+scr_text("Я разберусь во всём этом, и докажу ему обратное.",noone,noone,"Mike","Аня","Anya");
+scr_text("И ты мне в этом поможешь.",noone,noone,"Mike","Аня","Anya");
 scr_text("Как?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ты можешь попадать в мир снов.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ты можешь попадать в мир снов.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
-scr_text("И кроме этого...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Какая комбинация из шести цифр приходит тебе на ум?",noone,noone,"Mike",_anya,"Anya");
+scr_text("И кроме этого...",noone,noone,"Mike","Аня","Anya");
+scr_text("Какая комбинация из шести цифр приходит тебе на ум?",noone,noone,"Mike","Аня","Anya");
 scr_text("хм...",noone,"Майк","Mike",noone,"Anya");
 scr_text("(Идея для пароля от телефона...)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("(Наверное, это...)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
@@ -2350,11 +2322,11 @@ break;
 case "day3_050106":
 obj_payer.faza[1]=1;
 scr_text("Что если 050106?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Почему?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Почему?",noone,noone,"Mike","Аня","Anya");
 scr_text("Ну... 05 + 01 = 06",noone,"Майк","Mike",noone,"Anya");
 scr_text("Логично?",noone,"Майк","Mike",noone,"Anya");
 scr_text("*Бип*",noone,noone,"Mike",noone,"Anya");
-scr_text("Нет, не логично...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Нет, не логично...",noone,noone,"Mike","Аня","Anya");
 if (obj_payer.faza[2]=0) scr_option("030907","day3_030907","030907");
 if (obj_payer.faza[3]=0) scr_option("396928","day3_396928","396928");
 if (obj_payer.faza[1]=1 and obj_payer.faza[2]=1 and obj_payer.faza[3]=1) scr_No_option("day3_anna_6");
@@ -2363,9 +2335,9 @@ break;
 case "day3_030907":
 obj_payer.faza[2]=1;
 scr_text("А если... 030907?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Странно, но ладно...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Странно, но ладно...",noone,noone,"Mike","Аня","Anya");
 scr_text("*Бип*",noone,noone,"Mike",noone,"Anya");
-scr_text("Нет, не ладно...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Нет, не ладно...",noone,noone,"Mike","Аня","Anya");
 if (obj_payer.faza[1]=0) scr_option("050106","day3_050106","050106");
 if (obj_payer.faza[3]=0) scr_option("396928","day3_396928","396928");
 if (obj_payer.faza[1]=1 and obj_payer.faza[2]=1 and obj_payer.faza[3]=1) scr_No_option("day3_anna_6");
@@ -2374,18 +2346,18 @@ break;
 case "day3_396928":
 obj_payer.faza[3]=1;
 scr_text("А если 396928?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ты это на рандоме сказал?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ты это на рандоме сказал?",noone,noone,"Mike","Аня","Anya");
 scr_text("Нет, просто три прикольных числа...",noone,"Майк","Mike",noone,"Anya");
 scr_text("*Бип*",noone,noone,"Mike",noone,"Anya");
-scr_text("Нет, не прикольных...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Нет, не прикольных...",noone,noone,"Mike","Аня","Anya");
 if (obj_payer.faza[1]=0) scr_option("050106","day3_050106","050106");
 if (obj_payer.faza[2]=0) scr_option("030907","day3_030907","030907");
 if (obj_payer.faza[1]=1 and obj_payer.faza[2]=1 and obj_payer.faza[3]=1) scr_No_option("day3_anna_6");
 break;
 
 case "day3_anna_6":
-scr_text("Гх... чёрт.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Я думаю, мне нужно больше времени.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Гх... чёрт.",noone,noone,"Mike","Аня","Anya");
+scr_text("Я думаю, мне нужно больше времени.",noone,noone,"Mike","Аня","Anya");
 scr_text("Хорошо.",noone,"Майк","Mike",noone,"Anya");
 scr_No_option("day3_anna_7");
 break;
@@ -2433,43 +2405,43 @@ room_goto(room_home);
 scr_black(black_no,1)
 scr_text("666999?",noone,"Майк","Mike",noone,"Anya");
 scr_text("*Бип*",noone,noone,"Mike",noone,"Anya");
-scr_text("Да чёрт!",noone,noone,"Mike",_anya,"Anya");
-scr_text("А что вы делаете?",noone,noone,"Mike",_masha,"Masha");
+scr_text("Да чёрт!",noone,noone,"Mike","Аня","Anya");
+scr_text("А что вы делаете?",noone,noone,"Mike","Маша","Masha");
 scr_text("Ищем пароль.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Пароль?",noone,noone,"Mike",_masha,"Masha");
-scr_text("Шесть цифр.",noone,_anya,"Anya",noone,"Masha");
-scr_text("Маш, есть идея?",noone,_anya,"Anya",noone,"Masha");
-scr_text("Шесть цифр?",noone,noone,"Anya",_masha,"Masha");
-scr_text("Ну...",noone,noone,"Anya",_masha,"Masha");
-scr_text("Хм...",noone,noone,"Anya",_masha,"Masha");
-scr_text("13...",noone,noone,"Anya",_masha,"Masha");
-scr_text("затем 11...",noone,noone,"Anya",_masha,"Masha");
-scr_text("и в конце... так...",noone,noone,"Anya",_masha,"Masha");
-scr_text("98",noone,noone,"Anya",_masha,"Masha");
-scr_text("131198?",noone,_anya,"Anya",noone,"Masha");
-scr_text("Да, вроде так.",noone,noone,"Anya",_masha,"Masha");
+scr_text("Пароль?",noone,noone,"Mike","Маша","Masha");
+scr_text("Шесть цифр.",noone,"Аня","Anya",noone,"Masha");
+scr_text("Маш, есть идея?",noone,"Аня","Anya",noone,"Masha");
+scr_text("Шесть цифр?",noone,noone,"Anya","Маша","Masha");
+scr_text("Ну...",noone,noone,"Anya","Маша","Masha");
+scr_text("Хм...",noone,noone,"Anya","Маша","Masha");
+scr_text("13...",noone,noone,"Anya","Маша","Masha");
+scr_text("затем 11...",noone,noone,"Anya","Маша","Masha");
+scr_text("и в конце... так...",noone,noone,"Anya","Маша","Masha");
+scr_text("98",noone,noone,"Anya","Маша","Masha");
+scr_text("131198?",noone,"Аня","Anya",noone,"Masha");
+scr_text("Да, вроде так.",noone,noone,"Anya","Маша","Masha");
 scr_text("А что это за число?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Дата рождения мамы.",noone,noone,"Mike",_masha,"Masha");
-scr_text("Твоей мамы?",noone,_anya,"Anya",noone,"Masha");
-scr_text("Ага. 13.11.1998",noone,noone,"Anya",_masha,"Masha");
-scr_text("Я запомнила это, ведь это ещё и всемирный день доброты!",noone,noone,"Anya",_masha,"Masha");
+scr_text("Дата рождения мамы.",noone,noone,"Mike","Маша","Masha");
+scr_text("Твоей мамы?",noone,"Аня","Anya",noone,"Masha");
+scr_text("Ага. 13.11.1998",noone,noone,"Anya","Маша","Masha");
+scr_text("Я запомнила это, ведь это ещё и всемирный день доброты!",noone,noone,"Anya","Маша","Masha");
 scr_text("Правда?",noone,"Майк","Mike",noone,"Masha");
-scr_text("Ну... вроде да.",noone,_anya,"Anya",noone,"Masha");
-scr_text("Не думаю, что получится, но всё же...",noone,_anya,"Anya",noone,"Masha");
+scr_text("Ну... вроде да.",noone,"Аня","Anya",noone,"Masha");
+scr_text("Не думаю, что получится, но всё же...",noone,"Аня","Anya",noone,"Masha");
 scr_text("*Плип*",noone,noone,"Anya",noone,"Masha");
-scr_text("А? Получилось?!",noone,_anya,"Anya",noone,"Masha");
-scr_text("Но... почему?",noone,_anya,"Anya",noone,"Masha");
-scr_text("...?",noone,noone,"Anya",_masha,"Masha");
-scr_text("Я молодец?",noone,noone,"Anya",_masha,"Masha");
-scr_text("Ну конечно же!",noone,_anya,"Anya",noone,"Masha");
-scr_text("Ура!...",noone,noone,"Anya",_masha,"Masha");
-scr_text("И что произошло?",noone,noone,"Anya",_masha,"Masha");
+scr_text("А? Получилось?!",noone,"Аня","Anya",noone,"Masha");
+scr_text("Но... почему?",noone,"Аня","Anya",noone,"Masha");
+scr_text("...?",noone,noone,"Anya","Маша","Masha");
+scr_text("Я молодец?",noone,noone,"Anya","Маша","Masha");
+scr_text("Ну конечно же!",noone,"Аня","Anya",noone,"Masha");
+scr_text("Ура!...",noone,noone,"Anya","Маша","Masha");
+scr_text("И что произошло?",noone,noone,"Anya","Маша","Masha");
 scr_text("Ну... ты можешь пойти спать.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Хух... а раньше я не могла?",noone,noone,"Mike",_masha,"Masha");
+scr_text("Хух... а раньше я не могла?",noone,noone,"Mike","Маша","Masha");
 scr_text("Нет.",noone,"Майк","Mike",noone,"Masha");
 scr_text("Так что иди, наслаждайся моментом.",noone,"Майк","Mike",noone,"Masha");
-scr_text("Хорошо...",noone,noone,"Mike",_masha,"Masha");
-scr_text("Спокойной ночи.",noone,noone,"Mike",_masha,"Masha");
+scr_text("Хорошо...",noone,noone,"Mike","Маша","Masha");
+scr_text("Спокойной ночи.",noone,noone,"Mike","Маша","Masha");
 scr_text("И тебе тоже.",noone,"Майк","Mike",noone,"Anya");
 scr_No_option("day3_anna_13");
 break;
@@ -2482,59 +2454,59 @@ obj_payer.faza[11]=3;
 
 scr_sound_sette(0,Sng_Colorful_Flowers,true,1);
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
 scr_text("Ну как?",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Тут какая-то переписка...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Тут какая-то переписка...",noone,noone,"Mike","Аня","Anya");
 scr_text("Здравствуйте, Александр.",noone,"???","Unknown",noone,"Sasha");
-scr_text("Здравствуй.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Что-то случилось?",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Здравствуй.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Что-то случилось?",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Да.",noone,"???","Unknown",noone,"Sasha");
-scr_text("Ей лучше?",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Ей лучше?",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Прошлый пациент? Её состояние не изменилось.",noone,"???","Unknown",noone,"Sasha");
 scr_text("Но этот ребёнок, что попал в больницу сегодня...",noone,"???","Unknown",noone,"Sasha");
 scr_text("Температура его тела в норме, никаких внешних или внутренних причин его состояния не обнаружено.",noone,"???","Unknown",noone,"Sasha");
-scr_text("С чем это может быть связано?",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("С чем это может быть связано?",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Я не уверена...",noone,"???","Unknown",noone,"Sasha");
-scr_text("Возможно, [c_yellow]это[c_white] повторяется.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Возможно, [c_yellow]это[c_white] повторяется.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("А?",noone,"???","Unknown",noone,"Sasha");
-scr_text("Всё это...",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Ничего тебе не напоминает?",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Всё это...",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Ничего тебе не напоминает?",noone,noone,"Unknown","Александр","Sasha");
 scr_text("О чём ты?",noone,"???","Unknown",noone,"Sasha");
-scr_text("О тех убийствах семилетней давности.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("О тех убийствах семилетней давности.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Ты считаешь, что они как-то связаны с происходящим сейчас?",noone,"???","Unknown",noone,"Sasha");
-scr_text("Я не считаю.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Считают математики, а я строю предложения.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Я не считаю.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Считают математики, а я строю предложения.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Но... разве то дело не было закрыто несколько лет назад?",noone,"???","Unknown",noone,"Sasha");
-scr_text("Да, я знаю.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Да, я знаю.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Не думаю, что кто-либо попытается совершить что-либо [c_yellow]подобное[c_white]...",noone,"???","Unknown",noone,"Sasha");
-scr_text("Но нам нельзя отрицать эту теорию без явных аргументов против неё.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Мы не дадим новым жертвам погибнуть.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Но нам нельзя отрицать эту теорию без явных аргументов против неё.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Мы не дадим новым жертвам погибнуть.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Да.",noone,"???","Unknown",noone,"Sasha");
 scr_text("",noone,"???","Unknown",noone,"Sasha");
 scr_text("А кстати, тот парень, что вчера попал сюда...",noone,"???","Unknown",noone,"Sasha");
 scr_text("Он ведь был знаком с твоей дочкой?",noone,"???","Unknown",noone,"Sasha");
 scr_text("Они ведь теперь учатся в одном классе...",noone,"???","Unknown",noone,"Sasha");
 scr_text("Может у неё что-нибудь узнать?",noone,"???","Unknown",noone,"Sasha");
-scr_text("Я не могу втягивать мою дочь в это.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Я не хочу, чтоб она повторила судьбу Ричарда.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Я не могу втягивать мою дочь в это.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Я не хочу, чтоб она повторила судьбу Ричарда.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Ты о чём?",noone,"???","Unknown",noone,"Sasha");
-scr_text("О том, когда он сунул свой нос не в своё дело, и был ложно обвинён в тех преступлениях.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("О том, когда он сунул свой нос не в своё дело, и был ложно обвинён в тех преступлениях.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Ах... да...",noone,"???","Unknown",noone,"Sasha");
-scr_text("Я не хочу, чтобы её любопытство погубило её будущее.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("Я не хочу, чтобы её любопытство погубило её будущее.",noone,noone,"Unknown","Александр","Sasha");
 scr_text("Но... ты же понимаешь, что она всё равно попытается изучить всё сама, что бы ты ей не говорил?",noone,"???","Unknown",noone,"Sasha");
 scr_text("И про Адама она рано или поздно узнает.",noone,"???","Unknown",noone,"Sasha");
 scr_text("Как бы ты не пытался уберечь её от всего этого, она точно узнает правду.",noone,"???","Unknown",noone,"Sasha");
 scr_text("Тебе нужно рассказать ей обо всём, пока не стало слишком поздно.",noone,"???","Unknown",noone,"Sasha");
 scr_text("Иначе она перестанет доверять тебе, зная что ты скрываешь от неё всё это...",noone,"???","Unknown",noone,"Sasha");
 scr_text("Про обоих пациентов. Понимаешь?",noone,"???","Unknown",noone,"Sasha");
-scr_text("",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Нет.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Ты не понимаешь.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Лучше будет как можно быстрее раскрыть это дело.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Надеюсь, тогда у нас появится спасти этих и будущих пациентов.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("Чем быстрее мы узнаем правду, тем лучше будет для всех нас.",noone,noone,"Unknown",_sasha,"Sasha");
-scr_text("И для тебя тоже.",noone,noone,"Unknown",_sasha,"Sasha");
+scr_text("",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Нет.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Ты не понимаешь.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Лучше будет как можно быстрее раскрыть это дело.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Надеюсь, тогда у нас появится спасти этих и будущих пациентов.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("Чем быстрее мы узнаем правду, тем лучше будет для всех нас.",noone,noone,"Unknown","Александр","Sasha");
+scr_text("И для тебя тоже.",noone,noone,"Unknown","Александр","Sasha");
 scr_No_option("day3_anna_14");
 break;
 
@@ -2542,50 +2514,50 @@ case "day3_anna_14":
 scr_black(black_no,1.5)
 scr_text("",noone,noone,noone,noone,noone);
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("О чём они говорили?",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("О чём они говорили?",noone,noone,"Mike","Аня","Anya");
 scr_text("Я не уверен...",noone,"Майк","Mike",noone,"Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Хм?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Этот человек...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Он пишет что-то?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Чт?!",noone,noone,"Mike",_anya,"Anya");
+scr_text("Чт?!",noone,noone,"Mike","Аня","Anya");
 scr_text("Привет.",noone,"???","Unknown",noone,noone);
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("(что нам делать?)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("Аня, это ведь ты сейчас за телефоном?",noone,"???","Unknown",noone,noone);
-scr_text("Хм?! Как она узнала?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Хм?! Как она узнала?",noone,noone,"Mike","Аня","Anya");
 scr_text("Ответь мне, пожалуйста.",noone,"???","Unknown",noone,noone);
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("''Да, это я.''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("''Да, это я.''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Что ты делаешь?!",noone,"Майк","Mike",noone,"Anya");
-scr_text("Пишу.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Пишу.",noone,noone,"Mike","Аня","Anya");
 scr_text("А если твой папа узнает?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Неважно.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Я не могу бросить это на пол пути.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Другого шанса узнать правду у меня может не быть...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Неважно.",noone,noone,"Mike","Аня","Anya");
+scr_text("Я не могу бросить это на пол пути.",noone,noone,"Mike","Аня","Anya");
+scr_text("Другого шанса узнать правду у меня может не быть...",noone,noone,"Mike","Аня","Anya");
 scr_text("Славно.",noone,"???","Unknown",noone,"Anya");
 scr_text("Сашка долго негодовал, что оставил свой телефон дома...",noone,"???","Unknown",noone,"Anya");
 scr_text("И тут кто-то внезапно входит с него в нашу переписку.",noone,"???","Unknown",noone,"Anya");
 scr_text("Кто же, если не ты.",noone,"???","Unknown",noone,"Anya");
 scr_text("Прочти сообщения выше.",noone,"???","Unknown",noone,"Anya");
-scr_text("''Уже сделала.''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("''Уже сделала.''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Хорошо.",noone,"???","Unknown",noone,"Anya");
 scr_text("Но перед этим один вопрос...",noone,"???","Unknown",noone,"Anya");
 scr_text("Тебе или твоим друзьям снился некто... что называл себя ''Безликий''?",noone,"???","Unknown",noone,"Anya");
-scr_text("?!",noone,noone,"Mike",_anya,"Anya");
+scr_text("?!",noone,noone,"Mike","Аня","Anya");
 scr_text("Откуда... ей известно...",noone,"Майк","Mike",noone,"Anya");
-scr_text("''Откуда ты знаешь о нём?''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("''Откуда ты знаешь о нём?''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Так значит и о нём тебе уже всё известно.",noone,"???","Unknown",noone,"Anya");
 scr_text("Я встретилась с ним несколько лет назад.",noone,"???","Unknown",noone,"Anya");
-scr_text("''Но разве взрослые могут попадать в тот, друг мир?''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("''Но разве взрослые могут попадать в тот, друг мир?''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Хоть у детей это получается лучше, люди до лет так 23 вполне могут попадать в тот мир.",noone,"???","Unknown",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Она работала с Безликим?",noone,noone,"Mike",_anya,"Anya");
-scr_text("... сколько лет назад это было?...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Она работала с Безликим?",noone,noone,"Mike","Аня","Anya");
+scr_text("... сколько лет назад это было?...",noone,noone,"Mike","Аня","Anya");
 scr_text("(Не сказав ни слова больше она продолжила переписку.)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
-scr_text("''Что тебе нужно?''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("''Что тебе нужно?''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Рассказать тебе правду.",noone,"???","Unknown",noone,"Anya");
 scr_text("Послушай, то, что сейчас происходит с Адамом...",noone,"???","Unknown",noone,"Anya");
 scr_text("Его состояние...",noone,"???","Unknown",noone,"Anya");
@@ -2593,36 +2565,36 @@ scr_text("Сегодня он был доставлен в больницу.",no
 scr_text("Он выглядел... ...безжизненно(?)",noone,"???","Unknown",noone,"Anya");
 scr_text("Не знаю как описать это лучше.",noone,"???","Unknown",noone,"Anya");
 scr_text("Ты понимаешь, о чём все думают?",noone,"???","Unknown",noone,"Anya");
-scr_text("''Это то же самое, что было здесь семь лет назад.''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("''Это то же самое, что было здесь семь лет назад.''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Именно.",noone,"???","Unknown",noone,"Anya");
 scr_text("Я предполагаю, что то произошло с ним в том мире.",noone,"???","Unknown",noone,"Anya");
-scr_text("хм?...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Если это... именно то, о чём говорил Безликий...",noone,noone,"Mike",_anya,"Anya");
+scr_text("хм?...",noone,noone,"Mike","Аня","Anya");
+scr_text("Если это... именно то, о чём говорил Безликий...",noone,noone,"Mike","Аня","Anya");
 scr_text("Тебе и твоим друзьям нужно помочь ему.",noone,"???","Unknown",noone,"Anya");
 scr_text("Иначе он продолжит эту ужасную статистику.",noone,"???","Unknown",noone,"Anya");
 scr_text("(Что-то дрогнуло в моей груди от одной лишь мысли об этом.)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("Раз вы уже виделись с Безликим, должно быть только у вас здесь есть возможность помочь ему.",noone,"???","Unknown",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
 scr_text("Нам действительно придётся помогать ему в одиночку?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Может попросить кого-нибудь о помощи?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Мы не можем.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Взрослые уже не смогут полноценно попасть в тот мир...",noone,noone,"Mike",_anya,"Anya");
-scr_text("А про кого-нибудь из наших одноклассников...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Хоть поверить мне в это сложно...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Но, если помнишь, Безликий говорил, что кто-то из них ответственен в этом.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Или как минимум помогает этому случиться.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Мы не можем.",noone,noone,"Mike","Аня","Anya");
+scr_text("Взрослые уже не смогут полноценно попасть в тот мир...",noone,noone,"Mike","Аня","Anya");
+scr_text("А про кого-нибудь из наших одноклассников...",noone,noone,"Mike","Аня","Anya");
+scr_text("Хоть поверить мне в это сложно...",noone,noone,"Mike","Аня","Anya");
+scr_text("Но, если помнишь, Безликий говорил, что кто-то из них ответственен в этом.",noone,noone,"Mike","Аня","Anya");
+scr_text("Или как минимум помогает этому случиться.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("(Я уже забыл про это...)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("(Хотя всё это я услышал ещё вчера.)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("(...Слишком много новой информации...)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
-scr_text("*вздох*",noone,noone,"Mike",_anya,"Anya");
-scr_text("''Почему ты помогаешь нам?''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("*вздох*",noone,noone,"Mike","Аня","Anya");
+scr_text("''Почему ты помогаешь нам?''",noone,noone,"Unknown","Аня","Anya");
 scr_text("Потому что могу.",noone,"???","Unknown",noone,"Anya");
 scr_text("Что за глупый вопрос?",noone,"???","Unknown",noone,"Anya");
 scr_text("Я не хочу, чтобы умер человек.",noone,"???","Unknown",noone,"Anya");
 scr_text("А уж тем более, чтобы вы винили себя в этом.",noone,"???","Unknown",noone,"Anya");
 scr_text("Я верю, что у тебя всё получится.",noone,"???","Unknown",noone,"Anya");
-scr_text("''Спасибо.''",noone,noone,"Unknown",_anya,"Anya");
+scr_text("''Спасибо.''",noone,noone,"Unknown","Аня","Anya");
 scr_text("",noone,"???","Unknown",noone,"Anya");
 scr_text("Не волнуйся, я удалю наши сообщения друг другу.",noone,"???","Unknown",noone,"Anya");
 scr_text("Только в начале, хочу чтобы ты узнала ещё кое-что.",noone,"???","Unknown",noone,"Anya");
@@ -2631,62 +2603,62 @@ scr_text("Ещё ",noone,"???","Unknown",noone,"Anya");
 scr_text("     ",noone,"???","Unknown",noone,"Anya");
 scr_text("        ",noone,"???","Unknown",noone,"Anya");
 scr_text("           ",noone,"???","Unknown",noone,"Anya");
-scr_text("Что?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Она просто вышла?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Даже предложение не дописала…",noone,noone,"Mike",_anya,"Anya");
+scr_text("Что?",noone,noone,"Mike","Аня","Anya");
+scr_text("Она просто вышла?",noone,noone,"Mike","Аня","Anya");
+scr_text("Даже предложение не дописала…",noone,noone,"Mike","Аня","Anya");
 scr_text("Хм...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Так... это действительно правда...",noone,noone,"Mike",_anya,"Anya");
-scr_text("То, о чём говорил Безликий.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Адам пропал в свой внутренний мир.",noone,noone,"Mike",_anya,"Anya");
-scr_text("И если мы не спасём его оттуда, то он...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Так... это действительно правда...",noone,noone,"Mike","Аня","Anya");
+scr_text("То, о чём говорил Безликий.",noone,noone,"Mike","Аня","Anya");
+scr_text("Адам пропал в свой внутренний мир.",noone,noone,"Mike","Аня","Anya");
+scr_text("И если мы не спасём его оттуда, то он...",noone,noone,"Mike","Аня","Anya");
 scr_text("Погибнет.",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Мы должны ему помочь.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Ведь если не мы, то никто не поможет ему.",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Мы должны ему помочь.",noone,noone,"Mike","Аня","Anya");
+scr_text("Ведь если не мы, то никто не поможет ему.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Но... у меня всё ещё куча вопросов.",noone,"Майк","Mike",noone,"Anya");
 scr_text("О чём они говорили?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Чья-то вина, убийства...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Судя по их словам они говорили об преступлениях семилетней давности.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Судя по их словам они говорили об преступлениях семилетней давности.",noone,noone,"Mike","Аня","Anya");
 scr_text("То, ради которого Безликий позвал себе помощника?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Да...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Официальная версия гласила, что несколько человек были отравлены.",noone,noone,"Mike",_anya,"Anya");
-scr_text("В начале был ложно обвинён 16-ти летний подросток.",noone,noone,"Mike",_anya,"Anya");
-scr_text("А потом настоящий виновный сам признался в содеянном.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Хоть все и думали, что он отравлял людей...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Но, по словам Безликого, он, видимо проникал во внутренние миры этих людей, и разрушал их сознание.",noone,noone,"Mike",_anya,"Anya");
-scr_text("После этого эти люди умирали, что спутали с эффектами от отравления...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Подслушав папин разговор незадолго до того, как ты приехал, я узнала, что [c_yellow]истинная причина[c_white] нашего переезда - подробное изучение тех событий.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Так-как сейчас происходит нечто подобное...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Теперь я уверена в этом.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Да...",noone,noone,"Mike","Аня","Anya");
+scr_text("Официальная версия гласила, что несколько человек были отравлены.",noone,noone,"Mike","Аня","Anya");
+scr_text("В начале был ложно обвинён 16-ти летний подросток.",noone,noone,"Mike","Аня","Anya");
+scr_text("А потом настоящий виновный сам признался в содеянном.",noone,noone,"Mike","Аня","Anya");
+scr_text("Хоть все и думали, что он отравлял людей...",noone,noone,"Mike","Аня","Anya");
+scr_text("Но, по словам Безликого, он, видимо проникал во внутренние миры этих людей, и разрушал их сознание.",noone,noone,"Mike","Аня","Anya");
+scr_text("После этого эти люди умирали, что спутали с эффектами от отравления...",noone,noone,"Mike","Аня","Anya");
+scr_text("Подслушав папин разговор незадолго до того, как ты приехал, я узнала, что [c_yellow]истинная причина[c_white] нашего переезда - подробное изучение тех событий.",noone,noone,"Mike","Аня","Anya");
+scr_text("Так-как сейчас происходит нечто подобное...",noone,noone,"Mike","Аня","Anya");
+scr_text("Теперь я уверена в этом.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Человек, что разрушает чужие создания...",noone,"Майк","Mike",noone,"Anya");
 scr_text("(И при этом это кто-то, кого я знаю...)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("Разве это не будет опасно?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Особенно без помощи взрослых?",noone,"Майк","Mike",noone,"Anya");
-scr_text("... боюсь, у нас просто нет выбора.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Ведь сколько бы папа не исследовал здесь происходящее...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Ему никак не попасть в другой мир.",noone,noone,"Mike",_anya,"Anya");
+scr_text("... боюсь, у нас просто нет выбора.",noone,noone,"Mike","Аня","Anya");
+scr_text("Ведь сколько бы папа не исследовал здесь происходящее...",noone,noone,"Mike","Аня","Anya");
+scr_text("Ему никак не попасть в другой мир.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Но то о чём они говорили...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Твой отец не хочет, чтоб ты занималась этим.",noone,"Майк","Mike",noone,"Anya");
-scr_text("...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Он просто не понимает меня.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Считает, что я ещё мала для подобных расследований.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Он даже про то, что случилось с Адамом рассказать мне не хотел.",noone,noone,"Mike",_anya,"Anya");
+scr_text("...",noone,noone,"Mike","Аня","Anya");
+scr_text("Он просто не понимает меня.",noone,noone,"Mike","Аня","Anya");
+scr_text("Считает, что я ещё мала для подобных расследований.",noone,noone,"Mike","Аня","Anya");
+scr_text("Он даже про то, что случилось с Адамом рассказать мне не хотел.",noone,noone,"Mike","Аня","Anya");
 scr_text("Он явно волнуется за тебя.",noone,"Майк","Mike",noone,"Anya");
-scr_text("Одно дело когда он просто волнуется, а другое когда он не даёт мне показать ему все свои способности.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Я обязана помочь Адаму.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Изучить тот мир.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Понять, кто ответственен за это.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Одно дело когда он просто волнуется, а другое когда он не даёт мне показать ему все свои способности.",noone,noone,"Mike","Аня","Anya");
+scr_text("Я обязана помочь Адаму.",noone,noone,"Mike","Аня","Anya");
+scr_text("Изучить тот мир.",noone,noone,"Mike","Аня","Anya");
+scr_text("Понять, кто ответственен за это.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("(''её любопытство погубило её будущее''?)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("(О чём он говорил?)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("(И кто этот ''второй пациент''?)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Тогда надо встретиться с Безликим как можно скорее.",noone,"Майк","Mike",noone,"Anya");
-scr_text("Да.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Спокойной ночи?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Да.",noone,noone,"Mike","Аня","Anya");
+scr_text("Спокойной ночи?",noone,noone,"Mike","Аня","Anya");
 scr_No_option("day3_anna_15");
 break;
 
@@ -2721,40 +2693,40 @@ scr_black(black_no,1);
 obj_time.time_change=3;
 scr_sound_sette(1,Sng_Timeless,true,1);
 scr_text("(И вот, я снова тут.)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Здравствуйте, Майк и Аня.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Здравствуйте, Майк и Аня.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Вы пришли к решению?",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Готовы ли Вы помогать мне?",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("...",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Да.",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Мы готовы.",noone,_anya,"Anya",noone,"Faceless");
+scr_text("Вы пришли к решению?",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Готовы ли Вы помогать мне?",noone,noone,"Mike","Безликий","Faceless");
+scr_text("...",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Да.",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Мы готовы.",noone,"Аня","Anya",noone,"Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Наш друг попал в этот мир.",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Мы должны помочь ему...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Ясно.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Что нам делать?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Для начала мне нужно открыть дверь во внутренний мир Вашего друга.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Сейчас Ваш друг должен быть именно там.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("А для этого мне нужно узнать больше о Вашем друге.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("...",noone,_anya,"Anya",noone,"Faceless");
+scr_text("Ясно.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Что нам делать?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Для начала мне нужно открыть дверь во внутренний мир Вашего друга.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Сейчас Ваш друг должен быть именно там.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("А для этого мне нужно узнать больше о Вашем друге.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("...",noone,"Аня","Anya",noone,"Faceless");
 scr_text("Его зовут Адам.",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Он такой... спокойный, молчаливый...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Хм...",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Хм...",noone,noone,"Mike","Безликий","Faceless");
 scr_text("У него голубые глаза, чёрные волосы...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Он...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("При моём с ним знакомстве он выглядел так...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Как будто скрывал ото всех... что-то...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("(хм...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("(Только сейчас я задумался над этим...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Ясно...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Надеюсь, этого будет достаточно.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Ясно...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Надеюсь, этого будет достаточно.",noone,noone,"Mike","Безликий","Faceless");
 scr_No_option("day3_faceless_1");
 break;
 
 case "day3_faceless_1":
 scr_black(black_no,-2);
 scr_text("(Сказав это, он принялся рисовать что-то.)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("...",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("...",noone,noone,"Mike","Безликий","Faceless");
 scr_text("(Это..?)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("(Дверь.)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_No_option("day3_faceless_2");
@@ -2763,22 +2735,22 @@ break;
 case "day3_faceless_2":
 scr_black(black_no,2);
 obj_payer.faza[0]=3.62;
-scr_text("Готово.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Этого оказалось достаточно?",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Если пройдя через эту дверь Вы действительно окажетесь во внутреннем мире Адама, то всё сработало.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("А если нет?...",noone,_anya,"Anya",noone,"Faceless");
+scr_text("Готово.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Этого оказалось достаточно?",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Если пройдя через эту дверь Вы действительно окажетесь во внутреннем мире Адама, то всё сработало.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("А если нет?...",noone,"Аня","Anya",noone,"Faceless");
 scr_text("(Безликий ели заметно пожал плечами.)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("*вздох*",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Пройдя через дверь Вам потребуется найти Вашего друга и привести его сюда.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Отсюда он сможет вернуться в реальность так же просто, как это делаете Вы.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Пройдя через дверь Вам потребуется найти Вашего друга и привести его сюда.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Отсюда он сможет вернуться в реальность так же просто, как это делаете Вы.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("Ясно...",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Надеюсь, там Вам не придётся сражаться с существами того мира...",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Надеюсь, там Вам не придётся сражаться с существами того мира...",noone,noone,"Mike","Безликий","Faceless");
 scr_text("А... А если предётся?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Мы даже защищаться не умеем!",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Всё Вы умеете.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Это же мир снов и эмоций. Если Вам нужно будет защизаться, Вам придёться просто высвободить Ваши эмоции.",noone,noone,"Anya",_faceless,"Faceless");
-scr_text("Ничего не поняла...",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Вы поймёте когда будет необходимо.",noone,noone,"Anya",_faceless,"Faceless");
+scr_text("Мы даже защищаться не умеем!",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Всё Вы умеете.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Это же мир снов и эмоций. Если Вам нужно будет защизаться, Вам придёться просто высвободить Ваши эмоции.",noone,noone,"Anya","Безликий","Faceless");
+scr_text("Ничего не поняла...",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Вы поймёте когда будет необходимо.",noone,noone,"Anya","Безликий","Faceless");
 scr_text("*вздох*",noone,"Майк","Mike",noone,"Faceless");
 scr_No_option("day3_faceless_3");
 break;
@@ -2789,25 +2761,25 @@ scr_sound_sette(0,Sng_Timeless,true,1);
 scr_text("(Я медленно повернул ручку двери.)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("(И внезапно она распахнулась перед мною...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
 scr_text("Пошли?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Подожди.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Подожди.",noone,noone,"Mike","Аня","Anya");
 scr_text("(Сказав это она выдала по одному маленькому наушнику мне, себе и даже Безликому.)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Вот. Я приготовила это на всякий случай.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Так у нас будет возможность связаться друг с другом.",noone,noone,"Mike",_anya,"Anya");
-scr_text("На всякий случай.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Хм...",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Хорошо.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Желаю Вам удачи.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Вот. Я приготовила это на всякий случай.",noone,noone,"Mike","Аня","Anya");
+scr_text("Так у нас будет возможность связаться друг с другом.",noone,noone,"Mike","Аня","Anya");
+scr_text("На всякий случай.",noone,noone,"Mike","Аня","Anya");
+scr_text("Хм...",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Хорошо.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Желаю Вам удачи.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("Спасибо...",noone,"Майк","Mike",noone,"Faceless");
 scr_text("(Медленно мы прошли через эту дверь.)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think");
 scr_text("А как ты пронесла сюда наушники?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Ну...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Вчера я уснула вместе с брелком в своём кармане.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Ну...",noone,noone,"Mike","Аня","Anya");
+scr_text("Вчера я уснула вместе с брелком в своём кармане.",noone,noone,"Mike","Аня","Anya");
 scr_No_option("day3_faceless_3_");
 break;
 
 case "day3_faceless_3_":
-scr_text("И он оказался в моём кармане и в этом мире тоже.",noone,noone,"Mike",_anya,"Anya");
+scr_text("И он оказался в моём кармане и в этом мире тоже.",noone,noone,"Mike","Аня","Anya");
 obj_payer.phy_position_x=1030;
 obj_payer.phy_position_y=480;
 obj_payer.faza[9]=0;
@@ -2818,8 +2790,8 @@ break;
 
 case "day3_faceless_3__":
 room_goto(room_edem);
-scr_text("Наверное, в этом есть логика.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Просто я не могу её сформулировать...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Наверное, в этом есть логика.",noone,noone,"Mike","Аня","Anya");
+scr_text("Просто я не могу её сформулировать...",noone,noone,"Mike","Аня","Anya");
 scr_option("Ясно.","day3_faceless_3.1","Clear.");
 scr_option("Не понятно...","day3_faceless_3.2","It's not clear...");
 scr_option("Ты что, сейчас спишь с наушниками?","day3_faceless_3.3","Are you sleeping with headphones on now?");
@@ -2832,24 +2804,24 @@ break;
 
 case "day3_faceless_3.2":
 scr_text("Мне не очень понятно...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Тогда просто прийми это как факт.",noone,noone,"Mike",_anya,"Anya");
+scr_text("Тогда просто прийми это как факт.",noone,noone,"Mike","Аня","Anya");
 scr_text("...",noone,"Майк","Mike",noone,"Anya");
 scr_No_option("day3_faceless_4");
 break;
 
 case "day3_faceless_3.3":
 scr_text("Погоди, ты что, сейчас спишь с наушниками в кармане?",noone,"Майк","Mike",noone,"Anya");
-scr_text("А что мне ещё осталось делать?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Наверное, вещи необязательно складывать в карман...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Возможно достаточно держать их рядом.",noone,noone,"Mike",_anya,"Anya");
-scr_text("Только эта теория всё ещё требует проверки.",noone,noone,"Mike",_anya,"Anya");
+scr_text("А что мне ещё осталось делать?",noone,noone,"Mike","Аня","Anya");
+scr_text("Наверное, вещи необязательно складывать в карман...",noone,noone,"Mike","Аня","Anya");
+scr_text("Возможно достаточно держать их рядом.",noone,noone,"Mike","Аня","Anya");
+scr_text("Только эта теория всё ещё требует проверки.",noone,noone,"Mike","Аня","Anya");
 scr_No_option("day3_faceless_4");
 break;
 
 case "day3_faceless_4":
 scr_text("Хм...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Здесь так темно...",noone,"Майк","Mike",noone,"Anya");
-scr_text("Я не знаю...",noone,noone,"Mike",_anya,"Anya");
+scr_text("Я не знаю...",noone,noone,"Mike","Аня","Anya");
 scr_No_option("day3_adam_0");
 break;
 
@@ -2858,7 +2830,7 @@ scr_black(no_no,3);
 scr_sound_sette(1,Sng_Pink_grass,true,1);
 scr_text("!?",noone,"Майк","Mike",noone,"Anya");
 scr_text("Что происходит?",noone,"Майк","Mike",noone,"Anya");
-scr_text("Это... поляна?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Это... поляна?",noone,noone,"Mike","Аня","Anya");
 scr_text("Розовая трава...",noone,"Майк","Mike",noone,"Anya");
 scr_text("Постельное окружение...",noone,"Майк","Mike",noone,"Anya");
 scr_text("(Это и есть внутренний мир Адама?)",noone,"Майк","Mike",noone,"Anya",0.6,"Font_think","end");
@@ -2872,8 +2844,8 @@ scr_text("(Это ведь деревья, да?)",noone,"Майк","Mike",noone
 break;
 
 case "tree_adam_anna":
-scr_text("Майк, смотри...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Это там... человек?",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Майк, смотри...",noone,noone,"Mike","Аня","Anya");
+scr_text("Это там... человек?",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 break;
 
 case "tree_adam_0":
@@ -2891,7 +2863,7 @@ obj_payer.faza[0]=4.1
 scr_text("А?",noone,noone,"Mike","Адам?","Adam0");
 scr_text("Кто здесь?",noone,noone,"Mike","Адам?","Adam0");
 scr_text("...Майк, это ты?",noone,noone,"Mike","Адам?","Adam0");
-scr_text("Что ты там делаешь?",noone,_anya,"Anya",noone,"Adam0");
+scr_text("Что ты там делаешь?",noone,"Аня","Anya",noone,"Adam0");
 scr_text("... Висю.",noone,noone,"Anya","Адам?","Adam0");
 scr_text("А... зачем?",noone,"Майк","Mike",noone,"Adam0");
 scr_text("А почему бы и нет?",noone,noone,"Mike","Адам?","Adam0");
@@ -2922,9 +2894,9 @@ case "tree_adam_2.1":
 obj_payer.moment_skip=0;
 scr_text("Ты в порядке?",noone,"Майк","Mike",noone,"Adam01");
 scr_text("...",noone,noone,"Mike","Адам?","Adam01");
-scr_text("Адам, пошли с нами.",noone,_anya,"Anya",noone,"Adam01");
+scr_text("Адам, пошли с нами.",noone,"Аня","Anya",noone,"Adam01");
 scr_text("Куда?",noone,noone,"Anya","Адам?","Adam01");
-scr_text("Домой.",noone,_anya,"Anya",noone,"Adam01");
+scr_text("Домой.",noone,"Аня","Anya",noone,"Adam01");
 scr_text("Но... мы итак дома...",noone,noone,"Anya","Адам?","Adam01");
 scr_text("О чём ты?",noone,"Майк","Mike",noone,"Adam01");
 scr_text("Я ведь никогда не покидал эту поляну.",noone,noone,"Mike","Адам?","Adam01");
@@ -2935,10 +2907,10 @@ break;
 case "tree_adam_3":
 scr_black(black_no,-1);
 scr_text("(Внезапно я услышал голос Безликого из наушника.)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Послушайте.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("То, что Вы видите перед собой - это не Ваш друг.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Это лишь часть его личности.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Как я понимаю, это самое хорошее, что есть в нём.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Послушайте.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("То, что Вы видите перед собой - это не Ваш друг.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Это лишь часть его личности.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Как я понимаю, это самое хорошее, что есть в нём.",noone,noone,"Mike","Безликий","Faceless");
 scr_No_option("tree_adam_4");
 break;
 
@@ -2948,19 +2920,19 @@ obj_payer.faza[0]=4.3
 obj_payer.phy_position_x=940;
 obj_payer.phy_position_y=466;
 scr_text("Что?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("По одной из теорий по строению личности эта часть человека называется ''Супер Эго'', или же ''Сверх-Я''",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Да, я слышала об этом.",noone,_anya,"Anya",noone,"Faceless");
-scr_text("Там говорилось, что взаимодействие Сверх-Я и ID создаёт наше Эго.",noone,_anya,"Anya",noone,"Faceless");
-scr_text("То есть наше ''Я''.",noone,_anya,"Anya",noone,"Faceless");
+scr_text("По одной из теорий по строению личности эта часть человека называется ''Супер Эго'', или же ''Сверх-Я''",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Да, я слышала об этом.",noone,"Аня","Anya",noone,"Faceless");
+scr_text("Там говорилось, что взаимодействие Сверх-Я и ID создаёт наше Эго.",noone,"Аня","Anya",noone,"Faceless");
+scr_text("То есть наше ''Я''.",noone,"Аня","Anya",noone,"Faceless");
 scr_text("А что такое ID?",noone,"Майк","Mike",noone,"Faceless");
-scr_text("Примитивные желания человека. Его тёмные мысли, то, что не даёт нам достигнуть идеальную версию себя.",noone,noone,"Mike",_faceless,"Faceless");
+scr_text("Примитивные желания человека. Его тёмные мысли, то, что не даёт нам достигнуть идеальную версию себя.",noone,noone,"Mike","Безликий","Faceless");
 scr_text("(Так вот что не даёт мне делать зарядку по утрам...)",noone,"Майк","Mike",noone,"Faceless",0.6,"Font_think");
-scr_text("Надеюсь, что Вы с ним не встретитесь.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("По другой теории личность человека делится на его разум его душу.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("То есть наши эмоции, желания и наше мышление.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("Обе эти теории объединяет наличие в личности человека двух противоположностей.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("И их взаимодействия и создают ту личность, которую люди видят в реальности.",noone,noone,"Mike",_faceless,"Faceless");
-scr_text("То есть, перед нами светлая сторона Адама?",noone,_anya,"Anya",noone,"Faceless");
+scr_text("Надеюсь, что Вы с ним не встретитесь.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("По другой теории личность человека делится на его разум его душу.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("То есть наши эмоции, желания и наше мышление.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("Обе эти теории объединяет наличие в личности человека двух противоположностей.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("И их взаимодействия и создают ту личность, которую люди видят в реальности.",noone,noone,"Mike","Безликий","Faceless");
+scr_text("То есть, перед нами светлая сторона Адама?",noone,"Аня","Anya",noone,"Faceless");
 scr_text("Типо, его душа?",noone,"Майк","Mike",noone,"Anya");
 scr_No_option("tree_adam_5");
 break;
@@ -2969,27 +2941,27 @@ case "tree_adam_5":
 scr_black(black_no,1);
 obj_payer.faza[0]=4.4
 
-scr_text("Эй, с кем вы говорите?",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Эй, с кем вы говорите?",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("Ни с кем.",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Просто мысли в слух.",noone,_anya,"Anya",noone,"Adam1");
-scr_text("М-м-м ясно.",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("А кстати, как тебя зовут?",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Меня?",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Да. Я раньше тебя не видел...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Меня зовут Анна. Я твоя одноклассница.",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Одно-кто?",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Звучит как что-то взрослое...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Ну так ты уже давно в школу ходишь.",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Нет.",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Я на дереве висю...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Ну... больше не висю...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Да, ну не это я имела ввиду!",noone,_anya,"Anya",noone,"Adam1");
+scr_text("Просто мысли в слух.",noone,"Аня","Anya",noone,"Adam1");
+scr_text("М-м-м ясно.",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("А кстати, как тебя зовут?",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Меня?",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Да. Я раньше тебя не видел...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Меня зовут Анна. Я твоя одноклассница.",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Одно-кто?",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Звучит как что-то взрослое...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Ну так ты уже давно в школу ходишь.",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Нет.",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Я на дереве висю...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Ну... больше не висю...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Да, ну не это я имела ввиду!",noone,"Аня","Anya",noone,"Adam1");
 /*
 scr_text("Да и вообще, почему ты знаешь меня, но не знаешь Аню?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("...А?",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Ты... что, не помнишь?",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("...А?",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Ты... что, не помнишь?",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("Не помню что?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("как мы играли вместе...",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("как мы играли вместе...",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("Что?",noone,"Майк","Mike",noone,"Adam1");
 scr_No_option("tree_adam_6");
 break;
@@ -3016,7 +2988,7 @@ case "tree_adam_7":
 scr_black(black_no,1.5);
 scr_text("",noone,noone,"Mike",noone,"Adam1");
 scr_text("...?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Ты правда забыл об этом?",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Ты правда забыл об этом?",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("(...)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("(Даже не знаю, что сказать...)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("(Адам - это мой бывший друг?)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
@@ -3027,31 +2999,31 @@ scr_text("(Просто человек, о котором ты забудешь 
 scr_text("(А тут он назвал меня... лучшим другом?)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("(Я чувствую себя плохо...)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("Извини... что не вспомнил этого...",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Хех, ничего страшного.",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Хех, ничего страшного.",noone,noone,"Mike","Адам (душа)","Adam1");
 */
-scr_text("Кстати, а ты не видел тут парня в зелёной кофте?",noone,_anya,"Anya",noone,"Adam1")
-scr_text("Хм...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Ну тут недавно проходил...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Такой, с короткими потрёпанными волосами, в зелёной кофте...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("И звучал он так печально...",noone,noone,"Anya",_adam_soul,"Adam1");
+scr_text("Кстати, а ты не видел тут парня в зелёной кофте?",noone,"Аня","Anya",noone,"Adam1")
+scr_text("Хм...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Ну тут недавно проходил...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Такой, с короткими потрёпанными волосами, в зелёной кофте...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("И звучал он так печально...",noone,noone,"Anya","Адам (душа)","Adam1");
 scr_text("Хм?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Это мог быть Адам.",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Что?",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Н-нет... Адам ведь не может быть таким...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Он... (я?) ведь совсем другой...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Или...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text(" ([emoji1,0,0];)",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Это правда был он?",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Ой...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Ой-ёй-ёй...",noone,noone,"Anya",_adam_soul,"Adam1");
+scr_text("Это мог быть Адам.",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Что?",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Н-нет... Адам ведь не может быть таким...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Он... (я?) ведь совсем другой...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Или...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text(" ([emoji1,0,0];)",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Это правда был он?",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Ой...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Ой-ёй-ёй...",noone,noone,"Anya","Адам (душа)","Adam1");
 scr_text("Что не так?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("... просто...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Он звучал так взросло...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Я испугался и отправил его в лес.",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Лес?",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Да. Он там, недалеко.",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Там живут все взрослые.",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Нам туда ходить нельзя.",noone,noone,"Anya",_adam_soul,"Adam1");
+scr_text("... просто...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Он звучал так взросло...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Я испугался и отправил его в лес.",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Лес?",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Да. Он там, недалеко.",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Там живут все взрослые.",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Нам туда ходить нельзя.",noone,noone,"Anya","Адам (душа)","Adam1");
 scr_No_option("tree_adam_7.1");
 break;
 
@@ -3059,15 +3031,15 @@ case "tree_adam_7.1":
 obj_payer.faza[9]=1056;
 obj_payer.faza[10]="anna_right";
 obj_payer.faza[11]=1.2;
-scr_text("Майк, пошли туда.",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Стой!",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Я слышал, что там очень опасно...",noone,noone,"Anya",_adam_soul,"Adam1");
+scr_text("Майк, пошли туда.",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Стой!",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Я слышал, что там очень опасно...",noone,noone,"Anya","Адам (душа)","Adam1");
 scr_text("Но если Адам там...",noone,"Майк","Mike",noone,"Adam1");
 scr_text("Мы должны помочь ему!",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Ох... ... ...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Почему так сложно?",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Извините, но я не могу позволить вам пройти туда...",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Ох... ... ...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Почему так сложно?",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Извините, но я не могу позволить вам пройти туда...",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_No_option("tree_adam_7.2");
 break;
 
@@ -3077,12 +3049,12 @@ case "tree_adam_7.2":
 //obj_payer.faza[11]=1.4;
 obj_payer.faza[10]="anna_get_tapes";
 inst_3A742D66_1.x=1052;
-scr_text("?!",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Эй!",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Отпусти меня!",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Для начала попробуйте победить эти ленты.",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Если вы докажете, что способны постоять за себя... Только тогда я позволю вам пройти.",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Майк, не дай этим лентам одолеть тебя!",noone,_anya,"Anya",noone,"Adam1");
+scr_text("?!",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Эй!",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Отпусти меня!",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Для начала попробуйте победить эти ленты.",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Если вы докажете, что способны постоять за себя... Только тогда я позволю вам пройти.",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Майк, не дай этим лентам одолеть тебя!",noone,"Аня","Anya",noone,"Adam1");
 scr_text("Я...",noone,"Майк","Mike",noone,"Adam1");
 scr_text("Я сделаю всё возможное ради этого.",noone,"Майк","Mike",noone,"Adam1");
 scr_text("(Найдя случайную ветку в траве, я приготовился к битве)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
@@ -3099,8 +3071,8 @@ break;
 case "first_fight_1":
 		obj_payer._talk_turn=1;
 		obj_payer._talk_what="first_fight_2"
-scr_text("Ой, Майк, извини! Эти ленты... Они сами аткауют!",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
-scr_text("Не волнуйтесь. Эти ленты не смогут сделать слишком больно.",noone,noone,"Mike",_adam_soul,"Adam1",0.6,"Font_main");
+scr_text("Ой, Майк, извини! Эти ленты... Они сами аткауют!",noone,noone,"Mike","Аня","Anya",0.6,"Font_main");
+scr_text("Не волнуйтесь. Эти ленты не смогут сделать слишком больно.",noone,noone,"Mike","Адам (душа)","Adam1",0.6,"Font_main");
 scr_text("(Что мне делать?)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("(Думаю, стоит попробовать атаковать эти ленты в ответ...)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think","end");
 		break;
@@ -3147,13 +3119,13 @@ if array_length(passed)<=3
 	if obj_cursor.cursor=3
 	{
 scr_text("Что ж... Со всеми имеющимися возможностями я должен закончить эту битву.",noone,"Майк","Mike",noone,noone,0.6,"Font_main");
-scr_text("Давай, у тебя получится!",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Давай, у тебя получится!",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 		}
 		else
 		{
-scr_text("Я понимаю, что ты хотел дать мне конфету, но эти ленты просто украли её!",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
-scr_text("Тебе нужно лучше продумывать свои дейтсвия. Только так ты сможешь победить.",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
-scr_text("Давай, я верю в тебя!",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Я понимаю, что ты хотел дать мне конфету, но эти ленты просто украли её!",noone,noone,"Mike","Аня","Anya",0.6,"Font_main");
+scr_text("Тебе нужно лучше продумывать свои дейтсвия. Только так ты сможешь победить.",noone,noone,"Mike","Аня","Anya",0.6,"Font_main");
+scr_text("Давай, я верю в тебя!",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 		}
 	}
 	else
@@ -3161,13 +3133,13 @@ scr_text("Давай, я верю в тебя!",noone,noone,"Mike",_anya,"Anya",
 	{
 scr_text("(Блин, этот рисунок был настолько прикольный, что я не смог не посмотреть на него...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("Мне нужно собраться, чтоб победить в этой битве!",noone,"Майк","Mike",noone,noone,0.6,"Font_main");
-scr_text("Давай, у тебя получится!",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Давай, у тебя получится!",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 	}
 	else
 	{
-scr_text("Эм... мне кажется, что сейчас не лучшее время пытаться показать мне рисунки...",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
-scr_text("Тебе нужно лучше продумывать свои дейтсвия. Только так ты сможешь победить.",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main");
-scr_text("Давай, я верю в тебя!",noone,noone,"Mike",_anya,"Anya",0.6,"Font_main","end");
+scr_text("Эм... мне кажется, что сейчас не лучшее время пытаться показать мне рисунки...",noone,noone,"Mike","Аня","Anya",0.6,"Font_main");
+scr_text("Тебе нужно лучше продумывать свои дейтсвия. Только так ты сможешь победить.",noone,noone,"Mike","Аня","Anya",0.6,"Font_main");
+scr_text("Давай, я верю в тебя!",noone,noone,"Mike","Аня","Anya",0.6,"Font_main","end");
 	}
 		break;
 
@@ -3175,27 +3147,27 @@ case "tree_adam_7.4":
 obj_payer.faza[0]=5
 obj_payer.faza[10]="anna_left";
 obj_payer.faza[9]=1052;
-scr_text("Это... было достаточно хорошо.",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Ладно... идите.",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("хм...",noone,_anya,"Anya",noone,"Adam1");
-scr_text("А можешь ли ты пойти с нами?",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Хух?",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Просто я думаю...",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Ты же способен взаимодействовать с этим миром гораздо лучше, чем мы...",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Мне кажется, что с тобой нам будет проще.",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Я...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("я не уверен...",noone,noone,"Anya",_adam_soul,"Adam1");
-scr_text("Видишь ли... я никогда не был в той части мира.",noone,noone,"Anya",_adam_soul,"Adam1");
+scr_text("Это... было достаточно хорошо.",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Ладно... идите.",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("хм...",noone,"Аня","Anya",noone,"Adam1");
+scr_text("А можешь ли ты пойти с нами?",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Хух?",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Просто я думаю...",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Ты же способен взаимодействовать с этим миром гораздо лучше, чем мы...",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Мне кажется, что с тобой нам будет проще.",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Я...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("я не уверен...",noone,noone,"Anya","Адам (душа)","Adam1");
+scr_text("Видишь ли... я никогда не был в той части мира.",noone,noone,"Anya","Адам (душа)","Adam1");
 scr_text("Но почему?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Просто...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Там мир становится более страшным...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Более опасным...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Более взрослым...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Но... если я так необходим вам, то...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Просто... старайтесь не попадаться на глаза тамошним существам...",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Просто...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Там мир становится более страшным...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Более опасным...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Более взрослым...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Но... если я так необходим вам, то...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Просто... старайтесь не попадаться на глаза тамошним существам...",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("*Адам присоединиться к команде!*",noone,noone,"Mike",noone,"Adam1");
-scr_text("Ну, тогда пошли.",noone,_anya,"Anya",noone,"Adam1",0.6,"Font_main","end");
+scr_text("Ну, тогда пошли.",noone,"Аня","Anya",noone,"Adam1",0.6,"Font_main","end");
 break;
 
 case "tree_adam_8":
@@ -3227,23 +3199,23 @@ scr_text("(Все эти порушенные деревья...)",noone,"Май�
 scr_text("(Всё это ощущение страха...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Как будто я чувствую взгляд существ этого мира...)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
 scr_text("(Адам даже не может смотреть вперёд, стоя боком к тропинке.)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Адам... Он точно тут?...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("...",noone,_anya,"Anya",noone,"Adam1");
-scr_text("Пока мы не исследуем это место до конца, мы не можем утверждать навернка...",noone,_anya,"Anya",noone,"Adam1");
+scr_text("Адам... Он точно тут?...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("...",noone,"Аня","Anya",noone,"Adam1");
+scr_text("Пока мы не исследуем это место до конца, мы не можем утверждать навернка...",noone,"Аня","Anya",noone,"Adam1");
 scr_text("(Я осмотрелся)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("(На одном из деревьев свисал ярко зелёный лист, намного живее чем всё вокргу)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("Что это?..",noone,"Майк","Mike",noone,"Adam1",0.6,);
 scr_text("(Не подумав ни о чём, я прикоснулся к нему)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
-scr_text("?!",noone,_anya,"Anya",noone,"Adam1");
+scr_text("?!",noone,"Аня","Anya",noone,"Adam1");
 scr_text("(Внезапно этот лист распался на яркий свет, ослепивший меня и остальных)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_No_option("adam_flashback_0");
 break;
 case "adam_flashback_0":
 scr_text("Что?",noone,"Майк","Mike",noone,noone,0.6,);
 scr_text("(Перед своими глазами я увидел... себя?)",noone,"Майк","Mike",noone,noone,0.6,"Font_think");
-scr_text("Где это мы?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Подождите, Майк, это ты?",noone,noone,"Mike",_anya,"Anya");
-scr_text("Но ты тут такой маленький!",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Где это мы?",noone,noone,"Mike","Аня","Anya");
+scr_text("Подождите, Майк, это ты?",noone,noone,"Mike","Аня","Anya");
+scr_text("Но ты тут такой маленький!",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("Это... сцена из прошлого?",noone,"Майк","Mike",noone,noone,0.6);
 scr_text("...",noone,"Майк",noone,noone,noone,0.6);
 scr_text("Ну где же он...",noone,"Майк",noone,noone,noone,0.6);
@@ -3277,7 +3249,7 @@ scr_text("...",noone,"Майк",noone,noone,noone,0.6);
 scr_No_option("adam_flashback_1");
 break;
 case "adam_flashback_1":
-scr_text("Это... правда было?",noone,noone,"Mike",_anya,"Anya");
+scr_text("Это... правда было?",noone,noone,"Mike","Аня","Anya");
 scr_text("Да.",noone,"Майк","Mike",noone,"Anya",0.3);
 scr_text("Теперь я это помню.",noone,"Майк","Mike",noone,"Anya",0.6);
 scr_text("Адам и мой друг из раннего детсва - реально один и тот же человек.",noone,"Майк","Mike",noone,"Anya",0.6);
@@ -3290,61 +3262,61 @@ scr_No_option("tree_adam_11");
 break
 case "adam_scare_0":
 scr_black(black_no,-1);
-scr_text("Этот голос...",noone,_anya,"Anya",noone,noone);
-scr_text("Это Адам?",noone,_anya,"Anya",noone,noone);
-scr_text("Нет...",noone,noone,noone,_adam,"Adam");
-scr_text("(Я снова упал на свою кровать.)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("Почему всё не может быть так же просто, как раньше?",noone,noone,noone,_adam,"Adam");
-scr_text("У меня нет сил встречать новый день...",noone,noone,noone,_adam,"Adam");
-scr_text("Каждый раз когда я включаю телевизор, новости становятся только хуже...",noone,noone,noone,_adam,"Adam");
-scr_text("(Неужто мир и правда становится хуже с каждым днём?)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Или это я взрослею?)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("Взрослею...",noone,noone,noone,_adam,"Adam");
-scr_text("Скорее уж просто продолжаю разлагаться.",noone,noone,noone,_adam,"Adam");
-scr_text("Это... это просто не может быть реальностью.",noone,noone,noone,_adam,"Adam");
-scr_text("(Я не хочу жить в такой реальности.)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Не хочу каждый день просыпаться в страхе за своё будущее)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Пока не повзрослею...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("...",noone,noone,noone,_adam,"Adam");
-scr_text(" ...",noone,noone,noone,_adam,"Adam");
+scr_text("Этот голос...",noone,"Аня","Anya",noone,noone);
+scr_text("Это Адам?",noone,"Аня","Anya",noone,noone);
+scr_text("Нет...",noone,noone,noone,"Адам","Adam");
+scr_text("(Я снова упал на свою кровать.)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("Почему всё не может быть так же просто, как раньше?",noone,noone,noone,"Адам","Adam");
+scr_text("У меня нет сил встречать новый день...",noone,noone,noone,"Адам","Adam");
+scr_text("Каждый раз когда я включаю телевизор, новости становятся только хуже...",noone,noone,noone,"Адам","Adam");
+scr_text("(Неужто мир и правда становится хуже с каждым днём?)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Или это я взрослею?)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("Взрослею...",noone,noone,noone,"Адам","Adam");
+scr_text("Скорее уж просто продолжаю разлагаться.",noone,noone,noone,"Адам","Adam");
+scr_text("Это... это просто не может быть реальностью.",noone,noone,noone,"Адам","Adam");
+scr_text("(Я не хочу жить в такой реальности.)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Не хочу каждый день просыпаться в страхе за своё будущее)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Пока не повзрослею...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("...",noone,noone,noone,"Адам","Adam");
+scr_text(" ...",noone,noone,noone,"Адам","Adam");
 scr_text("...",noone,noone,noone);
 /*
-scr_text("(бесполезно...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("С каждым следующим днём...",noone,noone,noone,_adam,"Adam");
-scr_text("Всё хуже и хуже.",noone,noone,noone,_adam,"Adam");
-scr_text("(Я боюсь...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Боюсь, что окружающие скажут, если узнают все мои чувства...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("Я продолжаю врать.",noone,noone,noone,_adam,"Adam");
-scr_text("Натягиваю улыбку на свой череп.",noone,noone,noone,_adam,"Adam");
-scr_text("Связываю себя в оковы...",noone,noone,noone,_adam,"Adam");
-scr_text("Что бы не случилось, я притворяюсь, как будто сейчас всё как раньше...",noone,noone,noone,_adam,"Adam");
-scr_text("(Что у родителей нет проблем с деньгами...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Что нам не пришлось переехать из-за этого...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Что после переезда я не прекратил общаться со своим другом...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Как будто в том возрасте у нас уже был телефоны, дабы мы могли поделиться номерами...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("хе-хе...",noone,noone,noone,_adam,"Adam");
-scr_text("Майк...",noone,noone,noone,_adam,"Adam");
-scr_text("Он совершенно забыл обо мне...",noone,noone,noone,_adam,"Adam");
-scr_text("Я так надеялся, что когда-нибудь всё будет как раньше...",noone,noone,noone,_adam,"Adam");
-scr_text("Но теперь никакой надежды не осталось",noone,noone,noone,_adam,"Adam");
-scr_text("Эх... если бы...",noone,noone,noone,_adam,"Adam");
-scr_text("Если бы я смог попасть в другой мир...",noone,noone,noone,_adam,"Adam");
-scr_text("Туда, где не надо было сталкиваться с этой реальностью...",noone,noone,noone,_adam,"Adam");
-scr_text("Единственное место, где я бы нашёл счастье...",noone,noone,noone,_adam,"Adam");
-scr_text("...",noone,noone,noone,_adam,"Adam");
-scr_text("(Я лишь пытаюсь найти своё счастье...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("(Я не знаю, получается ли у меня...)",noone,noone,noone,_adam,"Adam",0.6,"Font_think");
-scr_text("Возможно... я делаю только хуже...",noone,noone,noone,_adam,"Adam");
-scr_text("хуже... самому себе...",noone,noone,noone,_adam,"Adam");*/
+scr_text("(бесполезно...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("С каждым следующим днём...",noone,noone,noone,"Адам","Adam");
+scr_text("Всё хуже и хуже.",noone,noone,noone,"Адам","Adam");
+scr_text("(Я боюсь...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Боюсь, что окружающие скажут, если узнают все мои чувства...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("Я продолжаю врать.",noone,noone,noone,"Адам","Adam");
+scr_text("Натягиваю улыбку на свой череп.",noone,noone,noone,"Адам","Adam");
+scr_text("Связываю себя в оковы...",noone,noone,noone,"Адам","Adam");
+scr_text("Что бы не случилось, я притворяюсь, как будто сейчас всё как раньше...",noone,noone,noone,"Адам","Adam");
+scr_text("(Что у родителей нет проблем с деньгами...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Что нам не пришлось переехать из-за этого...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Что после переезда я не прекратил общаться со своим другом...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Как будто в том возрасте у нас уже был телефоны, дабы мы могли поделиться номерами...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("хе-хе...",noone,noone,noone,"Адам","Adam");
+scr_text("Майк...",noone,noone,noone,"Адам","Adam");
+scr_text("Он совершенно забыл обо мне...",noone,noone,noone,"Адам","Adam");
+scr_text("Я так надеялся, что когда-нибудь всё будет как раньше...",noone,noone,noone,"Адам","Adam");
+scr_text("Но теперь никакой надежды не осталось",noone,noone,noone,"Адам","Adam");
+scr_text("Эх... если бы...",noone,noone,noone,"Адам","Adam");
+scr_text("Если бы я смог попасть в другой мир...",noone,noone,noone,"Адам","Adam");
+scr_text("Туда, где не надо было сталкиваться с этой реальностью...",noone,noone,noone,"Адам","Adam");
+scr_text("Единственное место, где я бы нашёл счастье...",noone,noone,noone,"Адам","Adam");
+scr_text("...",noone,noone,noone,"Адам","Adam");
+scr_text("(Я лишь пытаюсь найти своё счастье...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("(Я не знаю, получается ли у меня...)",noone,noone,noone,"Адам","Adam",0.6,"Font_think");
+scr_text("Возможно... я делаю только хуже...",noone,noone,noone,"Адам","Adam");
+scr_text("хуже... самому себе...",noone,noone,noone,"Адам","Adam");*/
 scr_No_option("adam_scare_1");
 break;
 case "adam_scare_1":
 scr_black(black_no,1);
 scr_text("...",noone,"Майк","Mike",noone,"Adam1");
 scr_text("Что... это было?",noone,"Майк","Mike",noone,"Adam1");
-scr_text("Как будто его воспоминание материализовалось прямо перед нами...",noone,noone,"Mike",_anya,"Anya");
-scr_text("Воспоминание...",noone,noone,"Mike",_adam_soul,"Adam1");
-scr_text("Значит, это то, о чём он думал...",noone,noone,"Mike",_adam_soul,"Adam1");
+scr_text("Как будто его воспоминание материализовалось прямо перед нами...",noone,noone,"Mike","Аня","Anya");
+scr_text("Воспоминание...",noone,noone,"Mike","Адам (душа)","Adam1");
+scr_text("Значит, это то, о чём он думал...",noone,noone,"Mike","Адам (душа)","Adam1");
 scr_text("...",noone,"Майк","Mike",noone,"Adam1");
 scr_text("(То, что он говорил...)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");
 scr_text("(Это прозвучало так...)",noone,"Майк","Mike",noone,"Adam1",0.6,"Font_think");

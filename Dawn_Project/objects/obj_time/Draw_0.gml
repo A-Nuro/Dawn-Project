@@ -101,7 +101,7 @@ if global.time==4 and global.time!=time_change and time_was!=-1
 }
 
 
-if room == room_fight or room == Main_menu
+if room == room_fight or room == Main_menu or room == First_screen
 {
 x=camera_get_view_x(view_camera[0])-120	
 y=camera_get_view_y(view_camera[0])-120	

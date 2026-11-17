@@ -383,7 +383,11 @@ if ((Down=1 or Gp_stickv>0.3) and actions = 0) or fake_down=1
 	{
 	case "deff":
 	if moveOk==0
-	sprite_index=spgd_;
+	{
+	if (Right=1 or Gp_stickh>0.3) sprite_index=spgdr;
+	if (Left=1 or Gp_stickh<-0.3) sprite_index=spgdl;
+	if !(Left=1 or Gp_stickh<-0.3) and !(Right=1 or Gp_stickh>0.3) sprite_index=spgd_;
+	}
 	else
 	sprite_index=spbd;
 	break;
@@ -403,7 +407,11 @@ if ((Up=1 or Gp_stickv<-0.3)   and actions = 0) or fake_up=1
 	{
 	case "deff":
 	if moveOk==0
-	sprite_index=spgu_;
+	{
+	if (Right=1 or Gp_stickh>0.3) sprite_index=spgur;
+	if (Left=1 or Gp_stickh<-0.3) sprite_index=spgul;
+	if !(Left=1 or Gp_stickh<-0.3) and !(Right=1 or Gp_stickh>0.3) sprite_index=spgu_;
+	}
 	else
 	sprite_index=spbu;
 	break;
@@ -423,7 +431,11 @@ if ((Right=1 or Gp_stickh>0.3)  and actions = 0) or fake_right=1
 	{
 	case "deff":
 	if moveOk==0
-	sprite_index=spgr_;
+	{
+	if (Down=1 or Gp_stickv>0.3) sprite_index=spgdr
+	if (Up=1 or Gp_stickv<-0.3) sprite_index=spgur
+	if !(Down=1 or Gp_stickv>0.3) and !(Up=1 or Gp_stickv<-0.3) sprite_index=spgr_;
+	}
 	else
 	sprite_index=spbr;
 	break;
@@ -443,7 +455,11 @@ if ((Left=1 or Gp_stickh<-0.3) and actions = 0) or fake_left=1
 	{
 	case "deff":
 	if moveOk==0
-	sprite_index=spgl_;
+	{
+	if (Down=1 or Gp_stickv>0.3) sprite_index=spgdl
+	if (Up=1 or Gp_stickv<-0.3) sprite_index=spgul
+	if !(Down=1 or Gp_stickv>0.3) and !(Up=1 or Gp_stickv<-0.3) sprite_index=spgl_;
+	}
 	else
 	sprite_index=spbl;
 	break;

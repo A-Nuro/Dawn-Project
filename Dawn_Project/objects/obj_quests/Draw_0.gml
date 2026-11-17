@@ -15,22 +15,24 @@ with(global.main_quests[i])
 	}
 
 	draw_sprite_stretched_ext(Sprite139,0,min(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-string_width(name)*0.15-5,camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-string_width("НОВЫЙ КВЕСТ:")*0.15-5),camera_get_view_y(view_camera[0])+85,max(string_width(name)*0.3+10,string_width("НОВЫЙ КВЕСТ:")*0.3+10),obj_quests.quest_y-85+string_height(name)*0.3+5,c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9))
-	scribble("НОВЫЙ КВЕСТ:",8937).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width("НОВЫЙ КВЕСТ:")*0.15),camera_get_view_y(view_camera[0])+90)
+	scribble("НОВАЯ ЦЕЛЬ:",8937).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width("НОВЫЙ КВЕСТ:")*0.15),camera_get_view_y(view_camera[0])+90)
 	var __str = string("[scale,0.3]")+string(name)
-	if obj_quests.quest_y<133.9
+	if obj_quests.quest_y<132
 	{obj_quests.quest_y+=0.15
 	scribble(name,8936).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width(name)*0.15),camera_get_view_y(view_camera[0])+obj_quests.quest_y)
 	}
-	if obj_quests.quest_y>133.9
-	{
-	scribble(name,8936).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width(name)*0.15),camera_get_view_y(view_camera[0])+obj_quests.quest_y)
-	status=1;
 
+	if obj_quests.quest_y>=132
+	{
+	activation=0
+	scribble(name,8936).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width(name)*0.15),camera_get_view_y(view_camera[0])+obj_quests.quest_y)
+	global.main_quests[i-1].status=2
+	status=1;
 	if instance_exists(obj_textbox) obj_textbox.no_accept=0;
 	/*if array_get_index(obj_quests.active_quests,global.main_quests[i])==-1*/ //array_push(obj_quests.active_quests,global.main_quests[i])
 	obj_quests.quest_y=105;
 	
-	activation=0
+	
 	}
 	}
 	if activation == 2
@@ -41,13 +43,13 @@ with(global.main_quests[i])
 		obj_payer.skip_active=0;
 	}
 	draw_sprite_stretched_ext(Sprite139,0,min(camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-string_width(name)*0.15-5,camera_get_view_x(view_camera[0])+camera_get_view_width(view_camera[0])/2-string_width("ВЫПОЛНЕН КВЕСТ:")*0.15-5),camera_get_view_y(view_camera[0])+85,max(string_width(name)*0.3+10,string_width("ВЫПОЛНЕН КВЕСТ:")*0.3+10),obj_quests.quest_y-85+string_height(name)*0.3+5,c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9))
-	scribble("ВЫПОЛНЕН КВЕСТ:",8938).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width("ВЫПОЛНЕН КВЕСТ:")*0.15),camera_get_view_y(view_camera[0])+90)
+	scribble("ВЫПОЛНЕНА ЦЕЛЬ:",8938).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width("ВЫПОЛНЕН КВЕСТ:")*0.15),camera_get_view_y(view_camera[0])+90)
 	var __str = string("[scale,0.3]")+string(name)
-	if obj_quests.quest_y<133.9
+	if obj_quests.quest_y<132
 	{obj_quests.quest_y+=0.15
 	scribble(name,8939).starting_format("Font_main").scale(0.3).blend(c_white,sin((camera_get_view_height(view_camera[0])-obj_quests.quest_y)/9)).draw(camera_get_view_x(view_camera[0])+(camera_get_view_width(view_camera[0])/2)-(string_width(name)*0.15),camera_get_view_y(view_camera[0])+obj_quests.quest_y)
 	}
-	if obj_quests.quest_y>133.9
+	if obj_quests.quest_y>=132
 	{
 	status=2;
 	if instance_exists(obj_textbox) obj_textbox.no_accept=0;
