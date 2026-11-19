@@ -434,7 +434,7 @@ if ((Right=1 or Gp_stickh>0.3)  and actions = 0) or fake_right=1
 	{
 	if (Down=1 or Gp_stickv>0.3) sprite_index=spgdr
 	if (Up=1 or Gp_stickv<-0.3) sprite_index=spgur
-	if !(Down=1 or Gp_stickv>0.3) and !(Up=1 or Gp_stickv<-0.3) sprite_index=spgr_;
+	if !(Down=1 or Gp_stickv>0.3) and !(Up=1 or Gp_stickv<-0.3) sprite_index=spgr__1;
 	}
 	else
 	sprite_index=spbr;
@@ -458,7 +458,7 @@ if ((Left=1 or Gp_stickh<-0.3) and actions = 0) or fake_left=1
 	{
 	if (Down=1 or Gp_stickv>0.3) sprite_index=spgdl
 	if (Up=1 or Gp_stickv<-0.3) sprite_index=spgul
-	if !(Down=1 or Gp_stickv>0.3) and !(Up=1 or Gp_stickv<-0.3) sprite_index=spgl_;
+	if !(Down=1 or Gp_stickv>0.3) and !(Up=1 or Gp_stickv<-0.3) sprite_index=spgl__1;
 	}
 	else
 	sprite_index=spbl;
@@ -571,7 +571,7 @@ air = clamp(air, 0, airLim);
 if  air>=airLim
 {moveOk=0;
 if faza[0]>0.01
-{moveSpeed=2;
+{moveSpeed=1.5;
 moveMoreSpeed=2;}
 else
 {moveSpeed=1;

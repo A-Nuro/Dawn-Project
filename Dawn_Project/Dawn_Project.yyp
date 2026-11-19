@@ -83,7 +83,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Dawn_Project",
   "resources":[
@@ -370,10 +370,12 @@
     {"id":{"name":"spgd","path":"sprites/spgd/spgd.yy",},},
     {"id":{"name":"spgdl","path":"sprites/spgdl/spgdl.yy",},},
     {"id":{"name":"spgdr","path":"sprites/spgdr/spgdr.yy",},},
+    {"id":{"name":"spgl__1","path":"sprites/spgl__1/spgl__1.yy",},},
     {"id":{"name":"spgl_","path":"sprites/spgl_/spgl_.yy",},},
     {"id":{"name":"spgl_s_1","path":"sprites/spgl_s_1/spgl_s_1.yy",},},
     {"id":{"name":"spgl_s","path":"sprites/spgl_s/spgl_s.yy",},},
     {"id":{"name":"spgl","path":"sprites/spgl/spgl.yy",},},
+    {"id":{"name":"spgr__1","path":"sprites/spgr__1/spgr__1.yy",},},
     {"id":{"name":"spgr_","path":"sprites/spgr_/spgr_.yy",},},
     {"id":{"name":"spgr_s_1","path":"sprites/spgr_s_1/spgr_s_1.yy",},},
     {"id":{"name":"spgr_s","path":"sprites/spgr_s/spgr_s.yy",},},

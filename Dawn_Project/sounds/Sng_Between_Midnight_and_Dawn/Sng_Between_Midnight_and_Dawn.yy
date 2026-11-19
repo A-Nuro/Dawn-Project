@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":144.03917,
+  "duration":144.03918,
   "exportDir":"",
   "name":"Sng_Between_Midnight_and_Dawn",
   "parent":{

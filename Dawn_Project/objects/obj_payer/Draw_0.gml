@@ -34,7 +34,6 @@ if ((x!=xprevious or y!=yprevious) and Shift=0 and andr_shift=0 and air>0 and mo
 if (x==xprevious and y==yprevious and moveOk=0) air+=1.5
 }else air+=1;	
 
-
 /*
 if (Shift=1 or andr_shift=1) and air>0 and faza[0]>0.01
 		{

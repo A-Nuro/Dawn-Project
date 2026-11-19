@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":111.0465,
+  "duration":111.04653,
   "exportDir":"",
   "name":"Sng_Pink_grass_battle_mix",
   "parent":{
