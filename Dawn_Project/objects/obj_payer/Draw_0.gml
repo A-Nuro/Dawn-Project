@@ -1,4 +1,31 @@
+if faza[0]>0.01 
+{
 
+if air>=airLim
+{
+	switch(cloth)
+	{
+	case "deff":
+		switch(sprite_index)
+		{
+		case spbu:
+		sprite_index=spgu_
+		break;
+		case spbd:
+		sprite_index=spgd_
+		break;
+		case spbl:
+		sprite_index=spgl_
+		break;
+		case spbr:
+		sprite_index=spgr_
+		break;
+		}
+	break;
+	}
+}
+	
+}
 if (stil_moving = true) 
 {
 	player_move(global.selected_unit)
