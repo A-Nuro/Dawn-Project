@@ -26,6 +26,9 @@ if air>=airLim
 }
 	
 }
+
+
+
 if (stil_moving = true) 
 {
 	player_move(global.selected_unit)
@@ -60,7 +63,7 @@ if danger==false
 if ((x!=xprevious or y!=yprevious) and Shift=0 and andr_shift=0 and air>0 and moveOk=0) air+=0.5;
 if (x==xprevious and y==yprevious and moveOk=0) air+=1.5
 }else air+=1;	
-
+draw_text(x,y,faza[0])
 /*
 if (Shift=1 or andr_shift=1) and air>0 and faza[0]>0.01
 		{

@@ -22,7 +22,6 @@ talking=1;
 text_id="First talk1";
 */
 obj_payer.sprite_index=spwa;
-obj_payer.image_speed=1;
 
 if (obj_payer.image_index>=19) 
 {
@@ -37,7 +36,7 @@ if obj_payer.faza[0]=0.01
 
 if obj_payer.faza[0]=0.112
 {
-	obj_saves.savekey=1;
+	//obj_saves.savekey=1;
 	obj_payer.faza[0]=0.113
 }
 

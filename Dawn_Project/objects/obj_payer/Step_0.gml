@@ -1,6 +1,12 @@
 if (mouse_wheel_block>0) mouse_wheel_block--
 else mouse_wheel_block=0
 
+if (os_browser != browser_not_a_browser && !window_get_fullscreen()) {
+    if (device_mouse_check_button_pressed(0, mb_left)) {
+        window_set_fullscreen(true);
+    }
+}
+
 if instance_exists(obj_textbox)
 {
 if obj_textbox.reacting[obj_textbox.page]!=-1 and obj_textbox.draw_char==0 and obj_textbox.react_who[obj_textbox.page]="mike"
@@ -16,32 +22,36 @@ break;
 }
 }
 }
-
-Gp_padr = gamepad_button_check(gpl(),gp_padr);
-Gp_padl = gamepad_button_check(gpl(),gp_padl);
-Gp_padu = gamepad_button_check(gpl(),gp_padu);
-Gp_padd = gamepad_button_check(gpl(),gp_padd);
-Gp_a = gamepad_button_check(gpl(),gp_face1);
-Gp_b = gamepad_button_check(gpl(),gp_face2);
-Gp_x = gamepad_button_check(gpl(),gp_face3);
-Gp_y = gamepad_button_check(gpl(),gp_face4);
-Gp_stickh = gamepad_axis_value(gpl(),gp_axislh);
-Gp_stickv = gamepad_axis_value(gpl(),gp_axislv);
-Gp_stickl = gamepad_button_check_pressed(gpl(),gp_stickl);
-Gp_con = gamepad_is_connected(gpl());
 Gp_that_con = gpl();
-Gp_r1 = gamepad_button_check_pressed(gpl(),gp_shoulderl);
-Gp_r2 = gamepad_button_check(gpl(),gp_shoulderrb);
-Gp_start = gamepad_button_check_pressed(gpl(),gp_start);
-Gp_select = gamepad_button_check_pressed(gpl(),gp_select);
-Gp_padr_cl = gamepad_button_check_pressed(gpl(),gp_padr);
-Gp_padl_cl = gamepad_button_check_pressed(gpl(),gp_padl);
-Gp_padu_cl = gamepad_button_check_pressed(gpl(),gp_padu);
-Gp_padd_cl = gamepad_button_check_pressed(gpl(),gp_padd);
-Gp_a_cl = gamepad_button_check_pressed(gpl(),gp_face1);
-Gp_b_cl = gamepad_button_check_pressed(gpl(),gp_face2);
-Gp_x_cl = gamepad_button_check_pressed(gpl(),gp_face3);
-Gp_y_cl = gamepad_button_check_pressed(gpl(),gp_face4);
+
+Gp_con = gamepad_is_connected(Gp_that_con);
+
+if Gp_con
+{
+Gp_padr = gamepad_button_check(Gp_that_con,gp_padr);
+Gp_padl = gamepad_button_check(Gp_that_con,gp_padl);
+Gp_padu = gamepad_button_check(Gp_that_con,gp_padu);
+Gp_padd = gamepad_button_check(Gp_that_con,gp_padd);
+Gp_a = gamepad_button_check(Gp_that_con,gp_face1);
+Gp_b = gamepad_button_check(Gp_that_con,gp_face2);
+Gp_x = gamepad_button_check(Gp_that_con,gp_face3);
+Gp_y = gamepad_button_check(Gp_that_con,gp_face4);
+Gp_stickh = gamepad_axis_value(Gp_that_con,gp_axislh);
+Gp_stickv = gamepad_axis_value(Gp_that_con,gp_axislv);
+Gp_stickl = gamepad_button_check_pressed(Gp_that_con,gp_stickl);
+Gp_r1 = gamepad_button_check_pressed(Gp_that_con,gp_shoulderl);
+Gp_r2 = gamepad_button_check(Gp_that_con,gp_shoulderrb);
+Gp_start = gamepad_button_check_pressed(Gp_that_con,gp_start);
+Gp_select = gamepad_button_check_pressed(Gp_that_con,gp_select);
+Gp_padr_cl = gamepad_button_check_pressed(Gp_that_con,gp_padr);
+Gp_padl_cl = gamepad_button_check_pressed(Gp_that_con,gp_padl);
+Gp_padu_cl = gamepad_button_check_pressed(Gp_that_con,gp_padu);
+Gp_padd_cl = gamepad_button_check_pressed(Gp_that_con,gp_padd);
+Gp_a_cl = gamepad_button_check_pressed(Gp_that_con,gp_face1);
+Gp_b_cl = gamepad_button_check_pressed(Gp_that_con,gp_face2);
+Gp_x_cl = gamepad_button_check_pressed(Gp_that_con,gp_face3);
+Gp_y_cl = gamepad_button_check_pressed(Gp_that_con,gp_face4);
+}
 
 if !instance_exists(obj_textbox) and talk==0 and actions==0 and room!=room_nightmare
 {
@@ -235,7 +245,13 @@ var current_spd = can_run ? (moveSpeed + moveMoreSpeed) : moveSpeed;
 var vx = input_x * current_spd;
 var vy = input_y * current_spd;
 
-if (!atk && room != Main_menu && faza[0] >= 0.01 && moveOk == 0) {
+if faza[0]=0
+{
+	if (input_x!=0 or input_y!=0) image_speed=1
+	else {image_speed=0; image_index=0}
+}
+
+if (!atk and room != Main_menu and faza[0] >= 0.01 and moveOk == 0) {
 	// Right
 	if vx > 0
 	{
